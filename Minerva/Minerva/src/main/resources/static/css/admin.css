@@ -1,0 +1,44 @@
+.open>.admin-dropdawn {
+    position: relative;
+    float: none;
+    color: white;
+    padding: 5px;
+    background-color: rgba(0, 0, 0,0.0);
+    margin-left: 20px;
+}
+.open>.admin-dropdawn:HOVER {
+    background-color: rgba(128, 0, 0,0.5);
+}
+.dropdown-item:HOVER{
+	text-decoration: none;
+	color: white;
+}
+
+.foldal-modosit-popup{
+	display: none;
+	padding-bottom: 25px;
+/* 	padding-left: 100px; */
+/* 	padding-right: 100px; */
+	padding-top: 15px;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    -ms-transform: translateX(-50%) translateY(-0%);
+    -webkit-transform: translate(-50%,-0%);
+    transform: translate(-50%,-0%);
+    left: 50%;
+    z-index: 10;
+    top: 0px;
+    overflow-y: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.foldal-modosit-popup-subdiv{
+	width: 900px;
+    -ms-transform: translateX(-50%) translateY(-0%);
+    -webkit-transform: translate(-50%,-0%);
+    transform: translate(-50%,-0%);
+    left: 50%;
+    z-index: 10;
+    top: 0px;
+}

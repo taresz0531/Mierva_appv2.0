@@ -1,0 +1,12 @@
+.etel-header-row{
+	border-bottom: 3px solid white;
+}
+.etel-row{
+	border-bottom: 1px solid white;
+	height: 150px;
+	margin-top: 10px;	
+}
+.etlap-img{
+	max-height: 140px;
+	border-radius: 8px;
+}
