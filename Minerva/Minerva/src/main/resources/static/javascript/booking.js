@@ -17,6 +17,10 @@ var isMovCalendar = false;
 var moveCalendarId;
 var moveDateFrom;
 var moveRoomType;
+var actualCalendarId;
+var actualDateFrom;
+var actualRoomType;
+var saveCalendarId = 0;
 
 /*
  * cellák háttérszinének beállítása
@@ -54,11 +58,12 @@ function printBackgound() {
 	
 	for (var i = 0; i < cells.length; i++) {
 		var callId = document.getElementById("id_" + cells[i].id).value;
+		var color = document.getElementById("color_" + cells[i].id).value;
 		for (var j = 0; j < callIdArray.length; j++) {
 			if(callId == callIdArray[j]){
 				if(map.get('' + callId + '') > 0){
 					var item = document.getElementById(cells[i].id);
-					item.style.background = colorArray[j];
+					item.style.background = color;
 				}  
 			}
 		}	
@@ -138,10 +143,12 @@ function clickHeandler(item) {
 	var isEmty = document.getElementById("isEmty_" + item.id).value;
 	
 	if(callId != 0 && isEmty == "false"){
-		var roomType = document.getElementById("roomType_" + item.id).value;
-		var dateFrom = document.getElementById("dateFrom_" + item.id).value;
 		
 		saveMoveData(callId,dateFrom,roomType);
+	}else{
+		var roomType = document.getElementById("roomType_" + item.id).value;
+		var dateFrom = document.getElementById("dateFromNew_" + item.id).value;
+		saveActualData(callId,dateFrom,roomType);
 	}
 }
 
@@ -156,7 +163,7 @@ function doubleClickHeandler(event,item){
 		
 	if(callId == 0){
 		var roomType = document.getElementById("roomType_" + item.id).value;
-		var dateFrom = document.getElementById("dateFrom_" + item.id).value;
+		var dateFrom = document.getElementById("dateFromNew_" + item.id).value;
 		var dateTo = document.getElementById("dateTo");
 		dateTo.min = dateFrom;
 
@@ -290,12 +297,11 @@ function moveCalendar() {
 	var moveCancelButton = document.getElementById('moveCancelButton');
 	var saveMcalendar = document.getElementById("saveMoveCalendar");
 	if(moveCalendarId > 0){
-		var data = {};
 		
-		data["name"] = "moveCalendar";
-		data["param"] = 1;
+		var name = "moveCalendar";
+		var value = 1;
 		
-		var u = "/ajaxSessionSet?name=" + data["name"] + "&param=" + data["param"];
+		var u = "/ajaxSessionSet?name=" + name + "&param=" + value;
 		$.ajax({
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
@@ -305,6 +311,23 @@ function moveCalendar() {
 				moveButton.style.display = "none";
 				moveCancelButton.style.display = "block";
 				saveMcalendar.style.display = "block";
+				saveCalendarId = moveCalendarId;
+			},
+			error: function (e) {
+				console.log("error: " + e);
+			}
+		});
+		
+		name = "saveCalId";
+		value = moveCalendarId;
+		u = "/ajaxSessionSet?name=" + name + "&param=" + value;
+		$.ajax({
+			type: "POST",
+			contentType: "application/json; charset=utf-8",
+			url: u,
+			timeout : 100000,
+			success: function (data) {
+				
 			},
 			error: function (e) {
 				console.log("error: " + e);
@@ -315,23 +338,48 @@ function moveCalendar() {
 }
 
 function saveMoveCalendar(){
-	var r = confirm("Biztos áthelyezi a foglalást erre az időpontra? " + dateFrom);
-	if (r == true) {
-		var change_id = document.getElementById('change_id');
-		var change_roomType = document.getElementById('change_roomType');
-		var change_dateFrom = document.getElementById('change_dateFrom');
-		
-		change_id.value = dragCallId;
-		change_dateFrom.value = dateFrom;
-		change_roomType.value = roomType;
-		
-		document.getElementById("form-saveMoveCalendar").submit();
+	var newCalId = document.getElementById('newCalId');
+	
+	if(newCalId.value > 0 && actualCalendarId == 0){
+		var r = confirm("Biztos áthelyezi a foglalást erre az időpontra? " + actualDateFrom);
+		if (r == true) {
+			var change_id = document.getElementById('change_idw');
+			var change_roomType = document.getElementById('change_roomTypew');
+			var change_dateFrom = document.getElementById('change_dateFromw');
+			
+			change_id.value = newCalId.value;
+			change_dateFrom.value = actualDateFrom;
+			change_roomType.value = actualRoomType;
+			
+			var name = "moveCalendar";
+			var value = 0;
+			
+			var u = "/ajaxSessionSet?name=" + name + "&param=" + value;
+			$.ajax({
+				type: "POST",
+				contentType: "application/json; charset=utf-8",
+				url: u,
+				timeout : 100000,
+				success: function (data) {
+					moveButton.style.display = "none";
+					moveCancelButton.style.display = "block";
+					saveMcalendar.style.display = "block";
+					saveCalendarId = moveCalendarId;
+				},
+				error: function (e) {
+					console.log("error: " + e);
+				}
+			});
+			
+			document.getElementById("form-saveMoveCalendar").submit();
+		}
 	}
 }
 
 function moveCalendarCancel(){
 	var moveButton = document.getElementById('moveButton');
 	var moveCancelButton = document.getElementById('moveCancelButton');
+	var saveMcalendar = document.getElementById("saveMoveCalendar");
 	
 	var data = {};
 	
@@ -347,6 +395,8 @@ function moveCalendarCancel(){
 		success: function (data) {
 			moveButton.style.display = "block";
 			moveCancelButton.style.display = "none";
+			saveMcalendar.style.display = "none";
+			saveCalendarId = 0;
 		},
 		error: function (e) {
 			console.log("error: " + e);
@@ -358,6 +408,12 @@ function saveMoveData(calId,date,room) {
 	moveCalendarId = calId;
 	moveDateFrom = date;
 	moveRoomType = room;
+}
+
+function saveActualData(calId,date,room) {
+	actualCalendarId = calId;
+	actualDateFrom = date;
+	actualRoomType = room;
 }
 
 function closepopupadd(popupName){

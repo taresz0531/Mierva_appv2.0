@@ -133,9 +133,11 @@
 									<input type="hidden" id="dateFrom_${rt?index}${i}" value="${c.calendar.dateFrom?string('yyyy-MM-dd')}" />
 									<input type="hidden" id="dateTo_${rt?index}${i}" value="${c.calendar.dateTo?string('yyyy-MM-dd')}" />
 									<input type="hidden" id="dateFromNew_${rt?index}${i}" value="${weekDays[i].date?string('yyyy-MM-dd')}" />
+									<input type="hidden" id="color_${rt?index}${i}" value="${c.calendar.color}" />
 								<#else>
 									<input type="hidden" id="dateFromNew_${rt?index}${i}" value="${weekDays[i].date?string('yyyy-MM-dd')}" />
 									<input type="hidden" id="roomType_${rt?index}${i}" value="${rt.type}" />
+									<input type="hidden" id="color_${rt?index}${i}" value="#000" />
 								</#if>
 							</#if>
 						</#list>
@@ -176,17 +178,20 @@
 		</div>
 		<div class="right-buttons">
 			<div>
-				<input id="moveButton" class="btn" type="button" onclick="moveCalendar()" value="Áthelyezés másik hétre">
-				<div id="saveMoveCalendar" style="display: none">
+				<input id="moveButton" class="btn" type="button" <#if !Session.moveCalendar?exists || Session.moveCalendar == "0">style="display: block;"<#else>style="display: none;"</#if> onclick="moveCalendar()" value="Áthelyezés másik hétre">
+				<div id="saveMoveCalendar" <#if Session.moveCalendar?exists && Session.moveCalendar == "1">style="display: block;"<#else>style="display: none;"</#if>>
 					<form action="bookingChange" method="post" id="form-saveMoveCalendar" name="form-saveMoveCalendar">
+						<input type="hidden" id="newCalId" name="newCalId" <#if Session.saveCalId?exists && Session.saveCalId != "0">value="${Session.saveCalId}"<#else> value="0"</#if>/>
 						<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
-						<input type="hidden" id="change_id" name="change_id" />
-						<input type="hidden" id="change_roomType" name="change_roomType" />
-						<input type="hidden" id="change_dateFrom" name="change_dateFrom" />
+						<input type="hidden" id="change_idw" name="change_id" />
+						<input type="hidden" id="change_roomTypew" name="change_roomType" />
+						<input type="hidden" id="change_dateFromw" name="change_dateFrom" />
 						<input class="btn" type="button" onclick="saveMoveCalendar()" value="Mentés ide"/>
 					</form>
 				</div>
-				<input id="moveCancelButton" style="display: none;" class="btn" type="button" onclick="moveCalendarCancel()" value="Mégsem">
+			</div>
+			<div>
+				<input id="moveCancelButton" <#if Session.moveCalendar?exists && Session.moveCalendar == "1">style="display: block;"<#else>style="display: none;"</#if> class="btn" type="button" onclick="moveCalendarCancel()" value="Mégsem">
 			</div>
 			<div>
 				<button class="btn" type="button">Segítség</button>

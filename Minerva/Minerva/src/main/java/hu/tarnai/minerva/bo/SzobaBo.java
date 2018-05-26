@@ -205,6 +205,7 @@ public class SzobaBo extends SqlConnector{
 				cc.setPayType(rs.getString("pay_type"));
 				cc.setPrice(rs.getInt("price"));
 				cc.setComment(rs.getString("comment"));
+				cc.setColor(rs.getString("color"));
 				r.add(cc);
 			}
 			
@@ -314,7 +315,7 @@ public class SzobaBo extends SqlConnector{
 		}
 		
 		try{
-			cstm = conn.prepareCall("{call CALENDAR_GET_WEEK(?)}");
+			cstm = conn.prepareCall("{call CALENDAR_GET_BY_ID(?)}");
 			cstm.setInt(1, id);
 			
 			rs = cstm.executeQuery();
@@ -332,6 +333,7 @@ public class SzobaBo extends SqlConnector{
 				cc.setPayType(rs.getString("pay_type"));
 				cc.setPrice(rs.getInt("price"));
 				cc.setComment(rs.getString("comment"));
+				cc.setColor(rs.getString("color"));
 				return cc;
 			}
 			

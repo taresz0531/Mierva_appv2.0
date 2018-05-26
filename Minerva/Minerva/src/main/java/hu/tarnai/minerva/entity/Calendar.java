@@ -42,6 +42,8 @@ public class Calendar implements Serializable {
     public int price;
     @Column(nullable=false, length=1500)
     public String comment;
+    @Column(nullable=false, length=10)
+    public String color;
 
     /** Default constructor. */
     public Calendar() {
@@ -245,8 +247,17 @@ public class Calendar implements Serializable {
     public void setComment(String aComment) {
         comment = aComment;
     }
+    
 
-    /**
+    public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	/**
      * Compares the key for this instance with another Calendar.
      *
      * @param other The object to compare to
