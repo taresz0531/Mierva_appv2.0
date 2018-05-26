@@ -177,6 +177,16 @@
 		<div class="right-buttons">
 			<div>
 				<input id="moveButton" class="btn" type="button" onclick="moveCalendar()" value="Áthelyezés másik hétre">
+				<div id="saveMoveCalendar" style="display: none">
+					<form action="bookingChange" method="post" id="form-saveMoveCalendar" name="form-saveMoveCalendar">
+						<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
+						<input type="hidden" id="change_id" name="change_id" />
+						<input type="hidden" id="change_roomType" name="change_roomType" />
+						<input type="hidden" id="change_dateFrom" name="change_dateFrom" />
+						<input class="btn" type="button" onclick="saveMoveCalendar()" value="Mentés ide"/>
+					</form>
+				</div>
+				<input id="moveCancelButton" style="display: none;" class="btn" type="button" onclick="moveCalendarCancel()" value="Mégsem">
 			</div>
 			<div>
 				<button class="btn" type="button">Segítség</button>

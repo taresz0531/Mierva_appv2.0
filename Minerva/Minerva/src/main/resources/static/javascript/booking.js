@@ -287,22 +287,71 @@ function drop(ev,item) {
 
 function moveCalendar() {
 	var moveButton = document.getElementById('moveButton');
-	if(sessionStorage.getItem('isMove') == 'true'){
-		isMovCalendar = true;
+	var moveCancelButton = document.getElementById('moveCancelButton');
+	var saveMcalendar = document.getElementById("saveMoveCalendar");
+	if(moveCalendarId > 0){
+		var data = {};
+		
+		data["name"] = "moveCalendar";
+		data["param"] = 1;
+		
+		var u = "/ajaxSessionSet?name=" + data["name"] + "&param=" + data["param"];
+		$.ajax({
+			type: "POST",
+			contentType: "application/json; charset=utf-8",
+			url: u,
+			timeout : 100000,
+			success: function (data) {
+				moveButton.style.display = "none";
+				moveCancelButton.style.display = "block";
+				saveMcalendar.style.display = "block";
+			},
+			error: function (e) {
+				console.log("error: " + e);
+			}
+		});
+		
 	}
+}
+
+function saveMoveCalendar(){
+	var r = confirm("Biztos áthelyezi a foglalást erre az időpontra? " + dateFrom);
+	if (r == true) {
+		var change_id = document.getElementById('change_id');
+		var change_roomType = document.getElementById('change_roomType');
+		var change_dateFrom = document.getElementById('change_dateFrom');
+		
+		change_id.value = dragCallId;
+		change_dateFrom.value = dateFrom;
+		change_roomType.value = roomType;
+		
+		document.getElementById("form-saveMoveCalendar").submit();
+	}
+}
+
+function moveCalendarCancel(){
+	var moveButton = document.getElementById('moveButton');
+	var moveCancelButton = document.getElementById('moveCancelButton');
 	
-	if(!isMovCalendar){
-		moveButton.value = "Mégsem";
-		moveButton.className = "btn btn-primary";
-		isMovCalendar = true;
-		sessionStorage.setItem('isMove', 'true');
-		sessionStorage.setItem('moveCalendarId', 'true');
-		sessionStorage.setItem('moveDateFrom', 'true');
-		sessionStorage.setItem('moveRoomType', 'true');
-	}else{
-		moveButton.value = "Áthelyezés";
-		moveButton.className = "btn";
-	}
+	var data = {};
+	
+	data["name"] = "moveCalendar";
+	data["param"] = 0;
+	
+	var u = "/ajaxSessionSet?name=" + data["name"] + "&param=" + data["param"];
+	$.ajax({
+		type: "POST",
+		contentType: "application/json; charset=utf-8",
+		url: u,
+		timeout : 100000,
+		success: function (data) {
+			moveButton.style.display = "block";
+			moveCancelButton.style.display = "none";
+		},
+		error: function (e) {
+			console.log("error: " + e);
+		}
+	});
 }
 
 function saveMoveData(calId,date,room) {
