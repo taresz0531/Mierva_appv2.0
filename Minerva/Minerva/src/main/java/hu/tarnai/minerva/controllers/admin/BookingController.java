@@ -25,8 +25,10 @@ import hu.tarnai.minerva.utility.UserSession;
 @Controller
 public class BookingController {
 	private static String BOOKING_TABLE = "bookingTable";
+	private static String BOOKING_BOOK = "bookingBook";
 	private static int ONE_DAY = 24*60*60*1000;
 
+	// TODO Foglasás
 	@RequestMapping(value = "/bookingTable", method = RequestMethod.GET)
 	public String bookingTableGet(Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
@@ -293,5 +295,18 @@ public class BookingController {
 		model.addAttribute("cells", week.getCells());
 		
 		return  UserSession.checkUser(request, BOOKING_TABLE, model);
+	}
+	
+	// TODO booking-os szobák
+	@RequestMapping(value = "/bookingBook", method = RequestMethod.GET)
+	public String bookingBookGet(Model model, HttpServletRequest request, RedirectAttributes redirect){
+		PageName.saveAdmin(request, BOOKING_BOOK);
+		
+		BookingWeek week = new BookingWeek(new Date());
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("bookingRooms", week.getBooks());
+		
+		return  UserSession.checkUser(request, BOOKING_BOOK, model);
 	}
 }
