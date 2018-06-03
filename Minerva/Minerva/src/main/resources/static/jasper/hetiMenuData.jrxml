@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hetiMenuData" language="groovy" pageWidth="396" pageHeight="595" orientation="Landscape" columnWidth="396" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9fa7642c-3523-4b25-a8e4-61fb52f78cec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#8FAFCC">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#CFDBE6">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Hetimenu" uuid="dd13de9a-96ad-4754-8aac-c84c494f2c9f">
+		<field name="nap" class="java.lang.String"/>
+		<field name="leves" class="java.lang.String"/>
+		<field name="foetel" class="java.lang.String"/>
+		<field name="koret" class="java.lang.String"/>
+	</subDataset>
+	<field name="date" class="java.lang.String"/>
+	<field name="leves" class="java.lang.String"/>
+	<field name="foetel" class="java.lang.String"/>
+	<field name="koret" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="55" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="191" height="54" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="191" y="0" width="205" height="18" uuid="4dbee266-b4a3-4cba-bb27-ac11f4239c99"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{leves}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="191" y="18" width="205" height="18" uuid="7cb53083-39f0-4175-a316-81b5257a7078"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{foetel}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement stretchType="RelativeToTallestObject" x="191" y="36" width="205" height="18" uuid="b97f51f2-7d81-4ec2-86d1-edec36fb7621"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{koret}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
