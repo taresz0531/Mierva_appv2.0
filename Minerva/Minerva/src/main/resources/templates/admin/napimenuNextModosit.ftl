@@ -99,6 +99,11 @@
 	<center><input type="submit" class="btn" value="Mentés"/></center>
 </div>
 </form>
+<div>
+	<form action="/printNapimenu" method="post">
+		<input type="submit" value="Nyomtatás">
+	</form>
+</div>
 <!-- ez a vége -->
 		</div><!-- admin function -->
 	</div><!-- row -->

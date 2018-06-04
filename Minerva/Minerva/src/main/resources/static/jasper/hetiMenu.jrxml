@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hetiMenu" columnCount="2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="396" columnSpacing="10" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45bcea9e-8c8d-4d6c-b39f-7e8f70ad15a9">
-	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.zoom" value="1.000000000000006"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<style name="table">
@@ -124,7 +124,7 @@
 		</conditionalStyle>
 	</style>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA["F:\\Minerva_app\\Minerva\\src\\main\\resources\\static\\jasper\\"]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["h:\\GitHub\\Minerva\\src\\main\\resources\\static\\jasper\\compile\\"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="date" class="java.lang.String"/>
 	<parameter name="sub_obj" class="net.sf.jasperreports.engine.JRDataSource"/>
@@ -141,9 +141,9 @@
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="500" splitType="Stretch">
+		<band height="499" splitType="Stretch">
 			<staticText>
-				<reportElement x="137" y="0" width="121" height="30" uuid="187a4d9f-6f45-4eda-a613-3d604d11acce"/>
+				<reportElement x="0" y="0" width="394" height="30" uuid="187a4d9f-6f45-4eda-a613-3d604d11acce"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Calibri" size="22" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
@@ -152,87 +152,87 @@
 			<textField>
 				<reportElement x="0" y="30" width="394" height="25" uuid="e2c43f96-2ead-4d0e-be58-8282efa79ee8"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="14" isBold="true"/>
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="55" width="394" height="30" uuid="7ef39038-9f59-4689-b4e0-7f25172de57c"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="22" isBold="true" isItalic="true"/>
+					<font fontName="Calibri" size="22" isBold="true" isItalic="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[MINERVA ÉTTEREM]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="85" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="10" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[4024 DEBRECEN, KOSSUTH U. 59. Tel.: (52)531-363]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="97" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="10" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[www.minervapanziodebrecen.hu]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="109" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[ERZSÉBET UTALVÁNYT, SZÉP KÁRTYÁT, ÉTKEZÉSI JEGYEKET ELFOGADUNK!]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="121" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="10" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Az étterem előtt fizetős gépkocsi parkolók találhatók.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="145" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[MENÜ ÁR bruttó 1050 ft/nap]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="157" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[A menühöz kis adag csemegeuborka, káposztasaláta rendelhető bruttó 170.-]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="169" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Ft/adag áron.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="181" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="false"/>
+					<font fontName="Calibri" size="10" isBold="false" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Amennyiben a levest nem szereti, azt felár nélkül cseréljük csontlevesre]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="0" y="193" width="394" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="false"/>
+					<font fontName="Calibri" size="10" isBold="false" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[A változtatás jogát fenntartjuk!]]></text>
 			</staticText>
-			<subreport>
-				<reportElement x="0" y="217" width="394" height="283" uuid="58fda0ea-bd56-4e77-b429-2fa28eb4a417"/>
+			<subreport runToBottom="false">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="217" width="393" height="280" uuid="58fda0ea-bd56-4e77-b429-2fa28eb4a417"/>
 				<dataSourceExpression><![CDATA[$P{sub_obj}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
 			</subreport>
 			<staticText>
-				<reportElement x="545" y="0" width="121" height="30" uuid="3202504f-033a-44ba-ad83-15526525a339"/>
+				<reportElement x="408" y="0" width="394" height="30" uuid="3202504f-033a-44ba-ad83-15526525a339"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Calibri" size="22" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
@@ -241,85 +241,133 @@
 			<textField>
 				<reportElement x="408" y="30" width="394" height="25" uuid="06157653-a68d-4ca6-bf00-a56d7ae5696d"/>
 				<textElement textAlignment="Center">
-					<font fontName="Calibri" size="14" isBold="true"/>
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{date}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="408" y="55" width="394" height="30" uuid="4a89dea3-a1cc-4dfe-b727-08dc61322b6e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="22" isBold="true" isItalic="true"/>
+					<font fontName="Calibri" size="22" isBold="true" isItalic="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[MINERVA ÉTTEREM]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="85" width="394" height="16" uuid="8af042a3-489d-4581-8495-cd432d1b984d"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="10" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[4024 DEBRECEN, KOSSUTH U. 59. Tel.: (52)531-363]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="97" width="394" height="16" uuid="789609a4-da6a-4400-b820-5486d064eee9"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="10" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[www.minervapanziodebrecen.hu]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="109" width="394" height="16" uuid="94619098-35af-4ec2-9f42-f31d7c721551"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[ERZSÉBET UTALVÁNYT, SZÉP KÁRTYÁT, ÉTKEZÉSI JEGYEKET ELFOGADUNK!]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="121" width="394" height="16" uuid="54b2fd60-5b94-4cb7-aa23-22f1692d371e"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10"/>
+					<font fontName="Calibri" size="10" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Az étterem előtt fizetős gépkocsi parkolók találhatók.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="145" width="394" height="16" uuid="0681971b-9679-496b-8e90-2392da60bbeb"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[MENÜ ÁR bruttó 1050 ft/nap]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="157" width="394" height="16" uuid="66b4f97a-d5ab-4d0a-a578-3e67facf8da0"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[A menühöz kis adag csemegeuborka, káposztasaláta rendelhető bruttó 170.-]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="169" width="394" height="16" uuid="3a0b6d2b-e433-4300-8afa-f453ddb2e8b3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true"/>
+					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Ft/adag áron.]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="181" width="394" height="16" uuid="b6baca3c-7fe4-4025-82bc-2000078cb672"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="false"/>
+					<font fontName="Calibri" size="10" isBold="false" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[Amennyiben a levest nem szereti, azt felár nélkül cseréljük csontlevesre]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="408" y="193" width="394" height="16" uuid="b17baec6-afc4-4052-8e29-cff78f0f45f5"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="false"/>
+					<font fontName="Calibri" size="10" isBold="false" pdfEncoding="Cp1250"/>
 				</textElement>
 				<text><![CDATA[A változtatás jogát fenntartjuk!]]></text>
 			</staticText>
 			<subreport>
-				<reportElement x="408" y="217" width="394" height="283" uuid="a6b61c5e-e414-427d-b792-5d7014301d16"/>
+				<reportElement stretchType="RelativeToBandHeight" x="407" y="217" width="394" height="280" uuid="a6b61c5e-e414-427d-b792-5d7014301d16"/>
 				<dataSourceExpression><![CDATA[$P{sub_obj}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
 			</subreport>
+			<line>
+				<reportElement x="0" y="0" width="395" height="1" uuid="6223f4ab-3050-4886-bc7f-b630febf3739"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="394" y="0" width="1" height="497" uuid="f4112dae-de3d-44cc-9ca0-5d4eae3fb0b4"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="0" width="1" height="497" uuid="f1b2e1ea-3d08-469d-91f4-49c1c48182a1"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="497" width="395" height="1" uuid="099c177e-62c0-47ed-a492-d02b83e15ad7"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="408" y="0" width="395" height="1" uuid="41a8a12f-f2e4-4dd1-b511-6440e32953d0"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="802" y="0" width="1" height="497" uuid="f9ff1c87-fa46-4cc7-8102-964b0809b258"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="408" y="0" width="1" height="497" uuid="91c1f15b-5743-42cd-9268-08e77f2f44fb"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="408" y="497" width="395" height="1" uuid="16a6cd9b-80a2-4f6a-94e1-259abdcebc1c"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
 		</band>
 	</detail>
 </jasperReport>

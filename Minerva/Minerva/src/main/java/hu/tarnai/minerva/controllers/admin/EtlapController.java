@@ -1,10 +1,12 @@
 package hu.tarnai.minerva.controllers.admin;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.criteria.Predicate.BooleanOperator;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,8 +25,10 @@ import hu.tarnai.minerva.entity.Etlapkategoria;
 import hu.tarnai.minerva.entity.Napimenu;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
 import hu.tarnai.minerva.objects.EtlapObject;
+import hu.tarnai.minerva.objects.NapimenuJasperObj;
 import hu.tarnai.minerva.utility.DateToStringClass;
 import hu.tarnai.minerva.utility.ImageUpload;
+import hu.tarnai.minerva.utility.JasperUtil;
 import hu.tarnai.minerva.utility.Message;
 import hu.tarnai.minerva.utility.PageName;
 import hu.tarnai.minerva.utility.ResultSession;
@@ -588,94 +592,113 @@ public class EtlapController {
 	}
 	
 	//---------------------jövőheti menük modosit---------------------
-		@RequestMapping(value = "/napimenuActualModosit", method = RequestMethod.POST)
-		public String napimenuActualModositPost(@RequestParam(name="leves_hu") String[] leves_hu,
-									 @RequestParam(name="leves_en") String[] leves_en,
-									 @RequestParam(name="foetel_hu") String[] foetel_hu,
-									 @RequestParam(name="foetel_en") String[] foetel_en,
-									 @RequestParam(name="koret_hu") String[] koret_hu,
-									 @RequestParam(name="koret_en") String[] koret_en,
-									 Model model, HttpServletRequest request, RedirectAttributes redirect){
-			PageName.saveAdmin(request, ACTUAL_NAPI_MENU_MODOSIT);
-			
-			EtlapBo bo = new EtlapBo();
-			HetimenuBo hBo = new HetimenuBo();
-			List<String> days = DateToStringClass.getDaysName();
-			List<Napimenu> menus = new ArrayList<Napimenu>();
-			
-			String[] levesek = new String[7];
-			String[] foetelek = new String[7];
-			String[] koretek = new String[7];
-			
-			for(int i=0;i<7;i++){
-				if(StringValidator.isNotEmpty(leves_hu[i])&&StringValidator.isNotEmpty(leves_en[i])){
-					levesek[i] = leves_hu[i] + "/" + leves_en[i];
-				}else if(StringValidator.isNotEmpty(leves_hu[i])&&StringValidator.isEmpty(leves_en[i])){
-					levesek[i] = leves_hu[i] + "/" + leves_hu[i];
-				}else if(StringValidator.isEmpty(leves_hu[i])&&StringValidator.isNotEmpty(leves_en[i])){
-					List<Napimenu> m = getActualWeekMenus();
-					model.addAttribute("hetiMenu", m);
-					model.addAttribute("etelek", EtlapObject.get());
-					Message.error(request, "Kérem adja meg a magyar nevét is a levesnek (" + days.get(i) + ")");
-					return UserSession.checkUser(request, NAPI_MENU_UJ, model);
-				}
+	@RequestMapping(value = "/napimenuActualModosit", method = RequestMethod.POST)
+	public String napimenuActualModositPost(@RequestParam(name="leves_hu") String[] leves_hu,
+								 @RequestParam(name="leves_en") String[] leves_en,
+								 @RequestParam(name="foetel_hu") String[] foetel_hu,
+								 @RequestParam(name="foetel_en") String[] foetel_en,
+								 @RequestParam(name="koret_hu") String[] koret_hu,
+								 @RequestParam(name="koret_en") String[] koret_en,
+								 Model model, HttpServletRequest request, RedirectAttributes redirect){
+		PageName.saveAdmin(request, ACTUAL_NAPI_MENU_MODOSIT);
+		
+		EtlapBo bo = new EtlapBo();
+		HetimenuBo hBo = new HetimenuBo();
+		List<String> days = DateToStringClass.getDaysName();
+		List<Napimenu> menus = new ArrayList<Napimenu>();
+		
+		String[] levesek = new String[7];
+		String[] foetelek = new String[7];
+		String[] koretek = new String[7];
+		
+		for(int i=0;i<7;i++){
+			if(StringValidator.isNotEmpty(leves_hu[i])&&StringValidator.isNotEmpty(leves_en[i])){
+				levesek[i] = leves_hu[i] + "/" + leves_en[i];
+			}else if(StringValidator.isNotEmpty(leves_hu[i])&&StringValidator.isEmpty(leves_en[i])){
+				levesek[i] = leves_hu[i] + "/" + leves_hu[i];
+			}else if(StringValidator.isEmpty(leves_hu[i])&&StringValidator.isNotEmpty(leves_en[i])){
+				List<Napimenu> m = getActualWeekMenus();
+				model.addAttribute("hetiMenu", m);
+				model.addAttribute("etelek", EtlapObject.get());
+				Message.error(request, "Kérem adja meg a magyar nevét is a levesnek (" + days.get(i) + ")");
+				return UserSession.checkUser(request, NAPI_MENU_UJ, model);
 			}
-			
-			for(int i=0;i<7;i++){
-				if(StringValidator.isNotEmpty(foetel_hu[i])&&StringValidator.isNotEmpty(foetel_en[i])){
-					foetelek[i] = foetel_hu[i] + "/" + foetel_en[i];
-				}else if(StringValidator.isNotEmpty(foetel_hu[i])&&StringValidator.isEmpty(foetel_en[i])){
-					foetelek[i] = foetel_hu[i] + "/" + foetel_hu[i];
-				}else if(StringValidator.isEmpty(foetel_hu[i])&&StringValidator.isNotEmpty(foetel_en[i])){
-					List<Napimenu> m = getActualWeekMenus();
-					model.addAttribute("hetiMenu", m);
-					model.addAttribute("etelek", EtlapObject.get());
-					Message.error(request, "Kérem adja meg a magyar nevét is a főételnek (" + days.get(i) + ")");
-					return UserSession.checkUser(request, NAPI_MENU_UJ, model);
-				}
-			}
-			
-			for(int i=0;i<7;i++){
-				if(StringValidator.isNotEmpty(koret_hu[i])&&StringValidator.isNotEmpty(koret_en[i])){
-					koretek[i] = koret_hu[i] + "/" + koret_en[i];
-				}else if(StringValidator.isNotEmpty(koret_hu[i])&&StringValidator.isEmpty(koret_en[i])){
-					koretek[i] = koret_hu[i] + "/" + koret_hu[i];
-				}else if(StringValidator.isEmpty(koret_hu[i])&&StringValidator.isNotEmpty(koret_en[i])){
-					List<Napimenu> m = getActualWeekMenus();
-					model.addAttribute("hetiMenu", m);
-					model.addAttribute("etelek", EtlapObject.get());
-					Message.error(request, "Kérem adja meg a magyar nevét is a köretnek (" + days.get(i) + ")");
-					return UserSession.checkUser(request, NAPI_MENU_UJ, model);
-				}
-			}
-			
-			for(int i=0;i<7;i++){
-				if(StringValidator.isNotEmpty(levesek[i])||StringValidator.isNotEmpty(foetelek[i])||StringValidator.isNotEmpty(koretek[i])){
-					Napimenu n = new Napimenu();
-					n.setLeves(levesek[i]);
-					n.setFoetel(foetelek[i]);
-					n.setKoret(koretek[i]);
-					n.setNap(days.get(i));
-					menus.add(n);
-				}
-			}
-			
-			ErrorCodeEnum error = hBo.saveWeekDays(menus, true);
-			
-			if(error == ErrorCodeEnum.SUCCESS){
-				Message.success(request);
-			}else if(error == ErrorCodeEnum.ERROR){
-				Message.error(request);
-			}else{
-				Message.errorDb(request);
-			}
-			
-			List<Napimenu> m = getActualWeekMenus();
-			model.addAttribute("hetiMenu", m);
-			model.addAttribute("etelek", EtlapObject.get());
-			
-			return UserSession.checkUser(request, ACTUAL_NAPI_MENU_MODOSIT, model);
 		}
+		
+		for(int i=0;i<7;i++){
+			if(StringValidator.isNotEmpty(foetel_hu[i])&&StringValidator.isNotEmpty(foetel_en[i])){
+				foetelek[i] = foetel_hu[i] + "/" + foetel_en[i];
+			}else if(StringValidator.isNotEmpty(foetel_hu[i])&&StringValidator.isEmpty(foetel_en[i])){
+				foetelek[i] = foetel_hu[i] + "/" + foetel_hu[i];
+			}else if(StringValidator.isEmpty(foetel_hu[i])&&StringValidator.isNotEmpty(foetel_en[i])){
+				List<Napimenu> m = getActualWeekMenus();
+				model.addAttribute("hetiMenu", m);
+				model.addAttribute("etelek", EtlapObject.get());
+				Message.error(request, "Kérem adja meg a magyar nevét is a főételnek (" + days.get(i) + ")");
+				return UserSession.checkUser(request, NAPI_MENU_UJ, model);
+			}
+		}
+		
+		for(int i=0;i<7;i++){
+			if(StringValidator.isNotEmpty(koret_hu[i])&&StringValidator.isNotEmpty(koret_en[i])){
+				koretek[i] = koret_hu[i] + "/" + koret_en[i];
+			}else if(StringValidator.isNotEmpty(koret_hu[i])&&StringValidator.isEmpty(koret_en[i])){
+				koretek[i] = koret_hu[i] + "/" + koret_hu[i];
+			}else if(StringValidator.isEmpty(koret_hu[i])&&StringValidator.isNotEmpty(koret_en[i])){
+				List<Napimenu> m = getActualWeekMenus();
+				model.addAttribute("hetiMenu", m);
+				model.addAttribute("etelek", EtlapObject.get());
+				Message.error(request, "Kérem adja meg a magyar nevét is a köretnek (" + days.get(i) + ")");
+				return UserSession.checkUser(request, NAPI_MENU_UJ, model);
+			}
+		}
+		
+		for(int i=0;i<7;i++){
+			if(StringValidator.isNotEmpty(levesek[i])||StringValidator.isNotEmpty(foetelek[i])||StringValidator.isNotEmpty(koretek[i])){
+				Napimenu n = new Napimenu();
+				n.setLeves(levesek[i]);
+				n.setFoetel(foetelek[i]);
+				n.setKoret(koretek[i]);
+				n.setNap(days.get(i));
+				menus.add(n);
+			}
+		}
+		
+		ErrorCodeEnum error = hBo.saveWeekDays(menus, true);
+		
+		if(error == ErrorCodeEnum.SUCCESS){
+			Message.success(request);
+		}else if(error == ErrorCodeEnum.ERROR){
+			Message.error(request);
+		}else{
+			Message.errorDb(request);
+		}
+		
+		List<Napimenu> m = getActualWeekMenus();
+		model.addAttribute("hetiMenu", m);
+		model.addAttribute("etelek", EtlapObject.get());
+		
+		return UserSession.checkUser(request, ACTUAL_NAPI_MENU_MODOSIT, model);
+	}
+		
+//	@RequestMapping(value = "/printNapimenu", method = RequestMethod.POST)
+//	public String printNapimenuPost(Model model, HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
+//		PageName.saveAdmin(request, NAPI_MENU_MODOSIT);
+//		
+//		EtlapBo bo = new EtlapBo();
+//		
+//		List<Napimenu> menus = getNexWeekMenus();
+//		List<NapimenuJasperObj> jaspObj = convertNapimenuToJasperOb(menus);
+//		
+//		JasperUtil jasperUtil = new JasperUtil("hetiMenu.jasper");
+//		
+//		jasperUtil.printNapimenu("2018.május 04-től - 2018.május 10-ig", jaspObj, response);
+//		
+//		model.addAttribute("etelek", EtlapObject.get());
+//		model.addAttribute("hetiMenu", menus);
+//		
+//		return UserSession.checkUser(request, NAPI_MENU_MODOSIT, model);
+//	}
 	
 	//--------------jövőheti menüket adja vissza (teljes hét!)
 	public List<Napimenu> getNexWeekMenus() {
@@ -703,7 +726,7 @@ public class EtlapController {
 		return menus;
 	}
 	
-	//--------------jövőheti menüket adja vissza (teljes hét!)
+	//--------------aktuális menüket adja vissza (teljes hét!)
 	public List<Napimenu> getActualWeekMenus() {
 		HetimenuBo hBo = new HetimenuBo();
 		List<String> days = DateToStringClass.getDaysName();
@@ -727,5 +750,16 @@ public class EtlapController {
 			}
 		}
 		return menus;
+	}
+	
+	public List<NapimenuJasperObj> convertNapimenuToJasperOb(List<Napimenu> napi){
+		List<NapimenuJasperObj> jasper = new ArrayList<NapimenuJasperObj>();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		int index = 0;
+		for(Napimenu n:napi) {
+			jasper.add(new NapimenuJasperObj("" + index, n.getNap(), n.getLeves(), n.getFoetel(), n.getKoret()));
+		}
+		
+		return jasper;
 	}
 }
