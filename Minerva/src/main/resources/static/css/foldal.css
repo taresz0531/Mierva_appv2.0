@@ -1,0 +1,38 @@
+.foldal-main-div{
+	-webkit-box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	-moz-box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.75);
+	filter: Alpha(opacity=75);
+	cursor: pointer;
+	
+}
+
+.foldal-main-div:HOVER {
+	background-color: rgba(0,0,0,0.9);
+	filter: Alpha(opacity=90);
+	-webkit-box-shadow: 0px 0px 22px 1px rgba(255,255,255,1);
+	-moz-box-shadow: 0px 0px 22px 1px rgba(255,255,255,1);
+	box-shadow: 0px 0px 22px 1px rgba(255,255,255,1);
+}
+.foldal-cim{
+	font-size: 20px;
+}
+
+.foldal-date{
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+
+.foldal-date p{
+	float:right;
+}
+
+.foldal-leiras{
+}
+
+.foldal-leiras:HOVER{
+	display: block;
+}
