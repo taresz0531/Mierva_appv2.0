@@ -1,0 +1,23 @@
+/*editor szöveg rész*/
+.fr-box.fr-basic .fr-element {
+    background-color: rgba(0,0,0,0.5);
+    cursor: default;
+}
+
+/*szó számláló*/
+.fr-box .fr-counter {
+    background: #333;
+    border-top: solid 1px #333;
+    border-left: solid 1px #333;
+}
+
+/*legördülõk háttere*/
+.fr-command.fr-btn+.fr-dropdown-menu .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list li a {
+    background-color: rgba(0,0,0,0.5);
+}
+.fr-command.fr-btn+.fr-dropdown-menu .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list li a.fr-active {
+    background: rgba(0,0,0,0.7);
+}
+.fr-command.fr-btn+.fr-dropdown-menu .fr-dropdown-wrapper .fr-dropdown-content ul.fr-dropdown-list li a:HOVER {
+    background: rgba(0,0,0,0.6);
+}

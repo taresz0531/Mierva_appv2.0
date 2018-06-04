@@ -1,0 +1,81 @@
+body {
+ 	background: url("../image/background/brick-background2.jpg") no-repeat center center fixed; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+p, label{
+	color: white;
+}
+
+h1, h2, h3, h4{
+	color: white;
+}
+
+li{
+	color: white;
+}
+
+.bottom-margin-10{
+	margin-bottom: 10px;
+}
+.bottom-margin-20{
+	margin-bottom: 20px;
+}
+
+.top-margin-10{
+	margin-top: 10px;
+}
+.top-margin-20{
+	margin-top: 20px;
+}
+
+.main-div{
+	position: relative;
+	margin-top: 25px;
+	max-width: 900px;
+}
+
+.guest-div{
+	-webkit-box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	-moz-box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	margin-bottom: 20px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+
+.admin-div{
+	-webkit-box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	-moz-box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	box-shadow: 0px 0px 22px 1px rgba(255,255,255,0.8);
+	margin-bottom: 20px;
+	margin-top: 25px;
+	padding: 10px;
+	background-color: rgba(0,0,0,0.75);
+	cursor: pointer;
+}
+
+.row-div{
+	margin-bottom: 20px;
+}
+
+.message-div{
+	position: relative;
+	z-index: 10;
+}
+
+.admin-message-div{
+	position: fixed;
+	-ms-transform: translateX(-50%) translateY(0);
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    left: 50%;
+    min-width: 700px;
+    max-width: 900px;
+    z-index: 1000;
+    top: 22%;
+}
