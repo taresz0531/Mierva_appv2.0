@@ -1,0 +1,2241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bookingTable" printOrder="Horizontal" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="738" leftMargin="50" rightMargin="54" topMargin="20" bottomMargin="20" uuid="cda1c798-7b8d-4944-9dff-05a6059d5c40">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="a858e4c9-d0d0-4e5a-a6f4-a7f617f6ab53"/>
+	<parameter name="bookingVa" class="java.lang.String"/>
+	<parameter name="bookingSzo" class="java.lang.String"/>
+	<parameter name="bookingPe" class="java.lang.String"/>
+	<parameter name="bookingCso" class="java.lang.String"/>
+	<parameter name="bookingSze" class="java.lang.String"/>
+	<parameter name="bookingKe" class="java.lang.String"/>
+	<parameter name="bookingHe" class="java.lang.String"/>
+	<parameter name="dateHe" class="java.lang.String"/>
+	<parameter name="dateKe" class="java.lang.String"/>
+	<parameter name="dateSze" class="java.lang.String"/>
+	<parameter name="dateCsu" class="java.lang.String"/>
+	<parameter name="datePe" class="java.lang.String"/>
+	<parameter name="dateSzo" class="java.lang.String"/>
+	<parameter name="dateVa" class="java.lang.String"/>
+	<parameter name="cela00" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="545" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="738" height="20" uuid="76a33c03-20e1-4f4d-bfcc-204c5f4c0f08"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" isItalic="false" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[MINERVA PANZIÓ, ÉTTEREM-KÁVÉZÓ FOGLALÁSI NYILVÁNTARTÓ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="648" y="22" width="90" height="12" uuid="616a4efa-d0ac-4667-be13-3f9f50fdf052"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="648" y="34" width="90" height="12" uuid="e9e30fe5-425c-4d58-9f24-abe2d947d5c2"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingVa}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="46" width="90" height="12" uuid="ffc67651-e023-4d8e-abb7-dbc5bf39eca8"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingVa}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="58" width="90" height="12" uuid="7c743157-14da-4464-9ab7-b04c1c5c5456"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingVa}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="70" width="90" height="12" uuid="195cce6a-891a-4615-943d-757debfab916"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingVa}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="82" width="90" height="12" uuid="6b97703e-96ed-415f-9b95-d3d9349f0ca6"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingVa}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="58" width="90" height="12" uuid="9ca97ba0-62a7-4fcb-922d-bab82f1983d7"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="70" width="90" height="12" uuid="7282667c-5521-4e48-b144-22c952b7e77f"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="82" width="90" height="12" uuid="4433c6ad-37c8-4aa1-9207-738b8b161407"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingSzo}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="46" width="90" height="12" uuid="ddc2b792-802d-43ef-9c38-3a296e5080fe"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="558" y="22" width="90" height="12" uuid="9b98624b-ce90-4496-93b5-b4fca6ea1ba9"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="558" y="34" width="90" height="12" uuid="d17a36cc-81cc-4679-95ce-d455300ba042"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="70" width="90" height="12" uuid="d5976047-6cfe-4ea1-90fb-251f265da5e1"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingPe}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="82" width="90" height="12" uuid="db7e189a-4fb0-4a1a-82cf-d8ce1746d1fd"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingPe}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="58" width="90" height="12" uuid="7a8b3370-7e7f-4c34-8723-7d15bdd234fc"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingPe}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="468" y="22" width="90" height="12" uuid="1526883c-c044-46eb-bd1d-6e450795e5cb"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="468" y="34" width="90" height="12" uuid="8560e263-e33a-48e8-a28b-b24cb57a2ebc"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingPe}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="46" width="90" height="12" uuid="06845b79-575c-4883-a2f8-93f5ab90e144"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingPe}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="58" width="90" height="12" uuid="3b713528-21ee-4bcd-9c68-784b2f7956d1"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingCso}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="46" width="90" height="12" uuid="7dc77c00-272a-4442-9ed7-5053294ab649"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingCso}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="34" width="90" height="12" uuid="0fb29588-4f3b-419c-8092-8ea0940b6fe3"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingCso}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="82" width="90" height="12" uuid="6e095076-2d4f-4a78-81b6-70d6920dfa73"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingCso}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="70" width="90" height="12" uuid="bd4c72ef-d760-4cd2-9440-10c81df50d3f"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingCso}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="378" y="22" width="90" height="12" uuid="4f619328-11f6-4205-a301-099068752104"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="288" y="58" width="90" height="12" uuid="4d8d6548-9073-44a5-8140-81784edac748"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingSze}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="46" width="90" height="12" uuid="25d4a2fa-b851-48d2-bb2a-51dd8bc0faef"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingSze}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="34" width="90" height="12" uuid="c1d4b3cf-bdb1-4f84-ba37-3f0b9707df3a"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingSze}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="82" width="90" height="12" uuid="734dbb53-5293-4791-b2d9-e45b0e6e5e5a"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingSze}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="70" width="90" height="12" uuid="3745b973-3a8e-440d-a016-3b5a796ff383"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingSze}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="288" y="22" width="90" height="12" uuid="40f2fc6f-b410-43c0-8791-adac5a9dd538"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="198" y="82" width="90" height="12" uuid="2a345add-ad68-410b-a096-ceab130be3a2"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingKe}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="70" width="90" height="12" uuid="da8e2ced-702b-448e-a6fc-35a08a9deff0"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingKe}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="58" width="90" height="12" uuid="151f3f94-575c-45d0-a4a7-243dd689810d"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingKe}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="198" y="22" width="90" height="12" uuid="b8ead203-c776-4782-8412-6fa740145ced"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="198" y="46" width="90" height="12" uuid="73dd7ae1-3402-45b3-aaf6-89136ad76e22"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingKe}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="34" width="90" height="12" uuid="9570206a-671a-428d-a5e0-ee6ea88d8d95"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingKe}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="82" width="90" height="12" uuid="e3ab9866-d41a-4cb6-a6f7-f912c2fe0d88"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- tetőtéri 2 ágyas:" + $P{bookingHe}.split( "#" )[4]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="70" width="90" height="12" uuid="8a4814e5-0b6c-481e-90b5-22401db09062"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 4 ágyas szoba:   " + $P{bookingHe}.split( "#" )[3]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="58" width="90" height="12" uuid="6f65ba0b-c4e2-4b8d-9555-e82e9ea5ade9"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 3 ágyas szoba:   " + $P{bookingHe}.split( "#" )[2]]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="108" y="22" width="90" height="12" uuid="50aecbab-87a8-4f87-ba22-5582795d2988"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top" markup="none">
+					<font fontName="Calibri" size="9" isBold="true" isUnderline="true" pdfEncoding="Cp1250"/>
+					<paragraph lineSpacing="Single" leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[Booking.com:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="108" y="46" width="90" height="12" uuid="fdbd9542-6283-4809-bc26-2fe5d058bb1f"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 2 ágyas szoba:   " + $P{bookingHe}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="34" width="90" height="12" uuid="b6c7b094-a5de-4f8b-8a03-7f4b67485363"/>
+				<box>
+					<pen lineWidth="1.25"/>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.25"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Top">
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA["- 1 ágyas szoba:   " + $P{bookingHe}.split( "#" )[0]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="648" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="dfc50cd2-796c-4c44-9e7c-19e7c41e2f3e"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateVa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="558" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="9b78bafa-daa6-4c6e-8017-be42e77cdaa0"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateSzo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="468" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="a2eae461-4f7d-4f57-909d-9f8a19d1f321"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datePe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="378" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="62adfd63-d085-4ba0-9a27-f85cd07ecf3d"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateCsu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="288" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="db9f8110-fc75-42e0-8921-e34c060c0ed8"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateSze}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="198" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="d8a53a76-35a6-4802-aca2-20edbc0f46f3"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateKe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Opaque" x="108" y="94" width="90" height="29" forecolor="#000000" backcolor="#CCCCCC" uuid="67b08450-9773-4713-819c-c04b732daa65"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{dateHe}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="648" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="8258f0c7-3a2d-4544-aa98-edb4c431be53"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[VASÁRNAP]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="558" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="182137ed-575b-4c8d-8f2f-226c3f094d3e"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[SZOMBAT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="468" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="852919b4-92ab-4b9a-9541-dc386ee9b93d"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[PÉNTEK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="378" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="58495c91-1a46-4ff5-b808-c4a2ae9d03ce"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[CSÜTÖRTÖK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="288" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="03b0b9f0-aafc-4f39-b572-8564be7a271f"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[SZERDA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="198" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="3c6854d2-090b-4bc6-8ea9-f50f6e458b07"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[KEDD]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="108" y="123" width="90" height="29" backcolor="#CCCCCC" uuid="adb39bef-23c9-4407-96b5-f3ee27498004"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+				</textElement>
+				<text><![CDATA[HÉTFŐ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="94" width="107" height="29" backcolor="#CCCCCC" uuid="db5aa247-6114-4397-9d07-25591258fc8c"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="123" width="107" height="29" backcolor="#CCCCCC" uuid="7e81c956-cf14-48e6-9135-001287a123bc"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[MEGNEVEZÉS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="152" width="107" height="29" backcolor="#CCCCCC" uuid="4e986b14-febb-4a19-be9b-79ae79d17e1a"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[1-ES SZOBA (2+2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="181" width="107" height="29" backcolor="#CCCCCC" uuid="2dca112c-a6a4-4123-84b7-82a68a804108"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[2-ES SZOBA (1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="210" width="107" height="29" backcolor="#CCCCCC" uuid="d04ec234-7a05-4f09-b078-d1d94782a6a0"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[3-AS SZOBA (2+2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="239" width="107" height="29" backcolor="#CCCCCC" uuid="fca91b68-cf2f-4afc-86c6-09b58c5e33a5"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[4-ES SZOBA (2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="268" width="107" height="29" backcolor="#CCCCCC" uuid="93d63f6f-5f2c-4984-866a-1cb751905381"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[5-ÖS SZOBA (2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="413" width="107" height="29" backcolor="#CCCCCC" uuid="5b0ecc96-4e90-4c5a-8483-8aa3400b4ed2"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[10-ES SZOBA (T4)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="384" width="107" height="29" backcolor="#CCCCCC" uuid="92919295-bdfa-4231-836f-dd2d3357c843"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[9-ES SZOBA (T3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="355" width="107" height="29" backcolor="#CCCCCC" uuid="efeaf77d-b944-4db2-8154-849c2d387d85"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[8-AS SZOBA (T3)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="297" width="107" height="29" backcolor="#CCCCCC" uuid="4ac5bf22-43c9-4a98-bd1c-69d9b71e59a7"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[6-OS SZOBA (2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="326" width="107" height="29" backcolor="#CCCCCC" uuid="734305b8-ef4e-4765-bbfe-5e349ce4d1a7"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[7-ES SZOBA (T2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="442" width="107" height="29" backcolor="#CCCCCC" uuid="3925ce8e-66d9-476f-a7a0-f4aa6075637c"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[11-ES SZOBA (T1)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="471" width="107" height="29" backcolor="#CCCCCC" uuid="67946a22-00de-4d16-8301-0a7e687f3226"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[ÚJ 1 (2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="1" y="500" width="107" height="29" backcolor="#CCCCCC" uuid="0dac939e-f235-49ef-bb96-5d17652b2467"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<text><![CDATA[ÚJ 2 (2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="529" width="738" height="16" uuid="ced86971-b1cc-4e0d-bb0f-f23877be78a1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calibri" size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FOGLALÁS ESETÉN A NÉV ÉS MOBILTELEFON SZÁM KITÖLTÉSE KÖTELEZŐ! AZ IDEGEN "BEESŐ" VENDÉGEKNEK ÉRKEZÉSKÓR A SZOBÁT KÖTELEZŐ KIFIZETNI!!]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="108" y="152" width="90" height="29" uuid="45efd679-bb80-49d2-929e-301a67102db2"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="181" width="90" height="29" uuid="3f721e38-d677-4d96-a3a0-3740789695ed"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="210" width="90" height="29" uuid="5df9b16a-39df-40d5-a33d-86a11f2c8a5c"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="239" width="90" height="29" uuid="296df65e-a574-48a0-8e95-0490781530c1"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="268" width="90" height="29" uuid="64d72ddc-f8d8-4636-8304-d21d997b2702"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="355" width="90" height="29" uuid="4d57e0b6-5cc1-446b-9da8-3088e144ccf6"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="326" width="90" height="29" uuid="c66eb7e5-e54a-4482-b17a-c9ec9c47b859"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="384" width="90" height="29" uuid="853d45b3-a4b7-4eb2-b71b-eb9e0194a3fd"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="297" width="90" height="29" uuid="fc2a0aca-9d92-4e04-b89c-948803765993"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="413" width="90" height="29" uuid="bd1dec6b-e031-471d-87b0-226a5e9f0b3f"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="442" width="90" height="29" uuid="4fae2000-7298-44d5-909e-5ce247eaf595"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="471" width="90" height="29" uuid="b959c9e5-2ab6-4b50-9119-ea6340d7b916"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="108" y="500" width="90" height="29" uuid="7e520270-f6a9-4d1c-9c10-05b8ab683e03"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="326" width="90" height="29" uuid="322e5984-884f-4012-8d48-c58a31c67f04"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="210" width="90" height="29" uuid="d3928c48-38c9-4562-acdb-0f7d01b3f271"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="181" width="90" height="29" uuid="d9d85b5e-ec67-481a-9c95-bda27cd89e81"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="500" width="90" height="29" uuid="c652c5e4-bf06-457e-8fcd-ed1e3a389d20"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="297" width="90" height="29" uuid="389337da-4f5d-451a-a1b9-cbfd07701b23"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="239" width="90" height="29" uuid="11b05b4c-9c73-43e7-8665-96d3fafb7a68"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="152" width="90" height="29" uuid="f87eac9b-7d11-43a5-af5d-4a1ee5701c4e"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="471" width="90" height="29" uuid="140cce73-6b99-43cb-aaf2-666d32bd5be8"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="355" width="90" height="29" uuid="77b65edd-baf9-44c0-ae72-3c620cde42fb"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="442" width="90" height="29" uuid="d8b68a4d-3aa6-4132-a16f-60989e8a5b41"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="384" width="90" height="29" uuid="da36b2a7-5731-4ea0-8da6-26e04a1f19ca"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="268" width="90" height="29" uuid="1c71457d-90e6-40d1-bfc1-410354cf0efd"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="413" width="90" height="29" uuid="1ddb3044-be04-4cb4-a340-8667d3c41545"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="326" width="90" height="29" uuid="c43d9aa5-8d0c-41d5-812f-737ed5bbd23e"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="210" width="90" height="29" uuid="f7505708-fd5b-4441-9b40-24ce888e6e2b"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="181" width="90" height="29" uuid="eb663bba-e203-4166-ad41-ad1238a954bd"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="500" width="90" height="29" uuid="6cc3f38e-2713-448e-b490-922155a7fa1b"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="297" width="90" height="29" uuid="30af56f2-1766-40c3-9f35-78b3d8fe7ddc"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="239" width="90" height="29" uuid="31e02332-03f0-4491-9578-6c847f9fa08d"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="152" width="90" height="29" uuid="ae383874-9722-450f-87a3-2f9750d92bd3"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="471" width="90" height="29" uuid="6d8bb7fa-f182-44b2-b409-e952357cc966"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="355" width="90" height="29" uuid="0b5eb596-7e71-4f94-8ab1-aeaed4afa4ce"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="442" width="90" height="29" uuid="7c6d1fbe-65ee-4302-b521-aed17b9aa590"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="384" width="90" height="29" uuid="167e9e9a-ae34-486a-9598-a5ad2fc9d0fd"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="268" width="90" height="29" uuid="55af1998-46aa-458d-8447-17a01f9475a4"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="413" width="90" height="29" uuid="22d96e03-a7a5-4b06-b116-42c068b8b6cc"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="326" width="90" height="29" uuid="a9ef047c-8c2f-4ce3-94aa-366d4fe80de4"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="210" width="90" height="29" uuid="700d302d-9516-425b-b670-09668dbdc761"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="181" width="90" height="29" uuid="84059973-b447-4832-8f3a-4df72cf38ab0"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="500" width="90" height="29" uuid="78571333-2e08-49af-ac6c-d30a2c18c8a9"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="297" width="90" height="29" uuid="65dd6a4c-ede9-4d09-b56b-6d2f8ea748c0"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="239" width="90" height="29" uuid="912b50dc-7c1b-4a08-9144-f9629a5133a9"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="152" width="90" height="29" uuid="9c423c0d-131b-4328-b95a-ff114eda6350"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="471" width="90" height="29" uuid="8e2b5330-1bad-48dc-8086-3ab79aa4ab40"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="355" width="90" height="29" uuid="717ecc76-e16c-4425-84d5-6df2be5e8034"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="442" width="90" height="29" uuid="14d96ec8-c8dd-45e0-bd31-22106ced2206"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="384" width="90" height="29" uuid="c1501123-f983-4aff-8ecb-187279b5ed52"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="268" width="90" height="29" uuid="3c33802d-026a-4ec5-b247-aed68008dc4e"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="378" y="413" width="90" height="29" uuid="dc888e78-9564-4bc1-b880-16acbb59947a"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="413" width="90" height="29" uuid="681eecc2-dc29-4882-8534-88ab5269fb3c"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="181" width="90" height="29" uuid="8e4473ae-ece9-4f3f-9988-f82b68bcd34a"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="442" width="90" height="29" uuid="f41dc7c1-f558-4e90-a7c2-31b3bcc3fe35"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="355" width="90" height="29" uuid="dc3792fe-47ac-4aea-b418-98c6162f81fd"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="268" width="90" height="29" uuid="9c5af09f-9e98-4400-8098-50bb5cb06221"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="297" width="90" height="29" uuid="7b715292-4b4d-4721-8210-8432dd21eb67"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="384" width="90" height="29" uuid="62e86dfd-ee18-4030-ad06-1315745bf075"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="471" width="90" height="29" uuid="bf5a353e-0208-40d9-b320-d2d6f09228c7"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="326" width="90" height="29" uuid="3ee76c14-909e-4a44-bb21-0d723c398531"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="152" width="90" height="29" uuid="63cb4c90-0717-4522-a206-3b9ad31fff19"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="239" width="90" height="29" uuid="a2cf7a56-1765-4ba6-ab2e-b164451cd393"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="500" width="90" height="29" uuid="0f214dd6-8572-4590-8605-cb6637913e97"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="468" y="210" width="90" height="29" uuid="335a6f29-6ca8-4636-9b1d-b7afcdfbc7ec"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="413" width="90" height="29" uuid="a121729f-a676-4755-b9f8-60e4cd906cae"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="181" width="90" height="29" uuid="13ce87f5-aa68-4b06-aa0d-490c3661574a"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="442" width="90" height="29" uuid="4128c9e2-c1c1-402c-b244-038664a973f6"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="355" width="90" height="29" uuid="62a269cc-24c3-42e3-bc4c-faf644b03404"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="268" width="90" height="29" uuid="432a76f3-aedc-4260-b073-e2e1a42d1275"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="297" width="90" height="29" uuid="10563d48-8aa0-4c41-8b1e-807c21811de2"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="384" width="90" height="29" uuid="7ffd6653-0905-4804-a4c0-0e270824181e"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="471" width="90" height="29" uuid="ec1c3891-7d1e-4eb9-b064-652627447510"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="326" width="90" height="29" uuid="f66305be-890d-461d-9277-464b2ff17f7c"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="152" width="90" height="29" uuid="5294b194-00cc-435b-8835-593910b73868"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="239" width="90" height="29" uuid="5a6e0678-8f6f-442d-9fab-ae34eaa70b68"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="500" width="90" height="29" uuid="39ba30f3-f00a-4726-bcb1-a476aee59d2f"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="558" y="210" width="90" height="29" uuid="9f6e205e-9d06-4ffa-94a7-7f9403f43a02"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="326" width="90" height="29" uuid="d9793b48-0728-4893-b6bd-0cf37d746476"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="413" width="90" height="29" uuid="aecf7836-65a6-40ea-a69b-5862340932f0"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="210" width="90" height="29" uuid="202934a2-9463-40b1-9e50-455cc45783c8"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="500" width="90" height="29" uuid="778b9106-f7c4-43fa-bc46-31562f43b4cc"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<bottomPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="355" width="90" height="29" uuid="38ef5d49-fee3-450d-b8b5-2ec58fc6db04"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="239" width="90" height="29" uuid="6bf2fa65-d021-4afe-90be-3772b073be0f"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="152" width="90" height="29" uuid="854d3bb9-e097-4357-99a8-5bcd12d435e1"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="442" width="90" height="29" uuid="b23278b8-6614-49ab-9338-6d014eace5d2"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="297" width="90" height="29" uuid="3b5c2035-d102-41f4-a4d9-5d1a80ece798"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="471" width="90" height="29" uuid="7aad4806-e4b8-4165-a83c-47ae64816e71"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="181" width="90" height="29" uuid="28aa703b-0af1-45fd-b36c-d652a470b4e7"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="384" width="90" height="29" uuid="ab78e4e7-0786-42a7-9a91-fbe529749842"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="648" y="268" width="90" height="29" uuid="f71cfdbb-d518-4846-920d-005322023fa8"/>
+				<box>
+					<topPen lineWidth="1.1"/>
+					<leftPen lineWidth="1.1"/>
+					<rightPen lineWidth="1.1"/>
+				</box>
+				<textElement>
+					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<paragraph leftIndent="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

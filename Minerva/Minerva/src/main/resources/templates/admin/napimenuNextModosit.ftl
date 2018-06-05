@@ -15,7 +15,7 @@
 	<!-- Leves -->
 		<div class="row">
 			<div class="form-group col-xs-4">
-				<label for="leves_hu_${m.nap}"><p>Leves magya:</p></label>
+				<label for="leves_hu_${m.nap}"><p>Leves magyar:</p></label>
 				<input type="text" class="form-control" id="leves_hu_${m.nap}" name="leves_hu" value="<#if m.leves??>${m.leves?keep_before("/")}</#if>">
 			</div>
 			<div class="form-group col-xs-4">
@@ -42,7 +42,7 @@
 		<!-- Főétel -->
 		<div class="row">
 			<div class="form-group col-xs-4">
-				<label for="foetel_hu_${m.nap}"><p>Főétel magya:</p></label>
+				<label for="foetel_hu_${m.nap}"><p>Főétel magyar:</p></label>
 				<input type="text" class="form-control" id="foetel_hu_${m.nap}" name="foetel_hu" value="<#if m.foetel??>${m.foetel?keep_before("/")}</#if>">
 			</div>
 			<div class="form-group col-xs-4">
@@ -69,7 +69,7 @@
 		<!-- köret -->
 		<div class="row">
 			<div class="form-group col-xs-4">
-				<label for="koret_hu_${m.nap}"><p>Köret magya:</p></label>
+				<label for="koret_hu_${m.nap}"><p>Köret magyar:</p></label>
 				<input type="text" class="form-control" id="koret_hu_${m.nap}" name="koret_hu" value="<#if m.koret??>${m.koret?keep_before("/")}</#if>">
 			</div>
 			<div class="form-group col-xs-4">
