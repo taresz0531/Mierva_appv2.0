@@ -6,6 +6,7 @@ import java.util.List;
 
 import hu.tarnai.minerva.entity.Napimenu;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
+import hu.tarnai.minerva.utility.DateToStringClass;
 import hu.tarnai.minerva.utility.SqlConnector;
 
 public class HetimenuBo extends SqlConnector{
@@ -218,6 +219,32 @@ public class HetimenuBo extends SqlConnector{
 			try { if (cstm != null) cstm.close(); } catch (SQLException e) { e.printStackTrace(); }
 			try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
 		}
+	}
+	
+	//--------------jövőheti menüket adja vissza (teljes hét!)
+	public static List<Napimenu> getNexWeekMenus() {
+		HetimenuBo hBo = new HetimenuBo();
+		List<String> days = DateToStringClass.getDaysName();
+		List<Napimenu> menus = new ArrayList<Napimenu>();
+		List<Napimenu> mm = hBo.getNext();
+		
+		for(String d:days){
+			boolean isCorrect = false;
+			Napimenu n = new Napimenu();
+			for(Napimenu nn:mm){
+				nn.setNap(HetimenuBo.getDayName(nn.getNap()));
+				if(nn.getNap().equals(d)){
+					menus.add(nn);
+					isCorrect = true;
+					break;
+				}
+			}
+			if(!isCorrect){
+				n.setNap(d);
+				menus.add(n);
+			}
+		}
+		return menus;
 	}
 	
 	public static String getDayName(String day){

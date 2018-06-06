@@ -38,7 +38,8 @@ public class JasperUtil {
 		Map<String, Object> map = new HashMap<String,Object>();
 		OutputStream output;
 		
-		response.addHeader("Content-type", "application/pdf");
+		response.setContentType("application/pdf");
+		response.addHeader("content-disposition", "inline;");
 
 		map.put("date", date);
 		map.put("SUBREPORT_DIR", "/static/jasper/compile/");

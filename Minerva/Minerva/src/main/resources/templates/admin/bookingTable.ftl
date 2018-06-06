@@ -148,7 +148,7 @@
 	</table>
 	<div class="buttons-layout">
 		<div class="left-buttons">
-			<div>
+			<div> 
 				<form action="/bookingPrev" method="post">
 					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
 					<input type="submit" class="btn" value="Előző hét"/>
@@ -195,6 +195,11 @@
 			</div>
 			<div>
 				<button class="btn" type="button">Segítség</button>
+			</div>
+			<div>
+				<form action="printBookingTable" method="post">
+					<button class="btn" type="submit">Nyomtatás</button>
+				</form>
 			</div>
 			<div>
 				<a href="admin?pageName=1"><button type="button" class="btn">Kilép</button></a>

@@ -96,14 +96,19 @@
 	</div>
 </#list>
 <div class="admin-div">
-	<center><input type="submit" class="btn" value="Mentés"/></center>
+	<center>
+		<div class="btn-group" role="group" aria-label="...">
+			<input type="submit" class="btn btn-default" value="Mentés" onclick="javascript: form.action='napimenuNextModosit'; form.target=''"/>
+			<input type="submit" class="btn btn-default" value="Nyomtatás" onclick="javascript: form.action='printNapimenu'; form.target='_blank'"/>
+		</div>
+	</center>
 </div>
 </form>
-<div>
-	<form action="/printNapimenu" method="post">
-		<input type="submit" value="Nyomtatás">
-	</form>
-</div>
+<!-- <div> -->
+<!-- 	<form action="/printNapimenu" method="post"> -->
+<!-- 		<input type="submit" value="Nyomtatás"> -->
+<!-- 	</form> -->
+<!-- </div> -->
 <!-- ez a vége -->
 		</div><!-- admin function -->
 	</div><!-- row -->

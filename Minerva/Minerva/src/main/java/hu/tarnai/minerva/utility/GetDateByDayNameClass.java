@@ -31,6 +31,44 @@ public class GetDateByDayNameClass {
     	return dayDate;
     }
     
+    public String getMonthName(String m) {
+    	if("01".equals(m)) {
+    		return "január";
+    	} else if("02".equals(m)) {
+    		return "február";
+    	} else if("03".equals(m)) {
+    		return "március";
+    	} else if("04".equals(m)) {
+    		return "április";
+    	} else if("05".equals(m)) {
+    		return "május";
+    	} else if("06".equals(m)) {
+    		return "június";
+    	} else if("07".equals(m)) {
+    		return "július";
+    	} else if("08".equals(m)) {
+    		return "augusztus";
+    	} else if("09".equals(m)) {
+    		return "szeptember";
+    	} else if("10".equals(m)) {
+    		return "október";
+    	} else if("11".equals(m)) {
+    		return "november";
+    	} else if("12".equals(m)) {
+    		return "december";
+    	}else {
+    		return m;
+    	}
+    }
+    
+    public String getPosFixDate(int d) {
+    	if(d==2||d==3||d==6||d==8||d==13||d==16||d==18||d==20||d==23||d==26||d==28||d==30) {
+    		return "-tól";
+    	}else {
+    		return "-től";
+    	}
+    }
+    
     private int getDayCounterNumber(String currentDay){
     	int dayCounter = 0;
     	currentDay = currentDay.toLowerCase();

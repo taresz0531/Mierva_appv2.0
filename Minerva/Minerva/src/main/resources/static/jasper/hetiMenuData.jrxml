@@ -40,7 +40,7 @@
 	<detail>
 		<band height="55" splitType="Stretch">
 			<textField isStretchWithOverflow="true" pattern="">
-				<reportElement style="table" stretchType="RelativeToBandHeight" x="0" y="0" width="191" height="54" backcolor="#FFFFFF" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
+				<reportElement style="table" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="0" width="191" height="54" backcolor="#FFFFFF" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
 				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="5"/>
