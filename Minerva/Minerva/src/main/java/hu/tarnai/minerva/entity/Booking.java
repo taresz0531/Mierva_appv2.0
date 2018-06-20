@@ -39,8 +39,19 @@ public class Booking implements Serializable {
     public Booking() {
         super();
     }
+    
+    public Booking(int id, Date date, int bed1, int bed2, int bed3, int bed4, int bedAttic2) {
+		super();
+		this.id = id;
+		this.date = date;
+		this.bed1 = bed1;
+		this.bed2 = bed2;
+		this.bed3 = bed3;
+		this.bed4 = bed4;
+		this.bedAttic2 = bedAttic2;
+	}
 
-    /**
+	/**
      * Access method for id.
      *
      * @return the current value of id

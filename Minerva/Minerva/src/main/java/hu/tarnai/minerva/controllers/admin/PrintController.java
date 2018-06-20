@@ -3,21 +3,21 @@ package hu.tarnai.minerva.controllers.admin;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import hu.tarnai.minerva.bo.HetimenuBo;
 import hu.tarnai.minerva.entity.Napimenu;
+import hu.tarnai.minerva.objects.BookinTableJasperObj;
 import hu.tarnai.minerva.objects.DayString;
 import hu.tarnai.minerva.objects.NapimenuJasperObj;
 import hu.tarnai.minerva.utility.GetDateByDayNameClass;
@@ -28,7 +28,7 @@ import hu.tarnai.minerva.utility.StringValidator;
 public class PrintController {
 	
 	@RequestMapping(value = "/printNapimenu", method = RequestMethod.POST)
-	public void printNapimenuPost(Model model, HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
+	public void printNapimenuPost(HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
 		
 		List<Napimenu> menus = HetimenuBo.getNexWeekMenus();
 		List<NapimenuJasperObj> jaspObj = convertNapimenuToJasperOb(menus);
@@ -36,7 +36,7 @@ public class PrintController {
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		GetDateByDayNameClass dateClass = new GetDateByDayNameClass();
 		
-		JasperUtil jasperUtil = new JasperUtil("hetiMenu.jasper");
+		JasperUtil jasperUtil = new JasperUtil("hetiMenu2.jasper");
 		
 		String dateMonday = dateClass.getDateByDay("hétfő");
 		String dateSunday = dateClass.getDateByDay("vasárnap");
@@ -54,7 +54,7 @@ public class PrintController {
 		dateMonday = format.format(calMonday);
 		dateSunday = format.format(calszunday);
 		
-		DayString monday = new DayString(dateMonday.split("-")[0], dateMonday.split("-")[1], dateSunday.split("-")[2]);
+		DayString monday = new DayString(dateMonday.split("-")[0], dateMonday.split("-")[1], dateMonday.split("-")[2]);
 		DayString szunday = new DayString(dateSunday.split("-")[0], dateSunday.split("-")[1], dateSunday.split("-")[2]);
 		
 		String dateFromTo = monday.getYear() + ". " + dateClass.getMonthName(monday.getMonth()) + " " + monday.getDay() + dateClass.getPosFixDate(Integer.parseInt(monday.getDay())) + "-" + szunday.getYear() + ". " + dateClass.getMonthName(szunday.getMonth()) + szunday.getDay() + "-ig";
@@ -64,15 +64,24 @@ public class PrintController {
 	}
 	
 	@RequestMapping(value = "/printBookingTable", method = RequestMethod.POST)
-	public void printBookingTablePost(Model model, HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
+	public void printBookingTablePost(@RequestParam("date") String date , HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		BookinTableJasperObj bookingTable;
 		
+		try {
+			bookingTable = new BookinTableJasperObj(new Date(format.parse(date).getTime()));
+		} catch (ParseException e) {
+			bookingTable = new BookinTableJasperObj(new Date());
+			e.printStackTrace();
+		}
 		
+		JasperUtil jasperUtil = new JasperUtil("bookingTable.jasper");
 		
+		jasperUtil.printBookingTable(bookingTable.get(), response);
 	}
 	
 	public List<NapimenuJasperObj> convertNapimenuToJasperOb(List<Napimenu> napi){
 		List<NapimenuJasperObj> jasper = new ArrayList<NapimenuJasperObj>();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		int index = 0;
 		String nap = "";
 		String leves = "";
@@ -86,7 +95,11 @@ public class PrintController {
 				koret = StringValidator.isNotEmpty(n.getKoret())?n.getKoret().split("/")[0]:"";
 				
 				jasper.add(new NapimenuJasperObj("" + index, nap, leves, foetel, koret));
-				index++;
+				if(index==0) {
+					index=1;
+				}else {
+					index=0;
+				}
 			}
 		}
 		

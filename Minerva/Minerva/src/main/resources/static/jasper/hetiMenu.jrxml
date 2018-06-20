@@ -128,6 +128,7 @@
 	</parameter>
 	<parameter name="date" class="java.lang.String"/>
 	<parameter name="sub_obj" class="net.sf.jasperreports.engine.JRDataSource"/>
+	<parameter name="sub_obj_copy" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -141,7 +142,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="499" splitType="Stretch">
+		<band height="500" splitType="Stretch">
 			<staticText>
 				<reportElement x="0" y="0" width="394" height="30" uuid="187a4d9f-6f45-4eda-a613-3d604d11acce"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -226,8 +227,8 @@
 				</textElement>
 				<text><![CDATA[A változtatás jogát fenntartjuk!]]></text>
 			</staticText>
-			<subreport runToBottom="false">
-				<reportElement stretchType="RelativeToBandHeight" x="1" y="217" width="393" height="280" uuid="58fda0ea-bd56-4e77-b429-2fa28eb4a417"/>
+			<subreport isUsingCache="true" runToBottom="false">
+				<reportElement stretchType="RelativeToBandHeight" x="1" y="216" width="200" height="100" uuid="58fda0ea-bd56-4e77-b429-2fa28eb4a417"/>
 				<dataSourceExpression><![CDATA[$P{sub_obj}]]></dataSourceExpression>
 				<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
 			</subreport>
@@ -315,11 +316,6 @@
 				</textElement>
 				<text><![CDATA[A változtatás jogát fenntartjuk!]]></text>
 			</staticText>
-			<subreport>
-				<reportElement stretchType="RelativeToBandHeight" x="407" y="217" width="394" height="280" uuid="a6b61c5e-e414-427d-b792-5d7014301d16"/>
-				<dataSourceExpression><![CDATA[$P{sub_obj}]]></dataSourceExpression>
-				<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
-			</subreport>
 			<line>
 				<reportElement x="0" y="0" width="395" height="1" uuid="6223f4ab-3050-4886-bc7f-b630febf3739"/>
 				<graphicElement>
@@ -368,6 +364,10 @@
 					<pen lineWidth="1.25"/>
 				</graphicElement>
 			</line>
+			<subreport>
+				<reportElement stretchType="RelativeToBandHeight" x="409" y="216" width="200" height="100" uuid="15ed6193-ff27-4439-9db2-8bad2c2a3105"/>
+				<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
+			</subreport>
 		</band>
 	</detail>
 </jasperReport>

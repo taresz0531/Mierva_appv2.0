@@ -29,7 +29,7 @@
 			<#global bed3 = 0>
 			<#global bed4 = 0>
 			<#global bedAttic = 0>
-			<#global date = monday?string('yyyy-MM-dd')>
+			<#global date = d.date?string('yyyy-MM-dd')>
 		<#else>
 			<#global bookId = rooms.id>
 			<#global bed1 = rooms.bed1>
@@ -68,38 +68,27 @@
 	</#list>
 	<div>
 		<div class="row">
-			<div class="bookingBook-btn">
-				<form action="/bookingBookPrev" method="post">
+			<form action="/" method="post">
+				<div  class="btn-group bookingBook-btn"  role="group" aria-label="...">
 					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
-					<input type="submit" class="btn" value="Előző hét"/>
-				</form>
-			</div>
-			<div class="bookingBook-btn">
-				<form action="/bookingBook" method="get">
-					<input type="submit" class="btn" value="Aktuális hét"/>
-				</form>
-			</div>
-			<div class="bookingBook-btn">
-				<form action="/bookingBookNext" method="post">
-					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
-					<input type="submit" class="btn" value="Következő hét"/>
-				</form>
-			</div>
+					<input type="submit" class="btn btn-default" value="Előző hét" onclick="javascript: form.action='bookingBookPrev'; form.target=''"/>
+					<input type="submit" class="btn btn-default" value="Aktuális hét" onclick="javascript: form.action='bookingBook'; form.target=''"/>
+					<input type="submit" class="btn btn-default" value="Következő hét" onclick="javascript: form.action='bookingBookNext'; form.target=''"/>
+				</div>
+			</form>
 		</div>
 		<div class="row">
-			<div>
-				<form action="/bookingBookWeek" method="post">
-					<div class="bookingBook-btn">
-						<input required type="week" id="date" name="date" class="form-control"/>
-					</div>
-					<div class="bookingBook-btn">
-						<input type="submit" class="btn" value="Ugrás"/>
-					</div>
-				</form>
-			</div>
-			<div class="bookingBook-btn">
-				<button class="btn" type="button">Mindet ment</button>
-			</div>
+			<form action="/" method="post">
+				<div  class="btn-group bookingBook-btn"  role="group" aria-label="...">
+				    <input class="btn btn-default" required type="week" id="date" name="date">
+				    <input class="btn btn-default" style="height: 36px;" type="submit" onclick="javascript: form.action='bookingBookWeek'; form.target=''" value="Ugrás">
+			 	</div>
+			</form>
+		</div>
+		<div class="row" style="margin-top: 10px;">
+		<form action="/bookingBookSaveAll" method="post" id="saveAllForm">
+			<center><button class="btn btn-default" type="button" onclick="submitAllBookingRooms('saveAllForm')">Mindet ment</button></center>
+		</form>
 		</div>
 	</div>
 </div>

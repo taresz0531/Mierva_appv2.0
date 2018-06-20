@@ -74,7 +74,7 @@ public class Day{
 					break;
 				}
 				case 5:{
-					days.add(new Day("Szomba",temp));
+					days.add(new Day("Szombat",temp));
 					break;
 				}
 				case 6:{

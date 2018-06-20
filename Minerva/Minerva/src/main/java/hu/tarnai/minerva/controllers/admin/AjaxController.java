@@ -3,33 +3,24 @@ package hu.tarnai.minerva.controllers.admin;
 import java.io.StringReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import javax.json.Json;
 import javax.json.JsonObject;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.http.MediaType;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import hu.tarnai.minerva.bo.EtlapBo;
-import hu.tarnai.minerva.bo.HetimenuBo;
+import hu.tarnai.minerva.bo.EventLogBo;
 import hu.tarnai.minerva.bo.SzobaBo;
-import hu.tarnai.minerva.entity.Napimenu;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
-import hu.tarnai.minerva.objects.NapimenuJasperObj;
-import hu.tarnai.minerva.utility.DateToStringClass;
-import hu.tarnai.minerva.utility.JasperUtil;
+import hu.tarnai.minerva.objects.EventLogObject;
 import hu.tarnai.minerva.utility.JsonCreator;
-import hu.tarnai.minerva.utility.StringValidator;
 
 @RestController
 public class AjaxController {
@@ -67,6 +58,23 @@ public class AjaxController {
 		JsonObject code = Json.createReader(new StringReader(JsonCreator.jsonBuilder(json))).readObject();
 		
 		return code.toString();
+	}
+	
+	@RequestMapping(value = "/searchEvent", method = RequestMethod.POST)
+	public String searcEventPost(@RequestParam(name = "dateFrom") String dateFrom, @RequestParam(name = "dateTo") String dateTo, @RequestParam(name = "id") int id, HttpServletRequest request){
+		EventLogBo bo = new EventLogBo();
+		List<EventLogObject> events = bo.getAllEventForUser(id, dateFrom, dateTo);
+		if(id<0) {
+			events = bo.getAll(dateFrom, dateTo);
+		}else {
+			events = bo.getAllEventForUser(id, dateFrom, dateTo);
+		}
+		if(events!=null&&events.size()>0) {
+			String jsonString = JsonCreator.creatJsonArrayFromList(events);
+			return jsonString;
+		}
+		
+		return null;
 	}
 }
  

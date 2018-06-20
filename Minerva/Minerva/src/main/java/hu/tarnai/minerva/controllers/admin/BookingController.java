@@ -2,13 +2,14 @@ package hu.tarnai.minerva.controllers.admin;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -33,6 +34,20 @@ public class BookingController {
 	// TODO Foglasás
 	@RequestMapping(value = "/bookingTable", method = RequestMethod.GET)
 	public String bookingTableGet(Model model, HttpServletRequest request, RedirectAttributes redirect){
+		PageName.saveAdmin(request, BOOKING_TABLE);
+		
+		BookingWeek week = new BookingWeek(new Date());
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("bookingRooms", week.getBooks());
+		model.addAttribute("roomTypes", week.getRooms());
+		model.addAttribute("cells", week.getCells());
+		
+		return  UserSession.checkUser(request, BOOKING_TABLE, model);
+	}
+	
+	@RequestMapping(value = "/bookingTable", method = RequestMethod.POST)
+	public String bookingTablePost(Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		
 		BookingWeek week = new BookingWeek(new Date());
@@ -189,12 +204,12 @@ public class BookingController {
 	}
 	
 	@RequestMapping(value = "/bookingWeek", method = RequestMethod.POST)
-	public String bookingWeekPost(@RequestParam(name = "date") String date, Model model, HttpServletRequest request, RedirectAttributes redirect){
+	public String bookingWeekPost(@RequestParam(name = "dateT") String dateT, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
-		if(StringValidator.isNotEmpty(date)) {
+		if(StringValidator.isNotEmpty(dateT)) {
 			java.util.Calendar cld = java.util.Calendar.getInstance();
-			cld.set(java.util.Calendar.YEAR, Integer.parseInt(date.split("-W")[0]));
-			cld.set(java.util.Calendar.WEEK_OF_YEAR, Integer.parseInt(date.split("-W")[1]));
+			cld.set(java.util.Calendar.YEAR, Integer.parseInt(dateT.split("-W")[0]));
+			cld.set(java.util.Calendar.WEEK_OF_YEAR, Integer.parseInt(dateT.split("-W")[1]));
 			Date result = cld.getTime();
 			BookingWeek week = new BookingWeek(new Date(result.getTime()));
 			
@@ -312,6 +327,18 @@ public class BookingController {
 		return  UserSession.checkUser(request, BOOKING_BOOK, model);
 	}
 	
+	@RequestMapping(value = "/bookingBook", method = RequestMethod.POST)
+	public String bookingBookPost(Model model, HttpServletRequest request, RedirectAttributes redirect){
+		PageName.saveAdmin(request, BOOKING_BOOK);
+		
+		BookingWeek week = new BookingWeek(new Date());
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("bookingRooms", week.getBooks());
+		
+		return  UserSession.checkUser(request, BOOKING_BOOK, model);
+	}
+	
 	@RequestMapping(value = "/bookingBookPrev", method = RequestMethod.POST)
 	public String bookingBookPrevPost(@RequestParam(name = "date") String date, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_BOOK);
@@ -391,12 +418,33 @@ public class BookingController {
 	}
 	
 	@RequestMapping(value = "/bookingBookSave", method = RequestMethod.POST)
-	public String bookingBookSave(@RequestParam(name = "date") String date, @ModelAttribute("booking") Booking booking, Model model, HttpServletRequest request, RedirectAttributes redirect){
+	public String bookingBookSave(@RequestParam(name = "id") int id,
+								  @RequestParam(name = "bed1") int bed1,
+								  @RequestParam(name = "bed2") int bed2,
+								  @RequestParam(name = "bed3") int bed3,
+								  @RequestParam(name = "bed4") int bed4,
+								  @RequestParam(name = "bedAttic2") int bedAttic2,
+								  @RequestParam(name = "date") String date,
+								  Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_BOOK);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		SzobaBo bo = new SzobaBo();
-		
+		Booking booking;
 		BookingWeek week;
+
+		try {
+			booking = new Booking(id, format.parse(date), bed1, bed2, bed3, bed4, bedAttic2);
+		} catch (ParseException e1) {
+			Message.error(request, "Ismeretlen hiba!");
+			week = new BookingWeek(new Date());
+			model.addAttribute("weekDays", week.getWeekDays());
+			model.addAttribute("monday", week.getWeekDays().get(0).date);
+			model.addAttribute("bookingRooms", week.getBooks());
+			e1.printStackTrace();
+			
+			return  UserSession.checkUser(request, BOOKING_BOOK, model);
+		}
+		
 		try {
 			ErrorCodeEnum error = ErrorCodeEnum.ERROR;
 
@@ -411,8 +459,8 @@ public class BookingController {
 			}else {
 				Message.error(request);
 			}
-			week = new BookingWeek(new Date(format.parse(date).getTime()));
-		} catch (ParseException e) {
+			week = new BookingWeek(new Date(booking.getDate().getTime()));
+		} catch (Exception e) {
 			e.printStackTrace();
 			Message.error(request, "Ismeretlen hiba!");
 			week = new BookingWeek(new Date());
@@ -420,9 +468,71 @@ public class BookingController {
 			model.addAttribute("monday", week.getWeekDays().get(0).date);
 			model.addAttribute("bookingRooms", week.getBooks());
 			
-			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+			return  UserSession.checkUser(request, BOOKING_BOOK, model);
 			
 		}
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("bookingRooms", week.getBooks());
+		
+		return  UserSession.checkUser(request, BOOKING_BOOK, model);
+	}
+	
+	@RequestMapping(value = "/bookingBookSaveAll", method = RequestMethod.POST)
+	public String bookingBookSaveAllPost(@RequestParam(name = "id") String id,
+								  @RequestParam(name = "bed1") String bed1,
+								  @RequestParam(name = "bed2") String bed2,
+								  @RequestParam(name = "bed3") String bed3,
+								  @RequestParam(name = "bed4") String bed4,
+								  @RequestParam(name = "bedAttic2") String bedAttic2,
+								  @RequestParam(name = "date") String date,
+								  Model model, HttpServletRequest request, RedirectAttributes redirect){
+		PageName.saveAdmin(request, BOOKING_BOOK);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		SzobaBo bo = new SzobaBo();
+		List<Booking> booking = new ArrayList<Booking>();
+		BookingWeek week;
+		
+		String[] ids = id.split("#");
+		String[] bed1s = bed1.split("#");
+		String[] bed2s = bed2.split("#");
+		String[] bed3s = bed3.split("#");
+		String[] bed4s = bed4.split("#");
+		String[] bedAttic2s = bedAttic2.split("#");
+		String[] dates = date.split("#");
+		
+		for(int i=0;i<7;i++) {
+			try {
+				booking.add(new Booking(Integer.parseInt(ids[i]), format.parse(dates[i]), Integer.parseInt(bed1s[i]), Integer.parseInt(bed2s[i]), Integer.parseInt(bed3s[i]), Integer.parseInt(bed4s[i]), Integer.parseInt(bedAttic2s[i])));
+			} catch (NumberFormatException | ParseException e) {
+				Message.error(request, "Ismeretlen hiba!");
+				week = new BookingWeek(new Date());
+				model.addAttribute("weekDays", week.getWeekDays());
+				model.addAttribute("monday", week.getWeekDays().get(0).date);
+				model.addAttribute("bookingRooms", week.getBooks());
+				e.printStackTrace();
+				
+				return  UserSession.checkUser(request, BOOKING_BOOK, model);
+			}
+		}
+		
+		for(Booking b:booking) {
+			ErrorCodeEnum error = ErrorCodeEnum.ERROR;
+			if(b.getId()>0) {
+				error = bo.bookingModif(b);
+			}else {
+				error = bo.bookingAdd(b, b.getDate());
+			}
+			
+			if(error == ErrorCodeEnum.SUCCESS) {
+				Message.success(request);
+			}else {
+				Message.error(request);
+			}
+		}
+		
+		week = new BookingWeek(new Date(booking.get(0).getDate().getTime()));
+
 		model.addAttribute("weekDays", week.getWeekDays());
 		model.addAttribute("monday", week.getWeekDays().get(0).date);
 		model.addAttribute("bookingRooms", week.getBooks());

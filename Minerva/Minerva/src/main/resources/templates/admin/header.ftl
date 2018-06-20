@@ -60,6 +60,7 @@
 	<script type="text/javascript" src="javascript/ajanlat.js"></script>
 	<script type="text/javascript" src="javascript/users.js"></script>
 	<script type="text/javascript" src="javascript/booking.js"></script>
+	<script type="text/javascript" src="javascript/events.js"></script>
 
 	</head>
 	<body>

@@ -442,3 +442,117 @@ function sleep(milliseconds) {
 	    }
 	  }
 	}
+
+function submitAllBookingRooms(formId){
+	var form = document.getElementById(formId);
+	
+	var id = document.createElement("input");
+	id.setAttribute("type", "hidden");
+	id.setAttribute("name", "id");
+	var id_arr = document.getElementsByName('id');
+	var id_concat = "";
+	for (var i=0;i<id_arr.length;i++){
+		if(i<id_arr.length-1){
+			id_concat = id_concat + id_arr[i].value + "#";
+		} else{
+			id_concat = id_concat + id_arr[i].value;
+		}
+	}
+	id.setAttribute("value", id_concat);
+	
+	var bed1 = document.createElement("input");
+	bed1.setAttribute("type", "hidden");
+	bed1.setAttribute("name", "bed1");
+	var bed1_arr = document.getElementsByName('bed1');
+	var bed1_concat = "";
+	for (var i=0;i<bed1_arr.length;i++){
+		if(i<bed1_arr.length-1){
+			bed1_concat = bed1_concat + bed1_arr[i].value + "#";
+		} else{
+			bed1_concat = bed1_concat + bed1_arr[i].value;
+		}
+		
+	}
+	bed1.setAttribute("value", bed1_concat);
+	
+	var bed2 = document.createElement("input");
+	bed2.setAttribute("type", "hidden");
+	bed2.setAttribute("name", "bed2");
+	var bed2_arr = document.getElementsByName('bed2');
+	var bed2_concat = "";
+	for (var i=0;i<bed2_arr.length;i++){
+		if(i<bed2_arr.length-1){
+			bed2_concat = bed2_concat + bed2_arr[i].value + "#";
+		} else{
+			bed2_concat = bed2_concat + bed2_arr[i].value;
+		}
+	}
+	bed2.setAttribute("value", bed2_concat);
+	
+	var bed3 = document.createElement("input");
+	bed3.setAttribute("type", "hidden");
+	bed3.setAttribute("name", "bed3");
+	var bed_arr = document.getElementsByName('bed3');
+	var bed3_concat = "";
+	for (var i=0;i<bed_arr.length;i++){
+		if(i<bed_arr.length-1){
+			bed3_concat = bed3_concat + bed_arr[i].value + "#";
+		} else{
+			bed3_concat = bed3_concat + bed_arr[i].value;
+		}
+	}
+	bed3.setAttribute("value", bed3_concat);
+	
+	var bed4 = document.createElement("input");
+	bed4.setAttribute("type", "hidden");
+	bed4.setAttribute("name", "bed4");
+	var bed4_arr = document.getElementsByName('bed4');
+	var bed4_concat = "";
+	for (var i=0;i<bed4_arr.length;i++){
+		if(i<bed4_arr.length-1){
+			bed4_concat = bed4_concat + bed4_arr[i].value + "#";
+		} else{
+			bed4_concat = bed4_concat + bed4_arr[i].value;
+		}
+	}
+	bed4.setAttribute("value", bed4_concat);
+	
+	var bedAttic2 = document.createElement("input");
+	bedAttic2.setAttribute("type", "hidden");
+	bedAttic2.setAttribute("name", "bedAttic2");
+	var bedAttic2_arr = document.getElementsByName('bedAttic2');
+	var bedAttic2_concat = "";
+	for (var i=0;i<bedAttic2_arr.length;i++){
+		if(i<bedAttic2_arr.length-1){
+			bedAttic2_concat = bedAttic2_concat + bedAttic2_arr[i].value + "#";
+		} else{
+			bedAttic2_concat = bedAttic2_concat + bedAttic2_arr[i].value;
+		}
+	}
+	bedAttic2.setAttribute("value", bedAttic2_concat);
+	
+	var date = document.createElement("input");
+	date.setAttribute("type", "hidden");
+	date.setAttribute("name", "date");
+	var date_arr = document.getElementsByName('date');
+	var date_concat = "";
+	for (var i=0;i<date_arr.length;i++){
+		if(i<date_arr.length-1){
+			date_concat = date_concat + date_arr[i].value + "#";
+		} else{
+			date_concat = date_concat + date_arr[i].value;
+		}
+	}
+	date.setAttribute("value", date_concat);
+	
+	form.appendChild(id);
+	form.appendChild(bed1);
+	form.appendChild(bed2);
+	form.appendChild(bed3);
+	form.appendChild(bed4);
+	form.appendChild(bedAttic2);
+	form.appendChild(date);
+	
+	form.setAttribute("action", "/bookingBookSaveAll");
+	form.submit();
+}

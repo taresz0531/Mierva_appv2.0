@@ -148,33 +148,16 @@
 	</table>
 	<div class="buttons-layout">
 		<div class="left-buttons">
-			<div> 
-				<form action="/bookingPrev" method="post">
+				<form action="/" method="post">
 					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
-					<input type="submit" class="btn" value="Előző hét"/>
+					 <div class="btn-group" role="group" aria-label="...">
+						<input style="height: 36" type="submit" class="btn btn-default" value="Előző hét" onclick="javascript: form.action='bookingPrev'; form.target=''"/>
+						<input style="height: 36" type="submit" class="btn btn-default" value="Aktuális hét" onclick="javascript: form.action='bookingTable'; form.target=''"/>
+						<input style="height: 36" type="submit" class="btn btn-default" value="Következő hét" onclick="javascript: form.action='bookingNext'; form.target=''"/>
+						<input type="week" id="dateT" name="dateT" class="btn btn-default"/>
+						<input style="height: 36" type="submit" class="btn btn-default" value="Ugrás" onclick="javascript: form.action='bookingWeek'; form.target=''"/>
+					 </div>				
 				</form>
-			</div>
-			<div>
-				<form action="/bookingTable" method="get">
-					<input type="submit" class="btn" value="Aktuális hét"/>
-				</form>
-			</div>
-			<div>
-				<form action="/bookingNext" method="post">
-					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
-					<input type="submit" class="btn" value="Következő hét"/>
-				</form>
-			</div>
-			<div>
-				<form action="/bookingWeek" method="post">
-					<div>
-						<input required type="week" id="date" name="date" class="form-control"/>
-					</div>
-					<div>
-						<input type="submit" class="btn" value="Ugrás"/>
-					</div>
-				</form>
-			</div>
 		</div>
 		<div class="right-buttons">
 			<div>
@@ -194,12 +177,13 @@
 				<input id="moveCancelButton" <#if Session.moveCalendar?exists && Session.moveCalendar == "1">style="display: block;"<#else>style="display: none;"</#if> class="btn" type="button" onclick="moveCalendarCancel()" value="Mégsem">
 			</div>
 			<div>
-				<button class="btn" type="button">Segítség</button>
-			</div>
-			<div>
 				<form action="printBookingTable" method="post">
+					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
 					<button class="btn" type="submit">Nyomtatás</button>
 				</form>
+			</div>
+			<div>
+				<button class="btn" type="button">Segítség</button>
 			</div>
 			<div>
 				<a href="admin?pageName=1"><button type="button" class="btn">Kilép</button></a>

@@ -44,6 +44,26 @@ public class JasperUtil {
 		map.put("date", date);
 		map.put("SUBREPORT_DIR", "/static/jasper/compile/");
 		map.put("sub_obj", new CustomDataSource(obj.toArray(new NapimenuJasperObj[obj.size()])));
+		map.put("sub_obj_copy", new CustomDataSource(obj.toArray(new NapimenuJasperObj[obj.size()])));
+		
+		try {
+			
+			pdfBlob = JasperRunManager.runReportToPdf(report, map, new CustomDataSource(new Object[] { new Object() } ));
+			output = response.getOutputStream();
+			output.write(pdfBlob);
+			output.flush();
+			output.close();
+			
+		} catch (JRException | IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void printBookingTable(HashMap<String,Object> map, HttpServletResponse response) {
+		OutputStream output;
+		
+		response.setContentType("application/pdf");
+		response.addHeader("content-disposition", "inline;");
 		
 		try {
 			

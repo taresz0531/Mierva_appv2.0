@@ -23,6 +23,16 @@
 			<pen lineWidth="0.5" lineColor="#000000"/>
 		</box>
 	</style>
+	<style name="bacgroundChangeStyle" mode="Opaque">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{index}.equals("1")]]></conditionExpression>
+			<style mode="Opaque" backcolor="#FFFFFF"/>
+		</conditionalStyle>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$F{index}.equals("0")]]></conditionExpression>
+			<style mode="Opaque" backcolor="#CCCCCC"/>
+		</conditionalStyle>
+	</style>
 	<subDataset name="Hetimenu" uuid="dd13de9a-96ad-4754-8aac-c84c494f2c9f">
 		<field name="nap" class="java.lang.String"/>
 		<field name="leves" class="java.lang.String"/>
@@ -38,9 +48,15 @@
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="55" splitType="Stretch">
-			<textField isStretchWithOverflow="true" pattern="">
-				<reportElement style="table" stretchType="RelativeToBandHeight" isPrintRepeatedValues="false" x="0" y="0" width="191" height="54" backcolor="#FFFFFF" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
+		<band height="48" splitType="Stretch">
+			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
+				<reportElement style="bacgroundChangeStyle" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="191" height="48" backcolor="#FFFFFF" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
 				<textElement verticalAlignment="Top">
 					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="5"/>
@@ -48,25 +64,37 @@
 				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="table" positionType="Float" stretchType="RelativeToBandHeight" x="191" y="0" width="205" height="18" uuid="4dbee266-b4a3-4cba-bb27-ac11f4239c99"/>
+				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="191" y="0" width="200" height="16" uuid="4dbee266-b4a3-4cba-bb27-ac11f4239c99"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="14" pdfEncoding="Cp1250"/>
+					<font fontName="Calibri" size="12" pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{leves}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="table" stretchType="RelativeToBandHeight" x="191" y="18" width="205" height="18" uuid="7cb53083-39f0-4175-a316-81b5257a7078"/>
+				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="191" y="16" width="200" height="16" uuid="7cb53083-39f0-4175-a316-81b5257a7078"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="14" pdfEncoding="Cp1250"/>
+					<font fontName="Calibri" size="12" pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{foetel}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="table" stretchType="RelativeToBandHeight" x="191" y="36" width="205" height="18" uuid="b97f51f2-7d81-4ec2-86d1-edec36fb7621"/>
+				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="191" y="32" width="200" height="16" uuid="b97f51f2-7d81-4ec2-86d1-edec36fb7621"/>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="14" pdfEncoding="Cp1250"/>
+					<font fontName="Calibri" size="12" pdfEncoding="Cp1250"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{koret}]]></textFieldExpression>

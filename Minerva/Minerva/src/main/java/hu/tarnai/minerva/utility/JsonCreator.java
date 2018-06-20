@@ -1,6 +1,12 @@
 package hu.tarnai.minerva.utility;
 
 import java.util.HashMap;
+import java.util.List;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import hu.tarnai.minerva.objects.EventLogObject;
 
 public class JsonCreator {
 	private static String A = "\"";
@@ -15,5 +21,17 @@ public class JsonCreator {
 		}
 		json = json + "}";
 		return json;
+	}
+	
+	public static String creatJsonArrayFromList(List<EventLogObject> list) {
+		ObjectMapper mapper = new ObjectMapper();
+		
+		try {
+			return mapper.writeValueAsString(list);
+		} catch (JsonProcessingException e) {
+			System.out.println("json converter error: " + e.getMessage());
+			e.printStackTrace();
+			return null;
+		}
 	}
 }
