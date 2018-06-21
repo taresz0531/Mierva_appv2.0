@@ -34,4 +34,20 @@ public class UserSession {
 		return "admin/" + pageName;
 	}
 	
+	public static boolean userHasPermission(HttpServletRequest request, int permId ) {
+		Users user = getCurrentUser(request);
+		if(user.getHkor().equals("S") || user.getHkor().equals("A")) {
+			return true;
+		}
+		
+		String[] perm = user.getPermission().split(",");
+		for(String p:perm) {
+			if(permId == Integer.parseInt(p)) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
 }

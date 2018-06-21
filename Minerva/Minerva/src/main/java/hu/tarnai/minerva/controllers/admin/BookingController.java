@@ -20,6 +20,7 @@ import hu.tarnai.minerva.entity.Booking;
 import hu.tarnai.minerva.entity.Calendar;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
 import hu.tarnai.minerva.objects.BookingWeek;
+import hu.tarnai.minerva.utility.DateUtility;
 import hu.tarnai.minerva.utility.Message;
 import hu.tarnai.minerva.utility.PageName;
 import hu.tarnai.minerva.utility.StringValidator;
@@ -75,6 +76,11 @@ public class BookingController {
 		
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		
+		if(!UserSession.userHasPermission(request, 5)) {
+			bookingErrorSet(model, request, "Nincs jogosultsága ehez a művelethez!");
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+		
 		Calendar calendar = new Calendar();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		Date saveDate = new Date();
@@ -93,14 +99,7 @@ public class BookingController {
 			}
 		} catch (ParseException e) {
 			e.printStackTrace();
-			Message.error(request, "Ismeretlen hiba!");
-			BookingWeek week = new BookingWeek(new Date());
-			model.addAttribute("weekDays", week.getWeekDays());
-			model.addAttribute("bookingRooms", week.getBooks());
-			model.addAttribute("monday", week.getWeekDays().get(0).date);
-			model.addAttribute("roomTypes", week.getRooms());
-			model.addAttribute("cells", week.getCells());
-			
+			bookingErrorSet(model, request, null);
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
 		
@@ -142,27 +141,32 @@ public class BookingController {
 		
 		return  UserSession.checkUser(request, BOOKING_TABLE, model);
 	}
+
+	
 	
 	@RequestMapping(value = "/bookingPrev", method = RequestMethod.POST)
 	public String bookingPrevPost(@RequestParam(name = "date") String date, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
+		try {
+			if(DateUtility.isOlderThanCurrently(format.parse(date), 30) && !UserSession.userHasPermission(request, 1)) {
+				bookingErrorSet(model, request, "Nincs joga ehez a művelethez!");
+				return  UserSession.checkUser(request, BOOKING_TABLE, model);
+			}
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+			bookingErrorSet(model, request, null);
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+		
 		BookingWeek week;
 		try {
 			week = new BookingWeek(new Date(format.parse(date).getTime() - ONE_DAY));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			Message.error(request, "Ismeretlen hiba!");
-			week = new BookingWeek(new Date());
-			model.addAttribute("weekDays", week.getWeekDays());
-			model.addAttribute("bookingRooms", week.getBooks());
-			model.addAttribute("monday", week.getWeekDays().get(0).date);
-			model.addAttribute("roomTypes", week.getRooms());
-			model.addAttribute("cells", week.getCells());
-			
+			bookingErrorSet(model, request, "Nincs joga ehez a művelethez!");
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
-			
 		}
 		model.addAttribute("weekDays", week.getWeekDays());
 		model.addAttribute("monday", week.getWeekDays().get(0).date);
@@ -206,7 +210,20 @@ public class BookingController {
 	@RequestMapping(value = "/bookingWeek", method = RequestMethod.POST)
 	public String bookingWeekPost(@RequestParam(name = "dateT") String dateT, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+
 		if(StringValidator.isNotEmpty(dateT)) {
+			try {
+				if(DateUtility.isOlderThanCurrently(format.parse(dateT), 30) && !UserSession.userHasPermission(request, 1)) {
+					bookingErrorSet(model, request, "Nincs joga ehez a művelethez!");
+					return  UserSession.checkUser(request, BOOKING_TABLE, model);
+				}
+			} catch (ParseException e1) {
+				e1.printStackTrace();
+				bookingErrorSet(model, request, null);
+				return  UserSession.checkUser(request, BOOKING_TABLE, model);
+			}
+			
 			java.util.Calendar cld = java.util.Calendar.getInstance();
 			cld.set(java.util.Calendar.YEAR, Integer.parseInt(dateT.split("-W")[0]));
 			cld.set(java.util.Calendar.WEEK_OF_YEAR, Integer.parseInt(dateT.split("-W")[1]));
@@ -236,6 +253,11 @@ public class BookingController {
 	@RequestMapping(value = "/bookingAddComment", method = RequestMethod.POST)
 	public String bookingAddCommentPost(@RequestParam(name = "date") String date, @RequestParam(name = "addCommentId") int id, @RequestParam(name = "comment") String comment, @RequestParam(name = "addComment") String originalComment, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
+		
+		if(!UserSession.userHasPermission(request, 4)) {
+			bookingErrorSet(model, request, "Nincs jogosultsága ehez a művelethez!");
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
 		
 		SzobaBo bo = new SzobaBo();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -269,6 +291,11 @@ public class BookingController {
 	@RequestMapping(value = "/bookingChange", method = RequestMethod.POST)
 	public String bookingChangePost(@RequestParam(name = "date") String date, @RequestParam(name = "change_id") int id, @RequestParam(name = "change_roomType") int roomType, @RequestParam(name = "change_dateFrom") String dateFrom, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
+		
+		if(!UserSession.userHasPermission(request, 2)) {
+			bookingErrorSet(model, request, "Nincs jogosultsága ehez a művelethez!");
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
 		
 		SzobaBo bo = new SzobaBo();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -538,5 +565,19 @@ public class BookingController {
 		model.addAttribute("bookingRooms", week.getBooks());
 		
 		return  UserSession.checkUser(request, BOOKING_BOOK, model);
+	}
+	
+	private void bookingErrorSet(Model model, HttpServletRequest request, String msg) {
+		String message = "Ismeretlen Hiba!";
+		if(StringValidator.isNotEmpty(msg)) {
+			message = msg;
+		}
+		Message.error(request, message);
+		BookingWeek week = new BookingWeek(new Date());
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("bookingRooms", week.getBooks());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("roomTypes", week.getRooms());
+		model.addAttribute("cells", week.getCells());
 	}
 }

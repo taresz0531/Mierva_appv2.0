@@ -33,6 +33,8 @@ public class Users implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(unique=true, nullable=false, precision=10)
     public int id;
+    @Column(name = "permission", length=300)
+    public String permission;
 
     /** Default constructor. */
     public Users() {
@@ -182,4 +184,12 @@ public class Users implements Serializable {
     public void setId(int aId) {
         id = aId;
     }
+
+	public String getPermission() {
+		return permission;
+	}
+
+	public void setPermission(String permission) {
+		this.permission = permission;
+	}
 }
