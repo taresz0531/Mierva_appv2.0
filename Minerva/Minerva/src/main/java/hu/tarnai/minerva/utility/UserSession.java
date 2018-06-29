@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;
 
 import hu.tarnai.minerva.entity.Users;
+import hu.tarnai.minerva.enums.PermissionCodeEnum;
 import hu.tarnai.minerva.objects.UserMenusObject;
 
 public class UserSession {
@@ -34,20 +35,23 @@ public class UserSession {
 		return "admin/" + pageName;
 	}
 	
-	public static boolean userHasPermission(HttpServletRequest request, int permId ) {
+	public static PermissionCodeEnum userHasPermission(HttpServletRequest request, int permId, String pageName, Model model) {
+		if(checkUser(request, pageName, model).equals("admin/login")) {
+			return PermissionCodeEnum.LOGOUT;
+		}
 		Users user = getCurrentUser(request);
 		if(user.getHkor().equals("S") || user.getHkor().equals("A")) {
-			return true;
+			return PermissionCodeEnum.ENABLE;
 		}
 		
 		String[] perm = user.getPermission().split(",");
 		for(String p:perm) {
 			if(permId == Integer.parseInt(p)) {
-				return true;
+				return PermissionCodeEnum.ENABLE;
 			}
 		}
 		
-		return false;
+		return PermissionCodeEnum.DISABLE;
 	}
 	
 }

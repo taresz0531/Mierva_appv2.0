@@ -120,8 +120,12 @@
 									<input type="hidden" id="isEmty_${rt?index}${i}" value="false"/>
 								</#if>
 								<input type="hidden" id="isEmty_${rt?index}${i}" value="true"/>
-								<input type="hidden" id="id_${rt?index}${i}" value="${c.calendar.id}" />
-								<#if c.calendar.id != 0>
+								<#if c.calendar.id != 0 && c.calendar.dateTo?string('yyyy-MM-dd') != weekDays[i].date?string('yyyy-MM-dd')>
+									<input type="hidden" id="id_${rt?index}${i}" value="${c.calendar.id}" />
+								<#else>
+									<input type="hidden" id="id_${rt?index}${i}" value="0" />
+								</#if>
+								<#if c.calendar.id != 0 && c.calendar.dateTo?string('yyyy-MM-dd') != weekDays[i].date?string('yyyy-MM-dd')>
 									<input type="hidden" id="name_${rt?index}${i}" value="${c.calendar.name}" />
 									<input type="hidden" id="phone_${rt?index}${i}" value="${c.calendar.phone}" />
 									<input type="hidden" id="adults_${rt?index}${i}" value="${c.calendar.adultsNum}" />
@@ -222,7 +226,7 @@
 		    <div class="form-group col-xs-6">
 		      	<label for="payType"><p style="color: black;">Fizetés típusa:</p></label>
 				<select id="payType" name="payType" class="form-control">
-						<option value="Kézpénz"><p>Készpénz</p></option>
+						<option value="Készpénz"><p>Készpénz</p></option>
 						<option value="Átutalás"><p>Átutalás</p></option>
 				</select>
 		    </div>
@@ -243,42 +247,37 @@
 	
 	<div id="popupModif" class="popupWindows">
 		<form role="form" action="/bookingModif" method="post" name="popup-form-modif">
-			<input type="hidden" id="dateFrom" name="dateFrom" value=""/>
-			<input type="hidden" id="roomType" name="roomType" value=""/>
+			<input type="hidden" id="id_modif" name="id_modif" value=""/>
 			<div class="form-group col-xs-12">
 		      	<label for="dateTo"><p style="color: black;">Távozás dátuma:</p></label>
-				<input  type="date" id="dateTo" name="dateTo" class="form-control"/>
+				<input  type="date" id="dateTo_modif" name="dateTo" class="form-control"/>
 		    </div>
 		    <div class="form-group col-xs-12">
 		      	<label for="name"><p style="color: black;">Név:</p></label>
-				<input required="true" type="text" id="name" name="name" class="form-control"/>
+				<input required="true" type="text" id="name_modif" name="name" class="form-control"/>
 		    </div>
 		    <div class="form-group col-xs-12">
 		      	<label for="phone"><p style="color: black;">Telefonszám:</p></label>
-				<input required="true" type="text" id="phone" name="phone" class="form-control"/>
+				<input required="true" type="text" id="phone_modif" name="phone" class="form-control"/>
 		    </div>
 		    <div class="form-group col-xs-6">
 		      	<label for="adultsNum"><p style="color: black;">Felnőttek száma:</p></label>
-				<input required="true" type="number" id="adultsNum" name="adultsNum" class="form-control" value="1"/>
+				<input required="true" type="number" id="adultsNum_modif" name="adultsNum" class="form-control" value="1"/>
 		    </div>
 		    <div class="form-group col-xs-6">
 		      	<label for="childrenNum"><p style="color: black;">Gyerekek száma:</p></label>
-				<input required="true" type="number" id="childrenNum" name="childrenNum" class="form-control" value="0"/>
+				<input required="true" type="number" id="childrenNum_modif" name="childrenNum" class="form-control" value="0"/>
 		    </div>
 		    <div class="form-group col-xs-6">
 		      	<label for="payType"><p style="color: black;">Fizetés típusa:</p></label>
-				<select id="payType" name="payType" class="form-control">
-						<option value="Kézpénz"><p>Készpénz</p></option>
+				<select id="payType_modif" name="payType" class="form-control">
+						<option value="Készpénz"><p>Készpénz</p></option>
 						<option value="Átutalás"><p>Átutalás</p></option>
 				</select>
 		    </div>
 		    <div class="form-group col-xs-6">
 		      	<label for="price"><p style="color: black;">Ár:</p></label>
-				<input required="true" type="number" id="price" name="price" class="form-control"/>
-		    </div>
-		    <div class="form-group col-xs-12">
-		      	<label for="comment"><p style="color: black;">Megjegyzés:</p></label>
-		      	<textarea rows="4"  id="comment" name="comment" class="form-control"></textarea>
+				<input required="true" type="number" id="price_modif" name="price" class="form-control"/>
 		    </div>
 		    <center>
 		    	<input type="submit" value="Mentés" class="btn btn-default"/>

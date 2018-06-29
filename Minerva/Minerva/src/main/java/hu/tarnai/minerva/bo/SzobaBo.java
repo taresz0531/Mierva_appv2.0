@@ -256,22 +256,19 @@ public class SzobaBo extends SqlConnector{
 		}
 		
 		try{
-			cstm = conn.prepareCall("{call CALENDAR_ADD(?,?,?,?,?,?,?,?,?,?,?)}");
-			cstm.setDate(1,  new java.sql.Date(c.getDateFrom().getTime()));
-			cstm.setDate(2,  new java.sql.Date(c.getDateTo().getTime()));
-			cstm.setInt(3, c.getRoomType());
-			cstm.setString(4, c.getName());
-			cstm.setString(5, c.getPhone());
-			cstm.setInt(6, c.getAdultsNum());
-			cstm.setInt(7, c.getChildrenNum());
-			cstm.setString(8, c.getPayType());
-			cstm.setInt(9, c.getPrice());
-			cstm.setString(10, c.getComment());
-			cstm.registerOutParameter(11, java.sql.Types.INTEGER);
+			cstm = conn.prepareCall("{call CALENDAR_MODIF(?,?,?,?,?,?,?,?)}");
+			cstm.setInt(1, c.getId());
+			cstm.setString(2, c.getName());
+			cstm.setString(3, c.getPhone());
+			cstm.setInt(4, c.getAdultsNum());
+			cstm.setInt(5, c.getChildrenNum());
+			cstm.setString(6, c.getPayType());
+			cstm.setInt(7, c.getPrice());
+			cstm.setDate(8, new java.sql.Date(c.getDateTo().getTime()));
 			
 			cstm.executeUpdate();
 			
-			return ErrorCodeConverter.getErrorCodeRoom(cstm.getInt(11));
+			return ErrorCodeEnum.SUCCESS;
 	
 		}catch (Exception e){
 			e.printStackTrace();

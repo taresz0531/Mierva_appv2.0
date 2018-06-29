@@ -157,6 +157,7 @@ function clickHeandler(item) {
  */
 function doubleClickHeandler(event,item){
 	var popupAdd = document.getElementById("popupAdd");
+	var popupModif = document.getElementById("popupModif");
 	
 	var callId = document.getElementById("id_" + item.id).value;
 
@@ -192,6 +193,48 @@ function doubleClickHeandler(event,item){
 		var popRoomType = document.getElementById('roomType')
 		popDateFrom.value = dateFrom;
 		popRoomType.value = roomType;
+	}else{
+		
+		x=event.clientX + 12;
+	    y=event.clientY + 12;
+	    
+		var modifId = document.getElementById('id_modif');
+		var modifDateTo = document.getElementById('dateTo_modif');
+		var modifName = document.getElementById('name_modif');
+		var modifPhone = document.getElementById('phone_modif');
+		var modifAdult = document.getElementById('adultsNum_modif');
+		var modifChildren = document.getElementById('childrenNum_modif');
+		var modifPayType = document.getElementById('payType_modif');
+		var modifPrice = document.getElementById('price_modif');
+		
+		modifId.value = document.getElementById('id_' + item.id).value;
+		modifDateTo.value = document.getElementById('dateTo_' + item.id).value;
+		modifName.value = document.getElementById('name_' + item.id).value;
+		modifPhone.value = document.getElementById('phone_' + item.id).value;
+		modifAdult.value = document.getElementById('adults_' + item.id).value;
+		modifChildren.value = document.getElementById('children_' + item.id).value;
+		modifPayType.value = document.getElementById('pay_' + item.id).value;
+		var pr = document.getElementById('price_' + item.id).value
+		modifPrice.value = pr.replace('\u00A0', '');
+		
+		
+		hiddenPopup();
+		popupModif.style.display = "block";
+		
+		 if(x > document.body.clientWidth/2){
+		    	x = x - popupModif.clientWidth - 15;
+		    }
+		    
+		    if((y + popupModif.clientHeight + 12) > document.body.clientHeight){
+		    	y = y - ((y + popupModif.clientHeight + 12) - document.body.clientHeight);
+		    }else if(y - popupModif.clientHeight - 12 < 100){
+		    	y = 100;
+		    }else{
+		    	y = y - popupModif.clientHeight - 12;
+		    }
+		    		
+		    popupModif.style.left=x+"px";
+		    popupModif.style.top=y+"px";
 	}
 	
 }

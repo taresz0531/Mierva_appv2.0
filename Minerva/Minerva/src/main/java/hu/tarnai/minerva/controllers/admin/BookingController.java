@@ -8,6 +8,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.aop.interceptor.PerformanceMonitorInterceptor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +20,7 @@ import hu.tarnai.minerva.bo.SzobaBo;
 import hu.tarnai.minerva.entity.Booking;
 import hu.tarnai.minerva.entity.Calendar;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
+import hu.tarnai.minerva.enums.PermissionCodeEnum;
 import hu.tarnai.minerva.objects.BookingWeek;
 import hu.tarnai.minerva.utility.DateUtility;
 import hu.tarnai.minerva.utility.Message;
@@ -76,6 +78,7 @@ public class BookingController {
 		
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 5, BOOKING_TABLE, model);
 		
 		Calendar calendar = new Calendar();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -86,7 +89,9 @@ public class BookingController {
 			e1.printStackTrace();
 		}
 		
-		if(!UserSession.userHasPermission(request, 5)) {
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}else if(permError == PermissionCodeEnum.DISABLE) {
 			bookingErrorSet(saveDate,model, request, "Nincs jogosultsága ehez a művelethez!");
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
@@ -143,15 +148,82 @@ public class BookingController {
 		return  UserSession.checkUser(request, BOOKING_TABLE, model);
 	}
 
-	
+	@RequestMapping(value = "/bookingModif", method = RequestMethod.POST)
+	public String bookingModifPost(@RequestParam(name = "dateTo") String dateTo,
+								  @RequestParam(name = "name") String name,
+								  @RequestParam(name = "phone") String phone,
+								  @RequestParam(name = "adultsNum") int adultsNum,
+								  @RequestParam(name = "childrenNum") int childrenNum,
+								  @RequestParam(name = "payType") String payType,
+								  @RequestParam(name = "price") int price,
+								  @RequestParam(name = "id_modif") int id_modif,
+								  Model model, HttpServletRequest request, RedirectAttributes redirect){
+		
+		PageName.saveAdmin(request, BOOKING_TABLE);
+		
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 6, BOOKING_TABLE, model);
+		
+		Calendar calendar = new Calendar();
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Date saveDate = new Date();
+		
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}else if(permError == PermissionCodeEnum.DISABLE) {
+			bookingErrorSet(saveDate,model, request, "Nincs jogosultsága ehez a művelethez!");
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+
+		try {
+			calendar.setDateTo(format.parse(dateTo));
+		} catch (ParseException e) {
+			e.printStackTrace();
+			bookingErrorSet(saveDate, model, request, null);
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+		
+		calendar.setId(id_modif);
+		calendar.setName(name);
+		calendar.setPhone(phone);
+		calendar.setAdultsNum(adultsNum);
+		calendar.setChildrenNum(childrenNum);
+		calendar.setPayType(payType);
+		calendar.setPrice(price);
+		
+		SzobaBo bo = new SzobaBo();
+
+		
+		ErrorCodeEnum error = bo.calendarModif(calendar);
+		
+		if(error == ErrorCodeEnum.SUCCESS) {
+			Message.success(request);
+		}else {
+			Message.error(request);
+		}
+		
+		BookingWeek week = new BookingWeek(saveDate);
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("bookingRooms", week.getBooks());
+		model.addAttribute("roomTypes", week.getRooms());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("cells", week.getCells());
+		
+		return  UserSession.checkUser(request, BOOKING_TABLE, model);
+	}
 	
 	@RequestMapping(value = "/bookingPrev", method = RequestMethod.POST)
 	public String bookingPrevPost(@RequestParam(name = "date") String date, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 1, BOOKING_TABLE, model);
+		
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+		
 		try {
-			if(DateUtility.isOlderThanCurrently(format.parse(date), 30) && !UserSession.userHasPermission(request, 1)) {
+			if(DateUtility.isOlderThanCurrently(format.parse(date), 30) && permError == PermissionCodeEnum.DISABLE) {
 				bookingErrorSet(date, true, model, request, "Nincs joga ehez a művelethez!");
 				return  UserSession.checkUser(request, BOOKING_TABLE, model);
 			}
@@ -211,7 +283,12 @@ public class BookingController {
 	@RequestMapping(value = "/bookingWeek", method = RequestMethod.POST)
 	public String bookingWeekPost(@RequestParam(name = "dateT") String dateT, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 1, BOOKING_TABLE, model);
+		
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
 
 		java.util.Calendar cld = java.util.Calendar.getInstance();
 		cld.set(java.util.Calendar.YEAR, Integer.parseInt(dateT.split("-W")[0]));
@@ -219,7 +296,7 @@ public class BookingController {
 		Date result = cld.getTime();
 
 		if(StringValidator.isNotEmpty(dateT)) {
-			if(DateUtility.isOlderThanCurrently(result, 30) && !UserSession.userHasPermission(request, 1)) {
+			if(DateUtility.isOlderThanCurrently(result, 30) && permError == PermissionCodeEnum.DISABLE) {
 				bookingErrorSet(null, model, request, "Nincs joga ehez a művelethez!");
 				return  UserSession.checkUser(request, BOOKING_TABLE, model);
 			}
@@ -250,10 +327,14 @@ public class BookingController {
 	public String bookingAddCommentPost(@RequestParam(name = "date") String date, @RequestParam(name = "addCommentId") int id, @RequestParam(name = "comment") String comment, @RequestParam(name = "addComment") String originalComment, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
 
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 4, BOOKING_TABLE, model);
+		
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		SimpleDateFormat formatH = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		
-		if(!UserSession.userHasPermission(request, 4)) {
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}else if(permError == PermissionCodeEnum.DISABLE) {
 			bookingErrorSet(date, false, model, request, "Nincs jogosultsága ehez a művelethez!");
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
@@ -289,7 +370,11 @@ public class BookingController {
 	public String bookingChangePost(@RequestParam(name = "date") String date, @RequestParam(name = "change_id") int id, @RequestParam(name = "change_roomType") int roomType, @RequestParam(name = "change_dateFrom") String dateFrom, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		
-		if(!UserSession.userHasPermission(request, 2)) {
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 2, BOOKING_TABLE, model);
+		
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}else if(permError == PermissionCodeEnum.DISABLE) {
 			bookingErrorSet(date, false, model, request, "Nincs jogosultsága ehez a művelethez!");
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
