@@ -30,7 +30,7 @@ import hu.tarnai.minerva.utility.UserSession;
 public class BookingController {
 	private static String BOOKING_TABLE = "bookingTable";
 	private static String BOOKING_BOOK = "bookingBook";
-	private static int ONE_DAY = 24*60*60*1000;
+	private static long ONE_DAY = 24*60*60*1000;
 
 	// TODO Foglasás
 	@RequestMapping(value = "/bookingTable", method = RequestMethod.GET)
@@ -76,10 +76,6 @@ public class BookingController {
 		
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		
-		if(!UserSession.userHasPermission(request, 5)) {
-			bookingErrorSet(model, request, "Nincs jogosultsága ehez a művelethez!");
-			return  UserSession.checkUser(request, BOOKING_TABLE, model);
-		}
 		
 		Calendar calendar = new Calendar();
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
@@ -90,6 +86,11 @@ public class BookingController {
 			e1.printStackTrace();
 		}
 		
+		if(!UserSession.userHasPermission(request, 5)) {
+			bookingErrorSet(saveDate,model, request, "Nincs jogosultsága ehez a művelethez!");
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+
 		try {
 			calendar.setDateFrom(format.parse(datefrom));
 			if(dateTo == null || dateTo.equals("")){
@@ -99,7 +100,7 @@ public class BookingController {
 			}
 		} catch (ParseException e) {
 			e.printStackTrace();
-			bookingErrorSet(model, request, null);
+			bookingErrorSet(saveDate, model, request, null);
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
 		
@@ -151,12 +152,12 @@ public class BookingController {
 		
 		try {
 			if(DateUtility.isOlderThanCurrently(format.parse(date), 30) && !UserSession.userHasPermission(request, 1)) {
-				bookingErrorSet(model, request, "Nincs joga ehez a művelethez!");
+				bookingErrorSet(date, true, model, request, "Nincs joga ehez a művelethez!");
 				return  UserSession.checkUser(request, BOOKING_TABLE, model);
 			}
 		} catch (ParseException e1) {
 			e1.printStackTrace();
-			bookingErrorSet(model, request, null);
+			bookingErrorSet(date, false, model, request, null);
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
 		
@@ -165,7 +166,7 @@ public class BookingController {
 			week = new BookingWeek(new Date(format.parse(date).getTime() - ONE_DAY));
 		} catch (ParseException e) {
 			e.printStackTrace();
-			bookingErrorSet(model, request, "Nincs joga ehez a művelethez!");
+			bookingErrorSet(null, model, request, null);
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
 		model.addAttribute("weekDays", week.getWeekDays());
@@ -212,22 +213,17 @@ public class BookingController {
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 
+		java.util.Calendar cld = java.util.Calendar.getInstance();
+		cld.set(java.util.Calendar.YEAR, Integer.parseInt(dateT.split("-W")[0]));
+		cld.set(java.util.Calendar.WEEK_OF_YEAR, Integer.parseInt(dateT.split("-W")[1]));
+		Date result = cld.getTime();
+
 		if(StringValidator.isNotEmpty(dateT)) {
-			try {
-				if(DateUtility.isOlderThanCurrently(format.parse(dateT), 30) && !UserSession.userHasPermission(request, 1)) {
-					bookingErrorSet(model, request, "Nincs joga ehez a művelethez!");
-					return  UserSession.checkUser(request, BOOKING_TABLE, model);
-				}
-			} catch (ParseException e1) {
-				e1.printStackTrace();
-				bookingErrorSet(model, request, null);
+			if(DateUtility.isOlderThanCurrently(result, 30) && !UserSession.userHasPermission(request, 1)) {
+				bookingErrorSet(null, model, request, "Nincs joga ehez a művelethez!");
 				return  UserSession.checkUser(request, BOOKING_TABLE, model);
 			}
 			
-			java.util.Calendar cld = java.util.Calendar.getInstance();
-			cld.set(java.util.Calendar.YEAR, Integer.parseInt(dateT.split("-W")[0]));
-			cld.set(java.util.Calendar.WEEK_OF_YEAR, Integer.parseInt(dateT.split("-W")[1]));
-			Date result = cld.getTime();
 			BookingWeek week = new BookingWeek(new Date(result.getTime()));
 			
 			model.addAttribute("weekDays", week.getWeekDays());
@@ -253,15 +249,16 @@ public class BookingController {
 	@RequestMapping(value = "/bookingAddComment", method = RequestMethod.POST)
 	public String bookingAddCommentPost(@RequestParam(name = "date") String date, @RequestParam(name = "addCommentId") int id, @RequestParam(name = "comment") String comment, @RequestParam(name = "addComment") String originalComment, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);
+
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		SimpleDateFormat formatH = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		
 		if(!UserSession.userHasPermission(request, 4)) {
-			bookingErrorSet(model, request, "Nincs jogosultsága ehez a művelethez!");
+			bookingErrorSet(date, false, model, request, "Nincs jogosultsága ehez a művelethez!");
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
 		
 		SzobaBo bo = new SzobaBo();
-		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
-		SimpleDateFormat formatH = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 		String commentWhitName = "<i style='font-size: 10px; color: black;'>>> " + formatH.format(new Date()) + ", " + UserSession.getCurrentUser(request).getNev() + ":</i><br/>" + comment + "<br/>";
 		String modifComment = originalComment + commentWhitName;
 		
@@ -293,7 +290,7 @@ public class BookingController {
 		PageName.saveAdmin(request, BOOKING_TABLE);
 		
 		if(!UserSession.userHasPermission(request, 2)) {
-			bookingErrorSet(model, request, "Nincs jogosultsága ehez a művelethez!");
+			bookingErrorSet(date, false, model, request, "Nincs jogosultsága ehez a művelethez!");
 			return  UserSession.checkUser(request, BOOKING_TABLE, model);
 		}
 		
@@ -340,6 +337,8 @@ public class BookingController {
 		
 		return  UserSession.checkUser(request, BOOKING_TABLE, model);
 	}
+	
+	
 	
 	// TODO booking-os szobák
 	@RequestMapping(value = "/bookingBook", method = RequestMethod.GET)
@@ -567,13 +566,39 @@ public class BookingController {
 		return  UserSession.checkUser(request, BOOKING_BOOK, model);
 	}
 	
-	private void bookingErrorSet(Model model, HttpServletRequest request, String msg) {
+	private void bookingErrorSet(Date date, Model model, HttpServletRequest request, String msg) {
 		String message = "Ismeretlen Hiba!";
 		if(StringValidator.isNotEmpty(msg)) {
 			message = msg;
 		}
 		Message.error(request, message);
 		BookingWeek week = new BookingWeek(new Date());
+		if(date != null)
+			 week = new BookingWeek(date);
+		
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("bookingRooms", week.getBooks());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("roomTypes", week.getRooms());
+		model.addAttribute("cells", week.getCells());
+	}
+	
+	private void bookingErrorSet(String date, boolean isPlus7Day, Model model, HttpServletRequest request, String msg) {
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		String message = "Ismeretlen Hiba!";
+		if(StringValidator.isNotEmpty(msg)) {
+			message = msg;
+		}
+		Message.error(request, message);
+		BookingWeek week;
+		try {
+			week = new BookingWeek(format.parse(date));
+			if(isPlus7Day)
+				week = new BookingWeek(new Date(format.parse(date).getTime() + (ONE_DAY * 7)));
+		} catch (ParseException e) {
+			week = new BookingWeek(new Date());
+			e.printStackTrace();
+		}
 		model.addAttribute("weekDays", week.getWeekDays());
 		model.addAttribute("bookingRooms", week.getBooks());
 		model.addAttribute("monday", week.getWeekDays().get(0).date);

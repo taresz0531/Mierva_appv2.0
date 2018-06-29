@@ -14,6 +14,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import hu.tarnai.minerva.bo.UserBo;
 import hu.tarnai.minerva.entity.Users;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
+import hu.tarnai.minerva.objects.PermissionObj;
 import hu.tarnai.minerva.objects.UserMenusObject;
 import hu.tarnai.minerva.utility.EmailSend;
 import hu.tarnai.minerva.utility.Message;
@@ -35,6 +36,7 @@ public class UserController {
 		PageName.saveAdmin(request, FELHASZNALO_UJ_URL);
 		
 		model.addAttribute("newUserMenus", UserMenusObject.getAll(request));
+		model.addAttribute("permission", PermissionObj.getAll());
 		return UserSession.checkUser(request, FELHASZNALO_UJ_URL, model);
 	}
 	
@@ -43,17 +45,23 @@ public class UserController {
 	public String userUjPost(@RequestParam(name = "nev") String nev,
 							 @RequestParam(name = "email") String email,
 							 @RequestParam(name = "menus") List<String> menus,
+							 @RequestParam(name = "perms") List<String> perms,
 							 Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, FELHASZNALO_UJ_URL);
 		
 		UserBo bo = new UserBo();
 		String menusConCat = "";
+		String permsConCat = "";
 		
 		for(int i=0;i<menus.size();i++){
 			menusConCat = menusConCat + menus.get(i).toString() + (((menus.size()-1)>i)?",":"");
 		}
 		
-		int res= bo.add(nev, menusConCat, email);
+		for(int i=0;i<perms.size();i++){
+			permsConCat = permsConCat + perms.get(i).toString() + (((perms.size()-1)>i)?",":"");
+		}
+		
+		int res= bo.add(nev, menusConCat, permsConCat, email);
 		
 		if(res >-1 ){
 			Message.success(request);
@@ -72,6 +80,7 @@ public class UserController {
 		}
 		
 		model.addAttribute("newUserMenus", UserMenusObject.getAll(request));
+		model.addAttribute("permission", PermissionObj.getAll());
 		return UserSession.checkUser(request, FELHASZNALO_UJ_URL, model);
 	}
 	
@@ -128,22 +137,28 @@ public class UserController {
 		
 		model.addAttribute("users", bo.getActive(UserSession.getUserId(request)));
 		model.addAttribute("newUserMenus", UserMenusObject.getAll(request));
+		model.addAttribute("permission", PermissionObj.getAll());
 		return UserSession.checkUser(request, FELHASZNALO_MENU_MODIF_URL, model);
 	}
 	
 	//---------------Felhasználó menü módosít----------------------
 	@RequestMapping(value = "/userMenuModif", method = RequestMethod.POST)
-	public String userMenuModifPost(@RequestParam(name = "id") int id, @RequestParam(name = "menus") List<String> menus,Model model, HttpServletRequest request, RedirectAttributes redirect){
+	public String userMenuModifPost(@RequestParam(name = "id") int id, @RequestParam(name = "menus") List<String> menus, @RequestParam(name = "perms") List<String> perms,Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, FELHASZNALO_MENU_MODIF_URL);
 		UserBo bo = new UserBo();
 		
 		String menusConCat = "";
+		String permsConCat = "";
 		
 		for(int i=0;i<menus.size();i++){
 			menusConCat = menusConCat + menus.get(i).toString() + (((menus.size()-1)>i)?",":"");
 		}
 		
-		ErrorCodeEnum error = bo.menuModif(id, menusConCat);
+		for(int i=0;i<perms.size();i++){
+			permsConCat = permsConCat + perms.get(i).toString() + (((perms.size()-1)>i)?",":"");
+		}
+		
+		ErrorCodeEnum error = bo.menuModif(id, menusConCat, permsConCat);
 		if(error == ErrorCodeEnum.SUCCESS){
 			Message.success(request);
 		}else if(error == ErrorCodeEnum.ERROR){
@@ -154,6 +169,7 @@ public class UserController {
 		
 		model.addAttribute("users", bo.getActive(UserSession.getUserId(request)));
 		model.addAttribute("newUserMenus", UserMenusObject.getAll(request));
+		model.addAttribute("permission", PermissionObj.getAll());
 		return UserSession.checkUser(request, FELHASZNALO_MENU_MODIF_URL, model);
 	}
 	

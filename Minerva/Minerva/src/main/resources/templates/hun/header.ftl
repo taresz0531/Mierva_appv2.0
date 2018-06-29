@@ -72,6 +72,7 @@
 		        <span class="icon-bar"></span>
 		        <span class="icon-bar"></span>
 		      </button>
+		      <a href="/Minerva" class="navbar-brand"><img alt="logo" src="icon/logo.png" height="60px" style="margin-top: -18px;"></a>
 		      <a href="/Minerva" class="navbar-brand">Minerva Panzió</a>
 		    </div>
 		    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
@@ -91,6 +92,7 @@
 			        <ul class="dropdown-menu">
 			          <li><a href="szolgaltatas">Szolgáltatásaink</a></li>
 			          <li><a href="arak">Árak</a></li>
+			          <li><a href="info">Város információ</a></li>
 			          <li><a href="gyik">Gyakori kérdések</a></li>
 			        </ul>
 			    </li>
@@ -122,8 +124,11 @@
 		  </div>
 		</header>
 		<div style="width: 100%; margin-top: 25px;">
-		    <img class="mySlides w3-animate-top" src="image/header/IMG_20150614_144232.jpg" width="100%" style="max-width: 1920px; margin-top: 50px;">
-		    <img class="mySlides w3-animate-top" src="image/header/fejlec.jpg" width="100%" style="max-width: 1920px; margin-top: 50px;">
+			<img src="image/header/fejlec_front_static.png" width="100%" style="max-width: 1920px; top: 25px; border-bottom: 2px solid black; border-radius: 10px;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_eloadoterem.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_etterem.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_parkolo.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_szobak.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
 		</div>
 		<script>
 			var myIndex = 0;
@@ -138,7 +143,7 @@
 			    myIndex++;
 			    if (myIndex > x.length) {myIndex = 1}    
 			    x[myIndex-1].style.display = "block";  
-			    setTimeout(carousel, 5000);    
+			    setTimeout(carousel, 10000);    
 			}	
 		</script>
 		<div class="main-div container">

@@ -73,6 +73,7 @@ public class UserBo extends SqlConnector{
 				u.setHkor(rs.getString("hkor"));
 				u.setMenu(rs.getString("menu"));
 				u.setStat(rs.getString("stat"));
+				u.setPermission(rs.getString("permission"));
 			}
 			return u;
 		}catch (Exception e){
@@ -215,23 +216,55 @@ public class UserBo extends SqlConnector{
 		}
 	}
 	
+	//-----------visszaad egy menu obj-ot code alapjan
+	public Menu getMenuByCode(int code){
+		if(connectDB() == ErrorCodeEnum.ERROR){
+			return null;
+		}
+		
+		try{
+			cstm = conn.prepareCall("{call MENU_GET_BY_CODE(?)}");
+			cstm.setInt(1, code);
+			rs = cstm.executeQuery();
+
+			if(rs.next()){
+				Menu m = new Menu();
+				m.setNev(rs.getString("nev"));
+				m.setUrl(rs.getString("url"));
+				m.setCode(rs.getString("code"));
+				m.setMain(rs.getString("main"));
+				return m;
+			}
+			return null;
+		}catch (Exception e){
+			e.printStackTrace();
+			System.out.println("Error: " + e.getMessage());
+			return null;
+		} finally {
+			try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
+			try { if (cstm != null) cstm.close(); } catch (SQLException e) { e.printStackTrace(); }
+			try { if (conn != null) conn.close(); } catch (SQLException e) { e.printStackTrace(); }
+		}
+	}
+	
 	//-----------új felhasználó------------------------------
-	public int add(String nev,String menu, String email){
+	public int add(String nev,String menu, String perm, String email){
 		if(connectDB() == ErrorCodeEnum.ERROR){
 			return -3;
 		}
 		
 		try{
-			cstm = conn.prepareCall("{call USERS_ADD_NEW(?,?,?,?)}");
+			cstm = conn.prepareCall("{call USERS_ADD_NEW(?,?,?,?,?)}");
 			cstm.setString(1, nev);
 			cstm.setString(2, menu);
 			cstm.setString(3, email);
-			cstm.registerOutParameter(4, java.sql.Types.INTEGER);
+			cstm.setString(4, perm);
+			cstm.registerOutParameter(5, java.sql.Types.INTEGER);
 			
 			cstm.executeUpdate();
 	
 			try {
-				int id = cstm.getInt(4);
+				int id = cstm.getInt(5);
 				return id;
 			} catch (SQLException e1) {
 				System.out.println(e1.getMessage());
@@ -334,6 +367,7 @@ public class UserBo extends SqlConnector{
 				u.setJelszo(rs.getString("jelszo"));
 				u.setStat(rs.getString("stat"));
 				u.setMenu(rs.getString("menu"));
+				u.setPermission(rs.getString("permission"));
 				users.add(u);
 			}
 			return users;
@@ -385,15 +419,16 @@ public class UserBo extends SqlConnector{
 	}
 	
 	//-----------felhasználó funkció módosít------------------------------
-	public ErrorCodeEnum menuModif(int id, String menus){
+	public ErrorCodeEnum menuModif(int id, String menus, String perms){
 		if(connectDB() == ErrorCodeEnum.ERROR){
 			return ErrorCodeEnum.DBERROR;
 		}
 		
 		try{
-			cstm = conn.prepareCall("{call USERS_MODIF_MENU(?,?)}");
+			cstm = conn.prepareCall("{call USERS_MODIF_MENU(?,?,?)}");
 			cstm.setInt(1, id);
 			cstm.setString(2, menus);
+			cstm.setString(3, perms);
 			
 			cstm.executeUpdate();
 	

@@ -241,6 +241,52 @@
 		</form>
 	</div>
 	
+	<div id="popupModif" class="popupWindows">
+		<form role="form" action="/bookingModif" method="post" name="popup-form-modif">
+			<input type="hidden" id="dateFrom" name="dateFrom" value=""/>
+			<input type="hidden" id="roomType" name="roomType" value=""/>
+			<div class="form-group col-xs-12">
+		      	<label for="dateTo"><p style="color: black;">Távozás dátuma:</p></label>
+				<input  type="date" id="dateTo" name="dateTo" class="form-control"/>
+		    </div>
+		    <div class="form-group col-xs-12">
+		      	<label for="name"><p style="color: black;">Név:</p></label>
+				<input required="true" type="text" id="name" name="name" class="form-control"/>
+		    </div>
+		    <div class="form-group col-xs-12">
+		      	<label for="phone"><p style="color: black;">Telefonszám:</p></label>
+				<input required="true" type="text" id="phone" name="phone" class="form-control"/>
+		    </div>
+		    <div class="form-group col-xs-6">
+		      	<label for="adultsNum"><p style="color: black;">Felnőttek száma:</p></label>
+				<input required="true" type="number" id="adultsNum" name="adultsNum" class="form-control" value="1"/>
+		    </div>
+		    <div class="form-group col-xs-6">
+		      	<label for="childrenNum"><p style="color: black;">Gyerekek száma:</p></label>
+				<input required="true" type="number" id="childrenNum" name="childrenNum" class="form-control" value="0"/>
+		    </div>
+		    <div class="form-group col-xs-6">
+		      	<label for="payType"><p style="color: black;">Fizetés típusa:</p></label>
+				<select id="payType" name="payType" class="form-control">
+						<option value="Kézpénz"><p>Készpénz</p></option>
+						<option value="Átutalás"><p>Átutalás</p></option>
+				</select>
+		    </div>
+		    <div class="form-group col-xs-6">
+		      	<label for="price"><p style="color: black;">Ár:</p></label>
+				<input required="true" type="number" id="price" name="price" class="form-control"/>
+		    </div>
+		    <div class="form-group col-xs-12">
+		      	<label for="comment"><p style="color: black;">Megjegyzés:</p></label>
+		      	<textarea rows="4"  id="comment" name="comment" class="form-control"></textarea>
+		    </div>
+		    <center>
+		    	<input type="submit" value="Mentés" class="btn btn-default"/>
+		    	<input onclick="closepopupadd('popupModif')" type="button" class="btn btn-default" value="Mégsem"/>
+		    </center>
+		</form>
+	</div>
+	
 	<div id="popupAddComment" class="popupWindows">
 		<form role="form" action="/bookingAddComment" method="post" name="popup-form-add-comment">
 			<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />

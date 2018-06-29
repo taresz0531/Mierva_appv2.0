@@ -36,8 +36,29 @@
 						</div>
 				</#list>
 		</#list>
-		<center><input style="margin-top: 20px;" type="submit" class="btn" value="Mentés"/></center>
 		</div>
+	</div>
+	<div class="row" style="margin-top: 20px;">
+		<div class="col-xs-12">
+		<label for="menus"><h2>Felhasználó jogok:</h2></label>
+			<#list permission as perm>
+				<h3 style="border-bottom: 1px solid white;">${perm.mainMenu}</h3>
+					<#list perm.permMenu as pm>
+						<h4 style="margin-left: 20px;">${pm.subMenuName}</h4>
+							<#list pm.perm as p>
+								<div class="row" style="margin-left: 40px;">
+									<div class="col-xs-8">
+										<label for="menus" style="font-size: 12px;">${p.description}</label>
+									</div>
+					  				<div class="col-xs-2">
+					  					<input type="checkbox" id="perms" name="perms" value="${p.id}" class="form-control" />      
+					  				</div> 
+								</div>
+							</#list>
+					</#list>
+			</#list>
+		</div>
+		<center><input style="margin-top: 20px;" type="submit" class="btn" value="Mentés"/></center>
 	</div>
 </form>
 </div>
