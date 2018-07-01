@@ -96,7 +96,7 @@
 			        <ul class="dropdown-menu">
 			          <li><a href="szolgaltatas">Szolgáltatásaink</a></li>
 			          <li><a href="arak">Árak</a></li>
-			          <li><a href="info">Város információ</a></li>
+			          <li><a href="varosinfo">Város információ</a></li>
 			          <li><a href="gyik">Gyakori kérdések</a></li>
 			        </ul>
 			    </li>

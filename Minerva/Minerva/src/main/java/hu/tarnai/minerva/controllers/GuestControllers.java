@@ -30,6 +30,8 @@ import hu.tarnai.minerva.utility.PageName;
 @Controller
 public class GuestControllers {
 	
+	static String VAROSINFO_PAGE_NAME = "varosinfo"
+			+ "";
 	static String MAIN_PAGE_NAME = "foldal";
 	static String SZOLGALTATAS_PAGE_NAME = "szolgaltatas";
 	static String ARAK_PAGE_NAME = "arak";
@@ -77,6 +79,14 @@ public class GuestControllers {
 	@RequestMapping(value = "/arak", method = RequestMethod.GET)
 	public String arak(Model model, HttpServletRequest request){
 		PageName.save(request, ARAK_PAGE_NAME);
+		
+		return Nyelv.getRedirectURL(request);
+	}
+	
+	//---------------várósinfó--------------------//
+	@RequestMapping(value = "/varosinfo", method = RequestMethod.GET)
+	public String varosinfo(Model model, HttpServletRequest request){
+		PageName.save(request, VAROSINFO_PAGE_NAME);
 		
 		return Nyelv.getRedirectURL(request);
 	}
