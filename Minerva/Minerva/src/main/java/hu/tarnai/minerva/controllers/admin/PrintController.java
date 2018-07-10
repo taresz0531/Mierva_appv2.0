@@ -87,9 +87,25 @@ public class PrintController {
 		String leves = "";
 		String foetel = "";
 		String koret = "";
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy.MM.dd");
+		GetDateByDayNameClass dateClass = new GetDateByDayNameClass();
+		
+		
 		for(Napimenu n:napi) {
 			if(n.getId()>0) {
-				nap = StringValidator.isNotEmpty(n.getNap())?n.getNap().split("/")[0]:"";
+				if(StringValidator.isNotEmpty(n.getNap())) {
+					String day = dateClass.getDateByDay(n.getNap().split("/")[0].toLowerCase());
+					try {
+						Date d = new Date(format.parse(day.replaceAll("-", ".")).getTime() + (7*24*60*60*1000));
+						nap = format.format(d) + ". " + n.getNap().split("/")[0];
+					} catch (ParseException e) {
+						e.printStackTrace();
+						nap = StringValidator.isNotEmpty(n.getNap())?n.getNap().split("/")[0]:"";
+					}
+				}else {
+					nap = StringValidator.isNotEmpty(n.getNap())?n.getNap().split("/")[0]:"";
+				}
 				leves = StringValidator.isNotEmpty(n.getLeves())?n.getLeves().split("/")[0]:"";
 				foetel = StringValidator.isNotEmpty(n.getFoetel())?n.getFoetel().split("/")[0]:"";
 				koret = StringValidator.isNotEmpty(n.getKoret())?n.getKoret().split("/")[0]:"";

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hetiMenuData" pageWidth="396" pageHeight="595" orientation="Landscape" columnWidth="396" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9fa7642c-3523-4b25-a8e4-61fb52f78cec">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hetiMenuData" pageWidth="802" pageHeight="48" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9fa7642c-3523-4b25-a8e4-61fb52f78cec">
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
@@ -50,7 +50,7 @@
 	<detail>
 		<band height="48" splitType="Stretch">
 			<textField isStretchWithOverflow="true" pattern="" isBlankWhenNull="true">
-				<reportElement style="bacgroundChangeStyle" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="191" height="48" backcolor="#FFFFFF" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
+				<reportElement style="bacgroundChangeStyle" positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="401" height="48" backcolor="#FFFFFF" uuid="cdf2e40d-8035-4523-80b9-4e9e75d07454"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<leftPen lineWidth="1.0"/>
@@ -64,10 +64,11 @@
 				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="191" y="0" width="200" height="16" uuid="4dbee266-b4a3-4cba-bb27-ac11f4239c99"/>
+				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="401" y="0" width="401" height="16" uuid="4dbee266-b4a3-4cba-bb27-ac11f4239c99"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="12" pdfEncoding="Cp1250"/>
@@ -76,10 +77,11 @@
 				<textFieldExpression><![CDATA[$F{leves}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="191" y="16" width="200" height="16" uuid="7cb53083-39f0-4175-a316-81b5257a7078"/>
+				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="401" y="16" width="401" height="16" uuid="7cb53083-39f0-4175-a316-81b5257a7078"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="12" pdfEncoding="Cp1250"/>
@@ -88,10 +90,11 @@
 				<textFieldExpression><![CDATA[$F{foetel}]]></textFieldExpression>
 			</textField>
 			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="191" y="32" width="200" height="16" uuid="b97f51f2-7d81-4ec2-86d1-edec36fb7621"/>
+				<reportElement style="bacgroundChangeStyle" stretchType="RelativeToTallestObject" x="401" y="32" width="401" height="16" uuid="b97f51f2-7d81-4ec2-86d1-edec36fb7621"/>
 				<box>
 					<topPen lineWidth="1.0"/>
 					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
 				</box>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Calibri" size="12" pdfEncoding="Cp1250"/>

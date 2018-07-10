@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hetiMenu" columnCount="2" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="391" columnSpacing="20" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="45bcea9e-8c8d-4d6c-b39f-7e8f70ad15a9">
 	<property name="ireport.zoom" value="1.2100000000000095"/>
-	<property name="ireport.x" value="0"/>
-	<property name="ireport.y" value="132"/>
+	<property name="ireport.x" value="56"/>
+	<property name="ireport.y" value="0"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
@@ -128,7 +128,6 @@
 	</parameter>
 	<parameter name="date" class="java.lang.String"/>
 	<parameter name="sub_obj" class="net.sf.jasperreports.engine.JRDataSource"/>
-	<parameter name="sub_obj_copy" class="net.sf.jasperreports.engine.JRDataSource"/>
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
@@ -142,7 +141,7 @@
 		<band splitType="Stretch"/>
 	</background>
 	<detail>
-		<band height="555" splitType="Stretch">
+		<band height="320" splitType="Stretch">
 			<elementGroup>
 				<staticText>
 					<reportElement x="0" y="0" width="391" height="30" uuid="187a4d9f-6f45-4eda-a613-3d604d11acce"/>
@@ -194,7 +193,7 @@
 					<text><![CDATA[Az étterem előtt fizetős gépkocsi parkolók találhatók.]]></text>
 				</staticText>
 				<staticText>
-					<reportElement x="0" y="145" width="391" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
+					<reportElement x="0" y="145" width="390" height="16" uuid="cda318bd-41a7-433e-9264-03b3daea5285"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
 					</textElement>
@@ -229,18 +228,15 @@
 					<text><![CDATA[A változtatás jogát fenntartjuk!]]></text>
 				</staticText>
 				<subreport isUsingCache="true" runToBottom="false">
-					<reportElement stretchType="RelativeToBandHeight" x="0" y="219" width="200" height="100" uuid="58fda0ea-bd56-4e77-b429-2fa28eb4a417"/>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="219" width="802" height="100" uuid="58fda0ea-bd56-4e77-b429-2fa28eb4a417"/>
 					<dataSourceExpression><![CDATA[$P{sub_obj}]]></dataSourceExpression>
-					<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
+					<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData2.jasper")]]></subreportExpression>
 				</subreport>
 				<line>
-					<reportElement x="0" y="0" width="1" height="552" uuid="ab18579d-b560-4b34-9981-79427fc56e8a"/>
+					<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="1" height="319" uuid="ab18579d-b560-4b34-9981-79427fc56e8a"/>
 				</line>
 				<line>
-					<reportElement x="390" y="0" width="1" height="552" uuid="b8ab75e7-e700-4952-8674-9d0c80a214e6"/>
-				</line>
-				<line>
-					<reportElement x="0" y="552" width="391" height="1" uuid="17d2a95a-0c98-4305-a7bc-340a033b2753"/>
+					<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="1" height="319" uuid="b8ab75e7-e700-4952-8674-9d0c80a214e6"/>
 				</line>
 				<line>
 					<reportElement x="1" y="0" width="390" height="1" uuid="29cef5f0-184a-461e-8517-4e4f9a5ba150"/>
@@ -331,19 +327,11 @@
 					</textElement>
 					<text><![CDATA[A változtatás jogát fenntartjuk!]]></text>
 				</staticText>
-				<subreport isUsingCache="true" runToBottom="false">
-					<reportElement stretchType="RelativeToBandHeight" x="411" y="219" width="200" height="100" uuid="f7f176aa-8d33-4724-9245-08b618d9f18c"/>
-					<dataSourceExpression><![CDATA[$P{sub_obj}]]></dataSourceExpression>
-					<subreportExpression><![CDATA[getClass().getResourceAsStream($P{SUBREPORT_DIR} + "hetiMenuData.jasper")]]></subreportExpression>
-				</subreport>
 				<line>
-					<reportElement x="411" y="0" width="1" height="552" uuid="b322b0eb-da61-45e2-b5e3-b78ca63c943f"/>
+					<reportElement stretchType="RelativeToBandHeight" x="411" y="0" width="1" height="319" uuid="b322b0eb-da61-45e2-b5e3-b78ca63c943f"/>
 				</line>
 				<line>
-					<reportElement x="801" y="0" width="1" height="552" uuid="2062a1e4-7a61-4bad-b3fa-256ceb214d87"/>
-				</line>
-				<line>
-					<reportElement x="411" y="552" width="391" height="1" uuid="ec305870-cb99-47ab-be99-d933e419b4f4"/>
+					<reportElement stretchType="RelativeToBandHeight" x="801" y="0" width="1" height="319" uuid="2062a1e4-7a61-4bad-b3fa-256ceb214d87"/>
 				</line>
 				<line>
 					<reportElement x="412" y="0" width="390" height="1" uuid="1b119607-2197-4434-8374-e2ce03d677a7"/>
