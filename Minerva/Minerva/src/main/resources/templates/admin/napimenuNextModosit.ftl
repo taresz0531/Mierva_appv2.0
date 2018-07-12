@@ -99,7 +99,7 @@
 	<center>
 		<div class="btn-group" role="group" aria-label="...">
 			<input type="submit" class="btn btn-default" value="Mentés" onclick="javascript: form.action='napimenuNextModosit'; form.target=''"/>
-			<input type="submit" class="btn btn-default" value="Nyomtatás" onclick="javascript: form.action='printNapimenu'; form.target='_blank'"/>
+			<input type="submit" class="btn btn-default" value="Nyomtatás" onclick="javascript: form.action='printNapimenuNext'; form.target='_blank'"/>
 		</div>
 	</center>
 </div>

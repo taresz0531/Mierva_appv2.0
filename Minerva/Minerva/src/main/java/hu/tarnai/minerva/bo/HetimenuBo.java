@@ -247,6 +247,32 @@ public class HetimenuBo extends SqlConnector{
 		return menus;
 	}
 	
+	//--------------jövőheti menüket adja vissza (teljes hét!)
+	public static List<Napimenu> getActualWeekMenus() {
+		HetimenuBo hBo = new HetimenuBo();
+		List<String> days = DateToStringClass.getDaysName();
+		List<Napimenu> menus = new ArrayList<Napimenu>();
+		List<Napimenu> mm = hBo.getActual();
+		
+		for(String d:days){
+			boolean isCorrect = false;
+			Napimenu n = new Napimenu();
+			for(Napimenu nn:mm){
+				nn.setNap(HetimenuBo.getDayName(nn.getNap()));
+				if(nn.getNap().equals(d)){
+					menus.add(nn);
+					isCorrect = true;
+					break;
+				}
+			}
+			if(!isCorrect){
+				n.setNap(d);
+				menus.add(n);
+			}
+		}
+		return menus;
+	}
+	
 	public static String getDayName(String day){
 		if(day.equals("Hétfő2")){
 			return ("Hétfő");

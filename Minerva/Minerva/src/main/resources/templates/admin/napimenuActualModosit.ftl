@@ -96,7 +96,12 @@
 	</div>
 </#list>
 <div class="admin-div">
-	<center><input type="submit" class="btn" value="Mentés"/></center>
+	<center>
+		<div class="btn-group" role="group" aria-label="...">
+			<input type="submit" class="btn btn-default" value="Mentés" onclick="javascript: form.action='napimenuActualModosit'; form.target=''"/>
+			<input type="submit" class="btn btn-default" value="Nyomtatás" onclick="javascript: form.action='printNapimenuActual'; form.target='_blank'"/>
+		</div>
+	</center>
 </div>
 </form>
 <!-- ez a vége -->

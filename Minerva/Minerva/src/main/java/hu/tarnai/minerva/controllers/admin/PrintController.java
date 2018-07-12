@@ -27,8 +27,8 @@ import hu.tarnai.minerva.utility.StringValidator;
 @RestController
 public class PrintController {
 	
-	@RequestMapping(value = "/printNapimenu", method = RequestMethod.POST)
-	public void printNapimenuPost(HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
+	@RequestMapping(value = "/printNapimenuNext", method = RequestMethod.POST)
+	public void printNapimenuNextPost(HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
 		
 		List<Napimenu> menus = HetimenuBo.getNexWeekMenus();
 		List<NapimenuJasperObj> jaspObj = convertNapimenuToJasperOb(menus);
@@ -47,6 +47,42 @@ public class PrintController {
 		try {
 			calMonday = new Date(format.parse(dateMonday).getTime() + (7*24*60*60*1000));
 			calszunday = new Date(format.parse(dateMonday).getTime() + (13*24*60*60*1000));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		
+		dateMonday = format.format(calMonday);
+		dateSunday = format.format(calszunday);
+		
+		DayString monday = new DayString(dateMonday.split("-")[0], dateMonday.split("-")[1], dateMonday.split("-")[2]);
+		DayString szunday = new DayString(dateSunday.split("-")[0], dateSunday.split("-")[1], dateSunday.split("-")[2]);
+		
+		String dateFromTo = monday.getYear() + ". " + dateClass.getMonthName(monday.getMonth()) + " " + monday.getDay() + dateClass.getPosFixDate(Integer.parseInt(monday.getDay())) + "-" + szunday.getYear() + ". " + dateClass.getMonthName(szunday.getMonth()) + szunday.getDay() + "-ig";
+		
+		jasperUtil.printNapimenu(dateFromTo, jaspObj, response);
+		
+	}
+	
+	@RequestMapping(value = "/printNapimenuActual", method = RequestMethod.POST)
+	public void printNapimenuActualPost(HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
+		
+		List<Napimenu> menus = HetimenuBo.getActualWeekMenus();
+		List<NapimenuJasperObj> jaspObj = convertNapimenuToJasperOb(menus);
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		GetDateByDayNameClass dateClass = new GetDateByDayNameClass();
+		
+		JasperUtil jasperUtil = new JasperUtil("hetiMenu2.jasper");
+		
+		String dateMonday = dateClass.getDateByDay("hétfő");
+		String dateSunday = dateClass.getDateByDay("vasárnap");
+		
+		Date calMonday = new Date();
+		Date calszunday = new Date();
+		
+		try {
+			calMonday = new Date(format.parse(dateMonday).getTime());
+			calszunday = new Date(format.parse(dateMonday).getTime()+ (6*24*60*60*1000));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

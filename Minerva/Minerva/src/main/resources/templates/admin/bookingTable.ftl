@@ -181,7 +181,7 @@
 				<input id="moveCancelButton" <#if Session.moveCalendar?exists && Session.moveCalendar == "1">style="display: block;"<#else>style="display: none;"</#if> class="btn" type="button" onclick="moveCalendarCancel()" value="Mégsem">
 			</div>
 			<div>
-				<form action="printBookingTable" method="post">
+				<form action="printBookingTable" method="post" target="_blank">
 					<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
 					<button class="btn" type="submit">Nyomtatás</button>
 				</form>

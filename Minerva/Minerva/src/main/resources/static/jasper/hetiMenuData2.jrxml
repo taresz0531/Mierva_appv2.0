@@ -44,9 +44,6 @@
 	<field name="foetel" class="java.lang.String"/>
 	<field name="koret" class="java.lang.String"/>
 	<field name="index" class="java.lang.String"/>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
 	<detail>
 		<band height="48" splitType="Stretch">
 			<elementGroup>
@@ -56,7 +53,7 @@
 						<topPen lineWidth="1.0"/>
 						<leftPen lineWidth="0.0"/>
 						<bottomPen lineWidth="1.0"/>
-						<rightPen lineWidth="1.0"/>
+						<rightPen lineWidth="1.5"/>
 					</box>
 					<textElement verticalAlignment="Top">
 						<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
