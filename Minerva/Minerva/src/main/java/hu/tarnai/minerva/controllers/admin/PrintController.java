@@ -9,6 +9,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,11 +19,14 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import hu.tarnai.minerva.bo.HetimenuBo;
 import hu.tarnai.minerva.entity.Napimenu;
 import hu.tarnai.minerva.objects.BookinTableJasperObj;
+import hu.tarnai.minerva.objects.BookingWeek;
 import hu.tarnai.minerva.objects.DayString;
 import hu.tarnai.minerva.objects.NapimenuJasperObj;
 import hu.tarnai.minerva.utility.GetDateByDayNameClass;
 import hu.tarnai.minerva.utility.JasperUtil;
+import hu.tarnai.minerva.utility.PageName;
 import hu.tarnai.minerva.utility.StringValidator;
+import hu.tarnai.minerva.utility.UserSession;
 
 @RestController
 public class PrintController {
@@ -103,10 +107,25 @@ public class PrintController {
 	public void printBookingTablePost(@RequestParam("date") String date , HttpServletRequest request, HttpServletResponse response,RedirectAttributes redirect){
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
 		BookinTableJasperObj bookingTable;
+		Date result;
+		
+		if(date.length()!=10) {
+			java.util.Calendar cld = java.util.Calendar.getInstance();
+			cld.set(java.util.Calendar.YEAR, Integer.parseInt(date.split("-W")[0]));
+			cld.set(java.util.Calendar.WEEK_OF_YEAR, Integer.parseInt(date.split("-W")[1]));
+			result = cld.getTime();
+		}else {
+			try {
+				result = format.parse(date);
+			} catch (ParseException e) {
+				result = new Date();
+				e.printStackTrace();
+			}
+		}
 		
 		try {
-			bookingTable = new BookinTableJasperObj(new Date(format.parse(date).getTime()));
-		} catch (ParseException e) {
+			bookingTable = new BookinTableJasperObj(result);
+		} catch (Exception e) {
 			bookingTable = new BookinTableJasperObj(new Date());
 			e.printStackTrace();
 		}

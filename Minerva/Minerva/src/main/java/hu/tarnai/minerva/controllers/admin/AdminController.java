@@ -23,6 +23,7 @@ public class AdminController {
 	
 	static String ADMIN_PAGE_NAME = "admin";
 	static String LOGIN_PAGE_NAME = "login";
+	static String PRINTING_PAGE_NAME = "printing";
 	
 		//---------------admin--------------------//
 		@RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -80,9 +81,9 @@ public class AdminController {
 		public String loginPost(@RequestParam(value = "fnev") String fnev,
 								@RequestParam(value = "jelszo") String jelszo,
 								Model model, HttpServletRequest request, RedirectAttributes redirect){
-			
-			PageName.save(request, LOGIN_PAGE_NAME);
-			PageName.deletAdmin(request);
+//			
+//			PageName.save(request, LOGIN_PAGE_NAME);
+//			PageName.deletAdmin(request);
 			Nyelv.setNyelv(request, NyelvEnum.HUN);
 			
 			UserBo bo = new UserBo();
@@ -90,6 +91,11 @@ public class AdminController {
 			
 			if(res  > -1){
 				Message.success(request, "Sikeres Bejelentkezés");
+				
+				if(PageName.getAdmin(request)!=null){
+					return "redirect:" + PageName.getAdmin(request);
+				}
+				
 				redirect.addAttribute("pageName", "0");
 				return "redirect:/admin";
 			}else if(res == -1){
@@ -110,9 +116,17 @@ public class AdminController {
 			Nyelv.setNyelv(request, NyelvEnum.HUN);
 			
 			UserSession.setUserId(-1, request);
+			PageName.deletAdmin(request);
 			Message.success(request, "Sikeresen kijelentkezett!");
 			
 			return "admin/" + LOGIN_PAGE_NAME;
+		}
+		
+		@RequestMapping(value = "/printing", method = RequestMethod.GET)
+		public String bookingTableGet(Model model, HttpServletRequest request, RedirectAttributes redirect){
+			PageName.saveAdmin(request, PRINTING_PAGE_NAME);
+			
+			return  UserSession.checkUser(request, PRINTING_PAGE_NAME, model);
 		}
 
 }
