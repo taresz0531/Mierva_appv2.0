@@ -13,4 +13,24 @@ public class DateUtility {
 		
 		return false;
 	}
+	
+	public static String convertHungariDayToEnglish(String day){
+		if(day.toLowerCase().contains("hétfő")){
+			return "Monday";
+		}else if(day.toLowerCase().contains("kedd")){
+			return "Tuesday";
+		}else if(day.toLowerCase().contains("szerda")){
+			return "Wednesday";
+		}else if(day.toLowerCase().contains("csütörtök")){
+			return "Thursday";
+		}else if(day.toLowerCase().contains("péntek")){
+			return "Friday";
+		}else if(day.toLowerCase().contains("szombat")){
+			return "Saturday";
+		}else if(day.toLowerCase().contains("vasárnap")){
+			return "Sunday";
+		}else{
+			return day;
+		}
+	}
 }

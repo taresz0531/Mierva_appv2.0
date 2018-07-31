@@ -3,6 +3,7 @@ package hu.tarnai.minerva.controllers;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,8 +22,11 @@ import hu.tarnai.minerva.bo.GetImagesBo;
 import hu.tarnai.minerva.bo.HetimenuBo;
 import hu.tarnai.minerva.entity.Ajanlat;
 import hu.tarnai.minerva.entity.Galeria;
+import hu.tarnai.minerva.entity.Napimenu;
+import hu.tarnai.minerva.enums.NyelvEnum;
 import hu.tarnai.minerva.objects.EtlapObject;
 import hu.tarnai.minerva.objects.HetimenuObject;
+import hu.tarnai.minerva.utility.DateUtility;
 import hu.tarnai.minerva.utility.Message;
 import hu.tarnai.minerva.utility.Nyelv;
 import hu.tarnai.minerva.utility.PageName;
@@ -205,8 +209,44 @@ public class GuestControllers {
 		@RequestMapping(value = "/hetimenu", method = RequestMethod.GET)
 		public String hetiMenu(Model model, HttpServletRequest request){
 			PageName.save(request, HETI_MENU_PAGE_NAME);
+			List<HetimenuObject> heti = new ArrayList<HetimenuObject>();
+			for( HetimenuObject o:HetimenuObject.get()) {
+				if(Nyelv.getNyelv(request) == NyelvEnum.HUN) {
+					HetimenuObject ho = new HetimenuObject();
+					Napimenu nm = new Napimenu();
+					
+					String[] leves =  o.getNapimenu().getLeves().split("/");
+					String[] fo =  o.getNapimenu().getFoetel().split("/");
+					String[] koret =  o.getNapimenu().getKoret().split("/");
+					
+					nm.setLeves(leves!=null?leves[0]:null);
+					nm.setFoetel(fo!=null?fo[0]:null);
+					nm.setKoret(koret!=null?koret[0]:null);
+					ho.setNapimenu(nm);
+					ho.setDate(o.getDate());
+					ho.setDayName(o.getDayName());
+					
+					heti.add(ho);
+				}else {
+					HetimenuObject ho = new HetimenuObject();
+					Napimenu nm = new Napimenu();
+					
+					String[] leves =  o.getNapimenu().getLeves().split("/");
+					String[] fo =  o.getNapimenu().getFoetel().split("/");
+					String[] koret =  o.getNapimenu().getKoret().split("/");
+					
+					nm.setLeves(leves!=null&&leves.length>1?leves[1]:null);
+					nm.setFoetel(fo!=null&&fo.length>1?fo[1]:null);
+					nm.setKoret(koret!=null&&koret.length>1?koret[1]:null);
+					ho.setNapimenu(nm);
+					ho.setDate(o.getDate());
+					ho.setDayName(DateUtility.convertHungariDayToEnglish(o.getDayName()));
+					
+					heti.add(ho);
+				}
+			}
 			
-			model.addAttribute("hetiMenuObj", HetimenuObject.get());
+			model.addAttribute("hetiMenuObj", heti);
 			
 			return Nyelv.getRedirectURL(request);
 		}
