@@ -3,7 +3,7 @@
 
 <div class="main-div container">
 	<div class="guest-div">
-		<center><h1>Étlap</h1></center>	
+		<center><h1>${Session.etlap_cim}</h1></center>	
 	</div>
 	<#list etlapObject as etObj>
 		<div class="guest-div">
@@ -12,10 +12,10 @@
 			</div>
 			<table>
 				<tr class="row-div etel-header-row">
-					<th class="col-sm-5"><p>Étel neve</p></th>
-					<th class="col-sm-3"><p>Allergének</p></th>
-					<th class="col-sm-1"><p>Ár</p></th>
-					<th class="col-sm-3"><p>Kép</p></th>
+					<th class="col-sm-5"><p>${Session.etlap_etel}</p></th>
+					<th class="col-sm-3"><p>${Session.etlap_alergen}</p></th>
+					<th class="col-sm-1"><p>${Session.etlap_ar}</p></th>
+					<th class="col-sm-3"><p>${Session.etlap_kep}</p></th>
 				</tr>
 				<#list etObj.etelek as e>
 					<#if !e?is_last>
@@ -27,7 +27,7 @@
 						<td class="col-sm-3"><p>${e.leiras?keep_before("/")}</p></td>
 						<td class="col-sm-1"><p>${e.ar}.-</p></td>
 						<#if e.is_kep == 0>
-							<td class="col-sm-3"><p>Nincs kép</p></td>
+							<td class="col-sm-3"><p>${Session.etlap_nincs_kep}</p></td>
 						<#else>
 							<td class="col-sm-3"><img src="getImage?fileId=${e.id}&who=e" id="${e.id}" class="etlap-img" onclick="openImage(${e.id})"/></td>
 						</#if>

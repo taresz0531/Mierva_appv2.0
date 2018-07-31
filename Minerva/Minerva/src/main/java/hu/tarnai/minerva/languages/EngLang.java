@@ -32,8 +32,8 @@ public class EngLang {
 		eng.put("menu_kapcsolat", "Contact");
 		
 		eng.put("heti_cim", "Heti menü");
-		eng.put("heti_cim2", "Minerva Étterem");
-		eng.put("heti_cim3", "4024 Debrecen, Kossuth U. 59. Tel.: (52) 531-363");
+		eng.put("heti_cim2", "Minerva Resturant");
+		eng.put("heti_cim3", "4024 Debrecen, Kossuth street 59. Phone: (52) 531-363");
 		eng.put("heti_utalvany", "Erzsébet utalványt, SZÉP kártyát, étkezési jegyeket elfogadunk!");
 		eng.put("heti_parkolo", "Az étterem elõtt gépkocsi parkolók találhatók.");
 		eng.put("heti_menuar", "MENÜ ÁR bruttó 1.050,- Ft/nap");
@@ -41,10 +41,17 @@ public class EngLang {
 		eng.put("heti_csere", "Amennyiben a levest nem szereti, azt felár nélkül cseréljük csontlevesre.");
 		eng.put("heti_jog", "A változtatás jogát fenntartjuk!");
 		eng.put("heti_elojegyzes", "Elõjegyzést felveszünk!");
-		eng.put("heti_nap", "Nap");
-		eng.put("heti_leves", "Leves");
-		eng.put("heti_foetel", "Főétel");
-		eng.put("heti_koret", "Köret");
+		eng.put("heti_nap", "Day");
+		eng.put("heti_leves", "Soup");
+		eng.put("heti_foetel", "Main course");
+		eng.put("heti_koret", "Side dish");
+		
+		eng.put("etlap_cim", "Menu");
+		eng.put("etlap_etel", "Meal");
+		eng.put("etlap_alergen", "Allergens");
+		eng.put("etlap_ar", "Price");
+		eng.put("etlap_kep", "Picture");
+		eng.put("etlap_nincs_kep", "No picture");
 	}
 	
 	public static void set(HttpSession session) {

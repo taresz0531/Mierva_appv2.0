@@ -45,6 +45,13 @@ public class HunLang {
 		hun.put("heti_leves", "Leves");
 		hun.put("heti_foetel", "Főétel");
 		hun.put("heti_koret", "Köret");
+		
+		hun.put("etlap_cim", "Étlap");
+		hun.put("etlap_etel", "Étel");
+		hun.put("etlap_alergen", "Allergének");
+		hun.put("etlap_ar", "Ár");
+		hun.put("etlap_kep", "Kép");
+		hun.put("etlap_nincs_kep", "Nincs kép");
 	}
 	
 	public static void set(HttpSession session) {
