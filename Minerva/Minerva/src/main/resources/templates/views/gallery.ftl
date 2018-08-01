@@ -3,7 +3,7 @@
 
 <div class="main-div container">
 	<div class="guest-div">
-		<center><h1>Galéria</h1></center>	
+		<center><h1>${Session.galeria_cim}</h1></center>	
 	</div>
 	<div class="tz-gallery guest-div">
 		 <div class="row">

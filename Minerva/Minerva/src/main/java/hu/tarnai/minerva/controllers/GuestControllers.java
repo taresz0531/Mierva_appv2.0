@@ -21,6 +21,7 @@ import hu.tarnai.minerva.bo.GalleryBo;
 import hu.tarnai.minerva.bo.GetImagesBo;
 import hu.tarnai.minerva.bo.HetimenuBo;
 import hu.tarnai.minerva.entity.Ajanlat;
+import hu.tarnai.minerva.entity.Etlap;
 import hu.tarnai.minerva.entity.Galeria;
 import hu.tarnai.minerva.entity.Napimenu;
 import hu.tarnai.minerva.enums.NyelvEnum;
@@ -198,7 +199,62 @@ public class GuestControllers {
 		public String etlap(Model model, HttpServletRequest request){
 			PageName.save(request, ETLAP_PAGE_NAME);
 			
-			List<EtlapObject> etlapObject = EtlapObject.get();
+			List<EtlapObject> etlapObject = new ArrayList<EtlapObject>();
+			for(EtlapObject o:EtlapObject.get()) {
+				if(Nyelv.getNyelv(request) == NyelvEnum.HUN) {
+					EtlapObject et = new EtlapObject();
+					List<Etlap> etlap = new ArrayList<Etlap>();
+					String[] n = o.getNev().split("/");
+					
+					for(Etlap e:o.getEtelek()) {
+						Etlap ee = new Etlap();
+						String[] etel = e.getNev().split("/");
+						String[] leir = e.getLeiras().split("/");
+						
+						ee.setNev(etel!=null&&etel.length>0?etel[0]:null);
+						ee.setLeiras(leir!=null&&leir.length>0?leir[0]:null);
+						ee.setAr(e.getAr());
+						ee.setId(e.getId());
+						ee.setIs_kep(e.getIs_kep());
+						ee.setKategoria(e.getKategoria());
+						ee.setKep(e.getKep());
+						ee.setStat(e.getStat());
+						etlap.add(ee);
+					}
+					
+					et.setNev(n[0]);
+					et.setEtelek(etlap);
+					et.setId(o.id);
+					et.setSorrend(o.getSorrend());
+					etlapObject.add(et);
+				}else {
+					EtlapObject et = new EtlapObject();
+					List<Etlap> etlap = new ArrayList<Etlap>();
+					String[] n = o.getNev().split("/");
+					
+					for(Etlap e:o.getEtelek()) {
+						Etlap ee = new Etlap();
+						String[] etel = e.getNev().split("/");
+						String[] leir = e.getLeiras().split("/");
+						
+						ee.setNev(etel!=null&&etel.length>1?etel[1]:(etel!=null&&etel.length>0?etel[0]:null));
+						ee.setLeiras(leir!=null&&leir.length>1?leir[1]:(leir!=null&&leir.length>0?leir[0]:null));
+						ee.setAr(e.getAr());
+						ee.setId(e.getId());
+						ee.setIs_kep(e.getIs_kep());
+						ee.setKategoria(e.getKategoria());
+						ee.setKep(e.getKep());
+						ee.setStat(e.getStat());
+						etlap.add(ee);
+					}
+					
+					et.setNev(n!=null&&n.length>1?n[1]:(n!=null&&n.length>0?n[0]:null));
+					et.setEtelek(etlap);
+					et.setId(o.id);
+					et.setSorrend(o.getSorrend());
+					etlapObject.add(et);
+				}
+			}
 			
 			model.addAttribute("etlapObject", etlapObject);
 			
@@ -219,9 +275,9 @@ public class GuestControllers {
 					String[] fo =  o.getNapimenu().getFoetel().split("/");
 					String[] koret =  o.getNapimenu().getKoret().split("/");
 					
-					nm.setLeves(leves!=null?leves[0]:null);
-					nm.setFoetel(fo!=null?fo[0]:null);
-					nm.setKoret(koret!=null?koret[0]:null);
+					nm.setLeves(leves!=null&&leves.length>0?leves[0]:null);
+					nm.setFoetel(fo!=null&&fo.length>0?fo[0]:null);
+					nm.setKoret(koret!=null&&koret.length>0?koret[0]:null);
 					ho.setNapimenu(nm);
 					ho.setDate(o.getDate());
 					ho.setDayName(o.getDayName());
@@ -235,9 +291,9 @@ public class GuestControllers {
 					String[] fo =  o.getNapimenu().getFoetel().split("/");
 					String[] koret =  o.getNapimenu().getKoret().split("/");
 					
-					nm.setLeves(leves!=null&&leves.length>1?leves[1]:null);
-					nm.setFoetel(fo!=null&&fo.length>1?fo[1]:null);
-					nm.setKoret(koret!=null&&koret.length>1?koret[1]:null);
+					nm.setLeves(leves!=null&&leves.length>1?leves[1]:(leves!=null&&leves.length>0?leves[0]:null));
+					nm.setFoetel(fo!=null&&fo.length>1?fo[1]:(fo!=null&&fo.length>0?fo[0]:null));
+					nm.setKoret(koret!=null&&koret.length>1?koret[1]:(koret!=null&&koret.length>0?koret[0]:null));
 					ho.setNapimenu(nm);
 					ho.setDate(o.getDate());
 					ho.setDayName(DateUtility.convertHungariDayToEnglish(o.getDayName()));

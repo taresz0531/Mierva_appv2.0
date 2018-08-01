@@ -23,9 +23,9 @@
 					<#else>
 						<tr style="height: 150px;">
 					</#if>
-						<td class="col-sm-5"><p>${e.nev?keep_before("/")}</p></td>
-						<td class="col-sm-3"><p>${e.leiras?keep_before("/")}</p></td>
-						<td class="col-sm-1"><p>${e.ar}.-</p></td>
+						<td class="col-sm-5"><p><#if e.nev??>${e.nev}</#if></p></td>
+						<td class="col-sm-3"><p><#if e.leiras??>${e.leiras}</#if></p></td>
+						<td class="col-sm-1"><p><#if e.ar??>${e.ar}.-</#if></p></td>
 						<#if e.is_kep == 0>
 							<td class="col-sm-3"><p>${Session.etlap_nincs_kep}</p></td>
 						<#else>
