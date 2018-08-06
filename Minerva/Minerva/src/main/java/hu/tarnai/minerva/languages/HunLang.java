@@ -213,6 +213,66 @@ public class HunLang {
 		hun.put("vinfo_hort", "Hortobágy");
 		hun.put("vinfo_hortleir", "A Hortobágy szó több jelentéssel is bír: jelöli a települést, a tájegységet és az azon kanyargó folyót. Ami összeköti ezeket, az a Kilenclyukú híd, az ország leghosszabb épített közúti kőhídja, és a híd közvetlen szomszédságában található tradicionális vendéglátóhely, a Hortobágyi Nagycsárda. Bárki részese lehet a pusztai életérzésnek egy fogatozás keretében: megtekintheti az állatokat eredeti élőhelyükön, és arra is választ kaphat, miért termett lóra a magyar ember.");
 		hun.put("vinfo_hortlink", "https://www.debrecen.hu/hu/turista/latnivalok/hortobagy-5");
+		
+		hun.put("gyik_cim", "Gyakori kérdések");
+		hun.put("gyik_01", "Hány órától foglalhatók el a szobák?");
+		hun.put("gyik_01l", "A szobákat az érkezés napján 14.00 órától tudja elfoglalni. Amennyiben az Ön szobájában az adott nap nem volt távozó vendég, akkor természetesen a szobát korábban is az Ön rendelkezésére tudjuk bocsátani. Kérjük ezért, ha korábban érkezik, a kellemetlenségek elkerülése érdekében telefonon vagy megelõzõ nap emailen - érdeklõdjön munkatársainktól, hogy a szoba elfoglalható-e 14.00 óra elõtt. Ha korábban érkezik és a szoba még nem áll rendelkezésre a csomagokat le tudja adni nálunk, szívesen õrizzük, addig Ön tehet egy rövid sétát a belvárosban.");
+		hun.put("gyik_02", "Meddig kell a távozás napján a szobákat elhagyni?");
+		hun.put("gyik_02l", "A szoba a távozás napján 11.00 óráig áll az Ön rendelkezésére. Kérjük ezt az idõpontot szíveskedjen betartani, annak érdekében, hogy az Ön után érkezõ vendégek számára is tisztán és pontosan tudjuk átadni azt. Persze ha még egy rövid kirándulást szeretne tenni a városban vagy egyéb elintéznivalója van, a csomagjait szívesen õrizzük a távozás napján is, valamint a gépjármû is a belsõ parkolónkban hagyható.");
+		hun.put("gyik_03", "A panzióba érkezéskor mi a teendõ?");
+		hun.put("gyik_03l", "A panzióba érkezéskor a recepción munkatársunk fogadja Önt. Bejelentkezéskor szükségünk lesz Öntõl néhány adatra (név, cím, személyi igazolvány szám, stb.), kérjük ezért, hogy személyi igazolványukat maguknál tartani szíveskedjenek. Természetesen az adatait bizalmasan kezeljük.");
+		hun.put("gyik_04", "Kaphatunk-e a panzióban reggelit?");
+		hun.put("gyik_04l", "Kérhetõ reggeli. A szobaár nem tartalmazza a reggelit. Minden reggel 7 órától 9.30-ig bõséges svédasztalos reggelivel várjuk Önt.");
+		hun.put("gyik_05", "Van-e vacsorázási lehetõség a panzióban?");
+		hun.put("gyik_05l", "Természetesen, hiszen a panziónk étteremmel egybeépült létesítmény. Lehetõsége van a la carte ételfogyasztásra, illetve panziónk biztosítja Vendégei számára a félpanziós ellátást is, amennyiben igényt tartanak rá. Az étterem déli 11-tõl egészen este 21 óráig áll a Vendégek rendelkezésére. Ez idõtartamon belül bármikor elfogyaszthatják ebédjüket, illetve vacsorájuk");
+		hun.put("gyik_06", "Van-e törölközõ a szobához?");
+		hun.put("gyik_06l", "Igen. Minden szobához biztosítunk törölközõt.");
+		hun.put("gyik_07", "Milyen a szobák felszereltsége?");
+		hun.put("gyik_07l", "A szobák televízióval, minibárral, telefonnal, internet csatlakozási lehetõséggel felszereltek, klimatizáltak. Minden szobához zuhanyzóval ellátott fürdõszoba tartozik.");
+		hun.put("gyik_08", "Milyen parkolási lehetõség áll a Vendégek részére?");
+		hun.put("gyik_08l", "A Panzió külön kialakított, nyitott parkolóval rendelkezik. A panzió Vendégei számára a parkolás ingyenes.");
+		hun.put("gyik_09", "Van-e lehetõség dohányzásra?");
+		hun.put("gyik_09l", "Az épületben a dohányzás a nemdohányzókra való tekintettel nem megengedett. Dohányzásra lehetõség csak az arra kijelölt helyen van.");
+		hun.put("gyik_10", "Meddig kell a távozás napján a szobákat elhagyni?");
+		hun.put("gyik_10l", "Igen. Panziónkban és éttermünkben egyaránt elfogadunk üdülési csekket.");
+		hun.put("gyik_11", "Mivel lehet még fizetni a panzióban?");
+		hun.put("gyik_11l", "A szolgáltatások ellenértékének kiegyenlítése lehetséges üdülési csekken túl");
+		hun.put("gyik_kp", "Készpénzzel");
+		hun.put("gyik_bank", "Bankkártyával");
+		hun.put("gyik_utal", "Elõzetes írásbeli megegyezés esetén átutalással");
+		hun.put("gyik_meleg", "Ételfogyasztás esetén elfogadunk meleg étkezési utalványokat");
+		hun.put("gyik_kerdes", "Maradt még kérdése? Keressen minket a 06-30/9-787-485-ös számon vagy írja meg e-mailen a konfer74@freemail.hu címre.");
+		
+		hun.put("ajan_cim", "Ajánlatkérés");
+		hun.put("ajan_nev", "Teljes név:");
+		hun.put("ajan_tel", "Elérhetőség(tel. vagy e-mail):");
+		hun.put("ajan_szemely", "Személyek száma:");
+		hun.put("ajan_szoba", "Szoba típusa:");
+		hun.put("ajan_mind", "Mindegy");
+		hun.put("ajan_egy", "Egy ágyas");
+		hun.put("ajan_ketto", "Két ágyas");
+		hun.put("ajan_harom", "Három ágyas");
+		hun.put("ajan_negy", "Négy ágyas");
+		hun.put("ajan_apart", "Apartman");
+		hun.put("ajan_erkez", "Érkezés:");
+		hun.put("ajan_tavoz", "Távozás:");
+		hun.put("ajan_reggel", "Reggeli:");
+		hun.put("ajan_kerek", "Kérek");
+		hun.put("ajan_megj", "Megjegyzés:");
+		hun.put("ajan_kuld", "Küldés");
+		
+		hun.put("eler_cim", "Elérhetőségek:");
+		hun.put("eler_nemhely", "Nem adott meg tartozkodási helyet!");
+		hun.put("eler_tel", "Tel.:");
+		hun.put("eler_fax", "fax.:");
+		hun.put("eler_igazgat", "Ügyvezető igazgató");
+		hun.put("eler_igazhely", "Igazgatóhelyettes");
+		hun.put("eler_utvonal", "Útvonaltervezés");
+		hun.put("eler_terkep", "Térkép");
+		hun.put("eler_hely", "Indulási hely:");
+		hun.put("eler_terv", "Tervezés");
+		hun.put("eler_ad", "Adja meg a helyét!");
+		
 	}
 	
 	public static void set(HttpSession session) {

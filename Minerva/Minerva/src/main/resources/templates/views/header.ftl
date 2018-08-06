@@ -127,12 +127,12 @@
 		    </nav>
 		  </div>
 		</header>
-		<div style="width: 100%; margin-top: 25px;">
-			<img src="image/header/fejlec_front_static.png" width="100%" style="max-width: 1920px; top: 25px; border-bottom: 2px solid black; border-radius: 10px;">
-				<img class="mySlides w3-animate-top" src="image/header/kozepso_eloadoterem.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
-				<img class="mySlides w3-animate-top" src="image/header/kozepso_etterem.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
-				<img class="mySlides w3-animate-top" src="image/header/kozepso_parkolo.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
-				<img class="mySlides w3-animate-top" src="image/header/kozepso_szobak.png" width="100%" style="max-width: 1920px; top: 25px; position: absolute;">
+		<div style="margin-top: 25px;">
+			<img src="image/header/fejlec_front_static.png" width="100%" style=" top: 25px; border-bottom: 2px solid black; border-radius: 10px;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_eloadoterem.png" width="100%" style="top: 25px; position: absolute;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_etterem.png" width="100%" style="top: 25px; position: absolute;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_parkolo.png" width="100%" style="top: 25px; position: absolute;">
+				<img class="mySlides w3-animate-top" src="image/header/kozepso_szobak.png" width="100%" style="top: 25px; position: absolute;">
 		</div>
 		<script>
 			var myIndex = 0;

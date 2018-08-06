@@ -118,101 +118,160 @@ public class EngLang {
 		eng.put("ar_egyhaz", "Az egyházi jogi személy tulajdonában lévő épületben,telken – kizárólag az egyházi jogi személy hitéleti tevékenységéhez kapcsolódó részvétel céljából – egyházi");
 		eng.put("ar_tajekoztat", "A feltüntetett árak tájékoztató jellegűek, azoktól kiemelt időszakokban, illetve egyedi megállapodások esetén eltérhetünk!");
 		
-		eng.put("vinfo_cim", "Debrecen város látnivalói, érdekességei");
-		eng.put("vinfo_info", "További információért kattintson ");
-		eng.put("vinfo_ide", "IDE");
+		eng.put("vinfo_cim", "The sights and attractions of Debrecen");
+		eng.put("vinfo_info", "For more information, ");
+		eng.put("vinfo_ide", "click HERE");
 		
-		eng.put("vinfo_nagyt", "Református Nagytemplom");
-		eng.put("vinfo_nagytleir", "Debrecen jelképe, az ország legnagyobb református temploma.");
-		eng.put("vinfo_nagytlink", "https://www.debrecen.hu/hu/turista/latnivalok/reformatus-nagytemplom");
+		eng.put("vinfo_nagyt", "Debrecen Reformed College");
+		eng.put("vinfo_nagytleir", "Having functioned continuously as an educational institution since its establishment in 1538, the college is the cradle of Hungarian civilization.");
+		eng.put("vinfo_nagytlink", "https://www.debrecen.hu/en/tourist/places/reformed-big-church");
 		
-		eng.put("vinfo_egyetem", "A Debreceni Egyetem főépülete");
-		eng.put("vinfo_egyetemleir", "A Debreceni Egyetem – mely az ország legrégebbi, folyamatosan működő felsőoktatási intézményei közé tartozik – egyike Magyarország kiemelt kutatóegyetemeinek, amely közel 30 ezer hallgatóval és 1500 oktatóval, 15 karával, 25 doktori iskolájával a legszélesebb hazai képzési kínálatot nyújtja.");
-		eng.put("vinfo_egyetemlink", "https://www.debrecen.hu/hu/turista/latnivalok/debreceni-egyetem-foepulete");
+		eng.put("vinfo_egyetem", "Main Building of the University of Debrecen");
+		eng.put("vinfo_egyetemleir", "One of the nation’s five research universities, UD celebrated its centenary in 2012.");
+		eng.put("vinfo_egyetemlink", "https://www.debrecen.hu/en/tourist/places/main-building-of-the-university-of-debrecen");
 		
-		eng.put("vinfo_deri", "Déri Múzeum");
-		eng.put("vinfo_derileir", "A Déri Múzeum Magyarország egyik legjelentősebb múzeuma. Az intézmény gazdag helytörténeti anyaga mellett Déri Frigyes egyetemes művelődéstörténeti gyűjteményével vált meghatározó jelentőségűvé.");
-		eng.put("vinfo_derilink", "https://www.debrecen.hu/hu/turista/latnivalok/deri-muzeum");
+		eng.put("vinfo_deri", "Déri Museum");
+		eng.put("vinfo_derileir", "The Déri Museum is one of Hungary’s foremost establishments of its kind. In addition to its exhibits of local cultural interest, it has become renowned for the huge collection of items, brought together by Frigyes Déri, which represents various aspects of universal human civilization.");
+		eng.put("vinfo_derilink", "https://www.debrecen.hu/en/tourist/places/deri-museum");
 	
-		eng.put("vinfo_reform", "Református Kollégium");
-		eng.put("vinfo_reformleir", "Az 1538 óta folyamatosan működő oktatási intézmény a magyar kultúra bölcsője, 2013 óta nemzeti emlékhely.");
-		eng.put("vinfo_reformlink", "https://www.debrecen.hu/hu/turista/latnivalok/reformatus-kollegium");
+		eng.put("vinfo_reform", "Debrecen Reformed College");
+		eng.put("vinfo_reformleir", "Having functioned continuously as an educational institution since its establishment in 1538, the college is the cradle of Hungarian civilization.");
+		eng.put("vinfo_reformlink", "https://www.debrecen.hu/en/tourist/places/debrecen-reformed-college");
 		
-		eng.put("vinfo_piac", "A Piac utca és a Kossuth tér");
-		eng.put("vinfo_piacleir", "Debrecen főutcája, ahol a XVI. századtól 300 éven át tartották a híres debreceni vásárokat.");
-		eng.put("vinfo_piaclink", "https://www.debrecen.hu/hu/turista/latnivalok/piac-utca-es-a-kossuth-ter");
+		eng.put("vinfo_piac", "Piac Street and Kossuth Square");
+		eng.put("vinfo_piacleir", "Debrecen’s Main Street - Piac Street - was the proud venue of the famous town fairs for 300 years starting in the 16th century.");
+		eng.put("vinfo_piaclink", "https://www.debrecen.hu/en/tourist/places/piac-street-and-kossuth-square");
 		
-		eng.put("vinfo_szent", "Szent Anna Székesegyház");
-		eng.put("vinfo_szentleir", "Debrecen első katolikus temploma a 168 évig tartó vallási hegemónia után – ma a Debrecen-nyíregyházi Római Katolikus Egyházmegye székesegyháza.");
-		eng.put("vinfo_szentlink", "https://www.debrecen.hu/hu/turista/latnivalok/szent-anna-szekesegyhaz");
+		eng.put("vinfo_szent", "St. Anne’s Cathedral");
+		eng.put("vinfo_szentleir", "Built in Baroque and Louis Seize style, the church was elevated to cathedral rank by Pope John Paul II in 1993.");
+		eng.put("vinfo_szentlink", "https://www.debrecen.hu/en/tourist/places/st-annes-cathedral");
 		
-		eng.put("vinfo_zsin", "Zsinagógák");
-		eng.put("vinfo_zsinleir", "A Debreceni Zsidó Hitközség jelenleg Magyarország legnagyobb vidéki zsidó közössége.");
-		eng.put("vinfo_zsinlink", "https://www.debrecen.hu/hu/turista/latnivalok/zsinagogak");
+		eng.put("vinfo_zsin", "Synagogues");
+		eng.put("vinfo_zsinleir", "Debrecen Jewish Congregation is Hungary’s largest Israelite community outside the capital.");
+		eng.put("vinfo_zsinlink", "https://www.debrecen.hu/en/tourist/places/synagogues");
 		
 		eng.put("vinfo_aqua", "Aquaticum Spa");
-		eng.put("vinfo_aqualeir", "A Nagyerdő csodálatos természeti környezetében található Aquaticum Spa fürdőkomplexum gyógyászati részleggel, széles körű szakorvosi szolgáltatásokkal, negyvenféle, gyógyvízre alapozott kezeléssel várja a regenerálódni, gyógyulni és kikapcsolódni vágyókat. A nyugodt pihenést és a felhőtlen kikapcsolódást a szálloda- és fürdőkomplexumban egész évben nyitva tartó termálfürdő, fedett mediterrán élményfürdő, csúszdapark, a szállodából közvetlen átjárással elérhető wellness-centrum és szaunavilág, valamint a fürdőt körülvevő rekreációs övezet garantálja.");
-		eng.put("vinfo_aqualink", "https://www.debrecen.hu/hu/turista/latnivalok/aquaticum-spa");
+		eng.put("vinfo_aqualeir", "Located in an area of scenic beauty in Big Forest, the spa complex offers an entire unit of medical facilities and a wide range of specialist consultations to guests who seek regeneration, healing, or relaxation. Your comfort and enjoyment will be guaranteed by the attractions of the Thermal Bath, the Indoor Mediterranean Pleasure Bath, “water-chute park,” wellness center (directly accessible from the hotel unit) as well as the “sauna world.” All this in an area of natural beauty set aside for public recreational use.");
+		eng.put("vinfo_aqualink", "https://www.debrecen.hu/en/tourist/places/aquaticum-spa");
 		
-		eng.put("vinfo_kod", "Ködszínház");
-		eng.put("vinfo_kodleir", "Kihagyhatatlan vízivarázslat, látványos fények és formák a Ködszínházban.");
-		eng.put("vinfo_kodlink", "https://www.debrecen.hu/hu/turista/latnivalok/kodszinhaz");
+		eng.put("vinfo_kod", "Mist Theater");
+		eng.put("vinfo_kodleir", "In the immediate vicinity of Nagyerdei Arena, a one-of-a-kind attraction beckons from spring through fall.");
+		eng.put("vinfo_kodlink", "https://www.debrecen.hu/en/tourist/places/mist-theater");
 		
-		eng.put("vinfo_viz", "Nagyerdei Víztorony");
-		eng.put("vinfo_vizleir", "A Nagyerdei park legújabb látványossága a Nagyerdei Víztorony tavasztól őszig megunhatatlan szórakozási lehetőségekkel várja az érdeklődőket.");
-		eng.put("vinfo_vizlink", "https://www.debrecen.hu/hu/turista/latnivalok/nagyerdei-viztorony-3");
+		eng.put("vinfo_viz", "Water Tower");
+		eng.put("vinfo_vizleir", "The newest attraction of Nagyerdei park is the Water Tower Adventure Center.");
+		eng.put("vinfo_vizlink", "https://www.debrecen.hu/en/tourist/places/water-tower-2");
 		
-		eng.put("vinfo_agora", "Agóra Tudományos Élményközpont");
-		eng.put("vinfo_agoraleir", "Az Agóra Tudományos Élményközpont mindennapi életünk csodáit magyarázza meg, mindenki számára közérthetően és élményszerűen.");
-		eng.put("vinfo_agoralink", "https://www.debrecen.hu/hu/turista/latnivalok/agora-tudomanyos-elmenykozpont");
+		eng.put("vinfo_agora", "Agora Scientific Adventure Center");
+		eng.put("vinfo_agoraleir", "Agora presents serious scientific knowledge and the little wonders of everyday life in a fun and easy-to-understand way.");
+		eng.put("vinfo_agoralink", "https://www.debrecen.hu/en/tourist/places/agora-scientific-adventure-center");
 		
-		eng.put("vinfo_erdo", "Nagyerdei park");
-		eng.put("vinfo_erdoleir", "Minden jelentõs várost fémjelez egy híres park – Debrecent az ország elsõ természetvédelmi területének nyilvánított Nagyerdõben található park.");
-		eng.put("vinfo_erdolink", "https://www.debrecen.hu/hu/turista/latnivalok/nagyerdei-park");
+		eng.put("vinfo_erdo", "Nagyerdei Park");
+		eng.put("vinfo_erdoleir", "All great cities can be identified by famous parks. In the case of Debrecen, this is called Nagyerdei Park Forest, the nation’s first conservation area. Only a ten-minute ride from downtown, the park offers total peace and quiet in the shade of hundred-year-old trees as well as countless entertainment options.");
+		eng.put("vinfo_erdolink", "https://www.debrecen.hu/en/tourist/places/nagyerdei-park");
 		
 		eng.put("vinfo_ady", "Ady park");
-		eng.put("vinfo_adyleir", "A debreceni sétát – vagy ahogy a helyiek nevezik, korzózást – a város zöld, szökőkutas terei teszik még kényelmesebbé.");
-		eng.put("vinfo_adylink", "https://www.debrecen.hu/hu/turista/latnivalok/ady-park");
+		eng.put("vinfo_adyleir", "The newest, open in the summer of 2015, is a vibrant, youthful and enchanting spot.");
+		eng.put("vinfo_adylink", "https://www.debrecen.hu/en/tourist/places/ady-park");
 		
-		eng.put("vinfo_deriter", "Déri tér");
-		eng.put("vinfo_deriterleir", "Debrecen egyik leghangulatosabb, legintimebb belvárosi tere.");
-		eng.put("vinfo_deriterlink", "https://www.debrecen.hu/hu/turista/latnivalok/deri-ter");
+		eng.put("vinfo_deriter", "Déri Square");
+		eng.put("vinfo_deriterleir", "This is one of the most ambient and intimate squares of Debrecen.");
+		eng.put("vinfo_deriterlink", "https://www.debrecen.hu/en/tourist/places/deri-square");
 		
-		eng.put("vinfo_emlek", "Emlékkert");
-		eng.put("vinfo_emlekleir", "A Református Nagytemplom és a Kollégium között húzódó Emlékkertben található Bocskai István erdélyi fejedelem szobra, melyet 1906-ban, a hajdúk letelepítésének 300. évfordulóján emeltek.");
-		eng.put("vinfo_emleklink", "https://www.debrecen.hu/hu/turista/latnivalok/emlekkert-3");
+		eng.put("vinfo_emlek", "Memorial Garden");
+		eng.put("vinfo_emlekleir", "The Memorial Garden occupies the leafy plot between the Big Church and the College.");
+		eng.put("vinfo_emleklink", "https://www.debrecen.hu/en/tourist/places/memorial-garden");
 		
 		eng.put("vinfo_hal", "Hal köz");
-		eng.put("vinfo_halleir", "Az egykori hal- és tejpiac helyén található Debrecen egyik leghangulatosabb belvárosi tere.");
-		eng.put("vinfo_hallink", "https://www.debrecen.hu/hu/turista/latnivalok/hal-koz");
+		eng.put("vinfo_halleir", "Located at the place of the old fish (“hal”) and dairy market, this is one of Debrecen’s most pleasant downtown piazzas.");
+		eng.put("vinfo_hallink", "https://www.debrecen.hu/en/tourist/places/704-1");
 		
-		eng.put("vinfo_medgy", "Medgyessy sétány");
-		eng.put("vinfo_medgyleir", "A Nagyerdő múzsák lakta vidék a poétáknak, s temérdek izgalmas kutatási témával szolgál a tudósok számára is.");
-		eng.put("vinfo_medgylink", "https://www.debrecen.hu/hu/turista/latnivalok/medgyessy-setany");
+		eng.put("vinfo_medgy", "Medgyessy Promenade");
+		eng.put("vinfo_medgyleir", "Big Forest has long been inhabited by the Muses of poetry and served as a rich hunting ground for academics in pursuit of exciting research topics.");
+		eng.put("vinfo_medgylink", "https://www.debrecen.hu/en/tourist/places/medgyessy-promenade");
 		
-		eng.put("vinfo_csoki", "Csokonai Nemzeti Színház");
-		eng.put("vinfo_csokileir", "Az ország egyik legszínvonalasabb vidéki színházi társulatának otthont adó kőszínház 1865-ben nyitotta meg kapuit.");
-		eng.put("vinfo_csokilink", "https://www.debrecen.hu/hu/turista/latnivalok/csokonai-nemzeti-szinhaz");
+		eng.put("vinfo_csoki", "Csokonai National Theatre");
+		eng.put("vinfo_csokileir", "One of the finest repertory theaters of the country opened its gates in 1865, so 2015 witnesses the celebrations of its 150th anniversary.");
+		eng.put("vinfo_csokilink", "https://www.debrecen.hu/en/tourist/places/csokonai-national-theater");
 		
-		eng.put("vinfo_botanik", "Egyetemi botanikus kert");
-		eng.put("vinfo_botanikleir", "A Diószegi Sámuel és Fazekas Mihály által 1807-ben megálmodott, a Református Kollégium botanikai oktatását szolgáló Füvészkert megszűnése után, 1928-ban alapították az egyetemi botanikus kertet.");
-		eng.put("vinfo_botaniklink", "https://www.debrecen.hu/hu/turista/latnivalok/egyetemi-botanikus-kert");
+		eng.put("vinfo_botanik", "Botanical Garden at UD");
+		eng.put("vinfo_botanikleir", "UD’s Botanical Garden behind the main campus building was established in 1928 when the original garden that had belonged to the Reformed College ceased to exist.");
+		eng.put("vinfo_botaniklink", "https://www.debrecen.hu/en/tourist/places/botanical-garden-at-ud");
 		
-		eng.put("vinfo_veres", "Verestemplom");
-		eng.put("vinfo_veresleir", "Közép-Európa egyik legkülönlegesebb református temploma.");
-		eng.put("vinfo_vereslink", "https://www.debrecen.hu/hu/turista/latnivalok/verestemplom");
+		eng.put("vinfo_veres", "Veres (Red) Church");
+		eng.put("vinfo_veresleir", "This is one of Central Europe's most unique Reformed churches.");
+		eng.put("vinfo_vereslink", "https://www.debrecen.hu/en/tourist/places/veres-red-church");
 		
-		eng.put("vinfo_kultur", "Nagyerdei Kultúrpark állat- és növénykertje");
-		eng.put("vinfo_kulturleir", "Itt található az ország első vidéki állat- és növénykertje, melyet 1958-ban alapítottak. A kicsiket vidámpark is várja, amit egy kisvasút köt össze az állatkerttel. A vonatból megcsodálhatjuk a dámszarvasokat és a tevéket, de akár szurkolhatunk a dodzsemezőknek is.");
-		eng.put("vinfo_kulturlink", "https://www.debrecen.hu/hu/turista/latnivalok/nagyerdei-kulturpark-allat-es-novenykertje");
+		eng.put("vinfo_kultur", "Nagyerdei Entertainment Complex");
+		eng.put("vinfo_kulturleir", "This complex covers an area of 17 hectares under the canopy of Big Forest’s grand old trees.");
+		eng.put("vinfo_kulturlink", "https://www.debrecen.hu/en/tourist/places/nagyerdei-entertainment-complex");
 		
-		eng.put("vinfo_modem", "Modem Modern és Kortárs Művészeti Központ");
-		eng.put("vinfo_modemleir", "A Modem Közép-Európa egyik legizgalmasabb kortárs művészeti kiállítóhelye, mely 2006-tól várja színvonalas képzőművészeti kiállításokkal és társművészeti programokkal az érdeklődőket.");
-		eng.put("vinfo_modemlink", "https://www.debrecen.hu/hu/turista/latnivalok/modem-modern-es-kortars-muveszeti-kozpont");
+		eng.put("vinfo_modem", "MODEM Center of Modern & Contemporary Art");
+		eng.put("vinfo_modemleir", "MODEM is one of Central Europe’s greatest museums of modern and contemporary art.");
+		eng.put("vinfo_modemlink", "https://www.debrecen.hu/en/tourist/places/modem-center-of-modern-contemporary-art");
 		
 		eng.put("vinfo_hort", "Hortobágy");
-		eng.put("vinfo_hortleir", "A Hortobágy szó több jelentéssel is bír: jelöli a települést, a tájegységet és az azon kanyargó folyót. Ami összeköti ezeket, az a Kilenclyukú híd, az ország leghosszabb épített közúti kőhídja, és a híd közvetlen szomszédságában található tradicionális vendéglátóhely, a Hortobágyi Nagycsárda. Bárki részese lehet a pusztai életérzésnek egy fogatozás keretében: megtekintheti az állatokat eredeti élőhelyükön, és arra is választ kaphat, miért termett lóra a magyar ember.");
-		eng.put("vinfo_hortlink", "https://www.debrecen.hu/hu/turista/latnivalok/hortobagy-5");
+		eng.put("vinfo_hortleir", "Proudly bearing its title of UNESCO World Heritage Site, Hortobágy National Park is the perfect archetype of pristine natural landscapes. This is the place where everyone longs to find refuge from the monotony of modern human existence.");
+		eng.put("vinfo_hortlink", "https://www.debrecen.hu/en/tourist/places/hortobagy-2");
+		
+		eng.put("gyik_cim", "Gyakori kérdések");
+		eng.put("gyik_01", "Hány órától foglalhatók el a szobák?");
+		eng.put("gyik_01l", "A szobákat az érkezés napján 14.00 órától tudja elfoglalni. Amennyiben az Ön szobájában az adott nap nem volt távozó vendég, akkor természetesen a szobát korábban is az Ön rendelkezésére tudjuk bocsátani. Kérjük ezért, ha korábban érkezik, a kellemetlenségek elkerülése érdekében telefonon vagy megelõzõ nap emailen - érdeklõdjön munkatársainktól, hogy a szoba elfoglalható-e 14.00 óra elõtt. Ha korábban érkezik és a szoba még nem áll rendelkezésre a csomagokat le tudja adni nálunk, szívesen õrizzük, addig Ön tehet egy rövid sétát a belvárosban.");
+		eng.put("gyik_02", "Meddig kell a távozás napján a szobákat elhagyni?");
+		eng.put("gyik_02l", "A szoba a távozás napján 11.00 óráig áll az Ön rendelkezésére. Kérjük ezt az idõpontot szíveskedjen betartani, annak érdekében, hogy az Ön után érkezõ vendégek számára is tisztán és pontosan tudjuk átadni azt. Persze ha még egy rövid kirándulást szeretne tenni a városban vagy egyéb elintéznivalója van, a csomagjait szívesen õrizzük a távozás napján is, valamint a gépjármû is a belsõ parkolónkban hagyható.");
+		eng.put("gyik_03", "A panzióba érkezéskor mi a teendõ?");
+		eng.put("gyik_03l", "A panzióba érkezéskor a recepción munkatársunk fogadja Önt. Bejelentkezéskor szükségünk lesz Öntõl néhány adatra (név, cím, személyi igazolvány szám, stb.), kérjük ezért, hogy személyi igazolványukat maguknál tartani szíveskedjenek. Természetesen az adatait bizalmasan kezeljük.");
+		eng.put("gyik_04", "Kaphatunk-e a panzióban reggelit?");
+		eng.put("gyik_04l", "Kérhetõ reggeli. A szobaár nem tartalmazza a reggelit. Minden reggel 7 órától 9.30-ig bõséges svédasztalos reggelivel várjuk Önt.");
+		eng.put("gyik_05", "Van-e vacsorázási lehetõség a panzióban?");
+		eng.put("gyik_05l", "Természetesen, hiszen a panziónk étteremmel egybeépült létesítmény. Lehetõsége van a la carte ételfogyasztásra, illetve panziónk biztosítja Vendégei számára a félpanziós ellátást is, amennyiben igényt tartanak rá. Az étterem déli 11-tõl egészen este 21 óráig áll a Vendégek rendelkezésére. Ez idõtartamon belül bármikor elfogyaszthatják ebédjüket, illetve vacsorájuk");
+		eng.put("gyik_06", "Van-e törölközõ a szobához?");
+		eng.put("gyik_06l", "Igen. Minden szobához biztosítunk törölközõt.");
+		eng.put("gyik_07", "Milyen a szobák felszereltsége?");
+		eng.put("gyik_07l", "A szobák televízióval, minibárral, telefonnal, internet csatlakozási lehetõséggel felszereltek, klimatizáltak. Minden szobához zuhanyzóval ellátott fürdõszoba tartozik.");
+		eng.put("gyik_08", "Milyen parkolási lehetõség áll a Vendégek részére?");
+		eng.put("gyik_08l", "A Panzió külön kialakított, nyitott parkolóval rendelkezik. A panzió Vendégei számára a parkolás ingyenes.");
+		eng.put("gyik_09", "Van-e lehetõség dohányzásra?");
+		eng.put("gyik_09l", "Az épületben a dohányzás a nemdohányzókra való tekintettel nem megengedett. Dohányzásra lehetõség csak az arra kijelölt helyen van.");
+		eng.put("gyik_10", "Meddig kell a távozás napján a szobákat elhagyni?");
+		eng.put("gyik_10l", "Igen. Panziónkban és éttermünkben egyaránt elfogadunk üdülési csekket.");
+		eng.put("gyik_11", "Mivel lehet még fizetni a panzióban?");
+		eng.put("gyik_11l", "A szolgáltatások ellenértékének kiegyenlítése lehetséges üdülési csekken túl");
+		eng.put("gyik_kp", "Készpénzzel");
+		eng.put("gyik_bank", "Bankkártyával");
+		eng.put("gyik_utal", "Elõzetes írásbeli megegyezés esetén átutalással");
+		eng.put("gyik_meleg", "Ételfogyasztás esetén elfogadunk meleg étkezési utalványokat");
+		eng.put("gyik_kerdes", "Maradt még kérdése? Keressen minket a 06-30/9-787-485-ös számon vagy írja meg e-mailen a konfer74@freemail.hu címre.");
+		
+		eng.put("ajan_cim", "Request for");
+		eng.put("ajan_nev", "Full name:");
+		eng.put("ajan_tel", "Contact(phone. or e-mail):");
+		eng.put("ajan_szemely", "Number of personal:");
+		eng.put("ajan_szoba", "Type of room:");
+		eng.put("ajan_mind", "Any");
+		eng.put("ajan_egy", "Single room");
+		eng.put("ajan_ketto", "Double room");
+		eng.put("ajan_harom", "Three bedroom");
+		eng.put("ajan_negy", "Four bedroom");
+		eng.put("ajan_apart", "Apartman");
+		eng.put("ajan_erkez", "Arrival:");
+		eng.put("ajan_tavoz", "Getaway:");
+		eng.put("ajan_reggel", "Breakfast:");
+		eng.put("ajan_kerek", "Yes");
+		eng.put("ajan_megj", "Notice:");
+		eng.put("ajan_kuld", "Send");
+		
+		eng.put("eler_cim", "Contacts:");
+		eng.put("eler_nemhely", "Provide your place of residence");
+		eng.put("eler_tel", "Phone:");
+		eng.put("eler_fax", "fax.:");
+		eng.put("eler_igazgat", "Managing director");
+		eng.put("eler_igazhely", "Deputy Director");
+		eng.put("eler_utvonal", "Get directions");
+		eng.put("eler_terkep", "Map");
+		eng.put("eler_hely", "Departure location:");
+		eng.put("eler_terv", "Planning");
+		eng.put("eler_ad", "Give it a place!");
 	}
 	
 	public static void set(HttpSession session) {

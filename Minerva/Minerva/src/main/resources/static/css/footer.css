@@ -2,9 +2,9 @@
 	position: fixed;
     width: 100%;
 	font-size: 12px;
-	background-color: #B30000;
 	color: white;
 	bottom: 0px;
+	height: 137px;
 }
 
 .shear-button{
@@ -19,4 +19,32 @@
 	margin-top: 0px;
 	margin-bottom: 0px;
 	margin-left: 0px;
+}
+
+.footer-img{
+	position: absolute;
+    left: 0px;
+    height: auto;
+    min-height: 90px;
+    bottom: 0px;
+    width: 100%;
+    z-index: -1;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 10px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 15px;
+  width: 80px;
+}
+
+#myBtn:hover {
+  width: 90px;
 }

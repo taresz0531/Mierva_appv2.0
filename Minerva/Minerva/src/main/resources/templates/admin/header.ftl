@@ -103,11 +103,6 @@
 		        </li>
 		      </ul>
 		      <div style="float: right;" >
-		      	<#if Session.nyelv?? && Session.nyelv = "eng">
-		      		<a href="hun"><img class="icon" src="icon/Hungary-icon.png"  height="50px" /></a>
-		      	<#else>
-		      		<a href="eng"><img class="icon" src="icon/United-Kingdom-icon.png"  height="50px"/></a>
-		      	</#if>
 		      	<#if Session.userId?? && Session.userId != -1>
 			      	<div style="float: right; margin-left: 10px; margin-top: 8px;" >
 			      		<form action="logOut">

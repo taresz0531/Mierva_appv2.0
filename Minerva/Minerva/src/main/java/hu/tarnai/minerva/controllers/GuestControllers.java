@@ -65,9 +65,9 @@ public class GuestControllers {
 		PageName.save(request, MAIN_PAGE_NAME);
 		
 		FoldalBo bo = new FoldalBo();
-		HetimenuBo hBo = new HetimenuBo();
+		
 		model.addAttribute("MainPageObject", bo.foldalGetAllActive(Nyelv.getNyelv(request)));
-		model.addAttribute("hetimenu", hBo.getCurrentDayMenu());
+		model.addAttribute("hetimenu", HetimenuObject.getCurrentDayMenu());
 		
 		return Nyelv.getRedirectURL(request);
 	}

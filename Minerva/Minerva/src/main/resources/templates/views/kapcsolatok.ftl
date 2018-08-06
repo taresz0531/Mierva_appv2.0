@@ -14,7 +14,8 @@
 			});
 		}
 		else{
-			document.getElementById("cim").value = "Adja meg a helyét!";
+			var ad = document.getElementById('ad');
+			document.getElementById("cim").value = ad.value;
 		}
 	}
 	function initialize() {
@@ -35,7 +36,8 @@
 	google.maps.event.addDomListener(window, 'load', initialize);
 	
 	function myFunction2() {
-	    var person = prompt("Nem adott meg tartozkodási helyet!", "Hely?");
+		var nemhely = document.getElementById('nemhely');
+	    var person = prompt(nemhely.value, "");
 	    
 	    if (person != null) {
 	        document.getElementById("cim").value = person;
@@ -59,29 +61,49 @@
 	}
 	</script>
 <div class="main-div container">
+	<input type="hidden" value="${Session.eler_ad}" id="ad"/>
+	<input type="hidden" value="${Session.eler_nemhely}" id="nemhely"/>
 	<div class="guest-div">
-		<center><h1>Elérhetőségek:</h1></center>
+		<center><h1>${Session.eler_cim}</h1></center>
 	</div>
 	<div class="guest-div">
 	<center>
 		<p>4024 Debrecen, Kossuth u. 59.</p>
-		<p>Tel.: (+36)-52-531-363</p>
-		<p>Fax.: (+36)-52-533-286</p>
+		<p>${Session.eler_tel} +36 52/531-363</p>
+		<p>${Session.eler_fax} +36 52/533-286</p>
 		<p>E-mail: kofer74@freemail.hu</p>
 	</center>
-		<h3>Útvonal tervezés</h3>
-		<p>Térkép</p>
+	<div class="row">
+		<div class="col-xs-6">
+			<center>
+				<p>${Session.eler_igazgat}</p>
+				<p>Dr. Kondorosiné Vizer Viola</p>
+				<p>${Session.eler_tel} +36 30/978-7485</p>
+				<p>konfer74@freemail.hu</p>
+			</center>
+		</div>
+		<div class="col-xs-6">
+			<center>
+				<p>${Session.eler_igazhely}</p>
+				<p>Czimre János</p>
+				<p>${Session.eler_tel} +36 30/994-9164</p>
+				<p>czimre.janos@freemail.hu</p>
+			</center>
+		</div>
+	</div>
+		<h3>${Session.eler_utvonal}</h3>
+		<p>${Session.eler_terkep}</p>
 		<div class="col-xs-12" id="googleMap" style="height: 350px; margin-bottom: 10px;"></div>
 		<form class="form-horizontal" action="gyikKerdesServlet" method="post">	
 			<div class="form-group">
-			  <label class="control-label col-sm-2" for="eler">Indulási hely:</label>
+			  <label class="control-label col-sm-2" for="eler">${Session.eler_hely}</label>
 			  <div class="col-sm-10">
 			  	<input onclick="setEmtyCim()" class="form-control" type="text" id="cim"/>
 			  </div>
 			</div>
 			<div align="left" class="form-group">
 			  <div class="col-sm-12">
-				<center><input class="btn" type="button" onclick="myFunction()" value="Tervezés" /></center>
+				<center><input class="btn" type="button" onclick="myFunction()" value="${Session.eler_terv}" /></center>
 			  </div>
 			</div>
 		</form>

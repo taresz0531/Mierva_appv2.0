@@ -16,7 +16,7 @@ public class PageName {
 	}
 	
 	public static String get(HttpServletRequest request){
-		return request.getSession().getAttribute("pageName").toString();
+		return request.getSession().getAttribute("pageName")!=null?request.getSession().getAttribute("pageName").toString():null;
 	}
 	
 	public static void deletAdmin(HttpServletRequest request){
