@@ -1,6 +1,7 @@
 package hu.tarnai.minerva.controllers.admin;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,9 +28,9 @@ public class AdminController {
 	
 		//---------------admin--------------------//
 		@RequestMapping(value = "/admin", method = RequestMethod.GET)
-		public String admin(@RequestParam(name = "pageName") String pageName,Model model, HttpServletRequest request){
+		public String admin(@RequestParam(name = "pageName") String pageName,Model model, HttpServletRequest request, HttpServletResponse response){
 			PageName.save(request, ADMIN_PAGE_NAME);
-			Nyelv.setNyelv(request, NyelvEnum.HUN);
+			Nyelv.setNyelv(request, response, NyelvEnum.HUN);
 			
 			
 			if(UserSession.getUserId(request)>-1){
@@ -70,9 +71,9 @@ public class AdminController {
 		
 		//---------------login--------------------//
 		@RequestMapping(value = "/login", method = RequestMethod.GET)
-		public String login(Model model, HttpServletRequest request){
+		public String login(Model model, HttpServletRequest request, HttpServletResponse response){
 			PageName.save(request, LOGIN_PAGE_NAME);
-			Nyelv.setNyelv(request, NyelvEnum.HUN);
+			Nyelv.setNyelv(request, response, NyelvEnum.HUN);
 			
 			return "admin/" + LOGIN_PAGE_NAME;
 		}
@@ -80,11 +81,11 @@ public class AdminController {
 		@RequestMapping(value = "/login", method = RequestMethod.POST)
 		public String loginPost(@RequestParam(value = "fnev") String fnev,
 								@RequestParam(value = "jelszo") String jelszo,
-								Model model, HttpServletRequest request, RedirectAttributes redirect){
+								Model model, HttpServletRequest request, HttpServletResponse response, RedirectAttributes redirect){
 //			
 //			PageName.save(request, LOGIN_PAGE_NAME);
 //			PageName.deletAdmin(request);
-			Nyelv.setNyelv(request, NyelvEnum.HUN);
+			Nyelv.setNyelv(request, response, NyelvEnum.HUN);
 			
 			UserBo bo = new UserBo();
 			int res = bo.loginUser(fnev, jelszo, request);
@@ -111,9 +112,9 @@ public class AdminController {
 		
 		//---------------kijelentkezés--------------------//
 		@RequestMapping(value = "/logOut", method = RequestMethod.GET)
-		public String logOut(Model model, HttpServletRequest request){
+		public String logOut(Model model, HttpServletRequest request, HttpServletResponse response){
 			PageName.save(request, LOGIN_PAGE_NAME);
-			Nyelv.setNyelv(request, NyelvEnum.HUN);
+			Nyelv.setNyelv(request, response, NyelvEnum.HUN);
 			
 			UserSession.setUserId(-1, request);
 			PageName.deletAdmin(request);

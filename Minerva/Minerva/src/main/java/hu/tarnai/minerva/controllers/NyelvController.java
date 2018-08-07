@@ -1,6 +1,7 @@
 package hu.tarnai.minerva.controllers;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,8 +17,8 @@ import hu.tarnai.minerva.utility.StringUtils;
 public class NyelvController {
 	
 	@RequestMapping(value = "hun", method = RequestMethod.GET)
-	public String nyelvHUN(Model model, HttpServletRequest request){
-		Nyelv.setNyelv(request, NyelvEnum.HUN);
+	public String nyelvHUN(Model model, HttpServletRequest request, HttpServletResponse response){
+		Nyelv.setNyelv(request, response, NyelvEnum.HUN);
 		if(StringUtils.isEmptyString(PageName.get(request))) {
 			return "redirect:/foldal";
 		}
@@ -25,8 +26,8 @@ public class NyelvController {
 	}
 	
 	@RequestMapping(value = "eng", method = RequestMethod.GET)
-	public String nyelvENG(Model model, HttpServletRequest request){
-		Nyelv.setNyelv(request, NyelvEnum.ENG);
+	public String nyelvENG(Model model, HttpServletRequest request, HttpServletResponse response){
+		Nyelv.setNyelv(request, response, NyelvEnum.ENG);
 		if(StringUtils.isEmptyString(PageName.get(request))) {
 			return "redirect:/foldal";
 		}

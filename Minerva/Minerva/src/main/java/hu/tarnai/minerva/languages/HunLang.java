@@ -2,13 +2,19 @@ package hu.tarnai.minerva.languages;
 
 import java.util.HashMap;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+
+import hu.tarnai.minerva.enums.NyelvEnum;
+import hu.tarnai.minerva.utility.Nyelv;
+
 
 public class HunLang {
 	private HashMap<String, String> hun;
 
 	public HunLang() {
 		hun = new HashMap<String, String>();
+		
 		hun.put("foldal_napimenu", "Aktuális heti menünk.");
 		hun.put("foldal_nincs", "Erre a napra nincsen napimenü!");
 		hun.put("foldal_leves", "Leves");

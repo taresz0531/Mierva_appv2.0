@@ -32,7 +32,7 @@
 				<#else>
 					<tr style="height: 100px;">
 				</#if>
-						<td class="col-sm-4"><h3>${h.date}. ${h.dayName}</h3></td>
+						<td class="col-sm-4"><h3>${h.date} ${h.dayName}</h3></td>
 						<td class="col-sm-3"><p><#if h.napimenu.leves??>${h.napimenu.leves}</#if></p></td>
 						<td class="col-sm-3"><p><#if h.napimenu.foetel??>${h.napimenu.foetel}</#if></p></td>
 						<td class="col-sm-2"><p><#if h.napimenu.koret??>${h.napimenu.koret}</#if></p></td>

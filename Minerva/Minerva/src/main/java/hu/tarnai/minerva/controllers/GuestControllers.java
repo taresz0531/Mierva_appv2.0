@@ -49,75 +49,217 @@ public class GuestControllers {
 	
 	//---------------foldal--------------------//
 	@RequestMapping(value = "", method = RequestMethod.GET)
-	public String guestMainPage1(Model model, HttpServletRequest request){
+	public String guestMainPage1(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, MAIN_PAGE_NAME);
 		
 		FoldalBo bo = new FoldalBo();
+		HetimenuObject hobj = HetimenuObject.getCurrentDayMenu();
+		HetimenuObject tobj = new HetimenuObject();
+		
+		if(hobj != null) {
+			String[] leves = hobj.getNapimenu().getLeves().split("/");
+			String[] foetel = hobj.getNapimenu().getFoetel().split("/");
+			String[] koret = hobj.getNapimenu().getKoret().split("/");
+			
+			if(Nyelv.getNyelv(request) == NyelvEnum.HUN) {
+				Napimenu nm = new Napimenu();
+				if(leves!=null && leves.length>0) {
+					nm.setLeves(leves[0]);
+				}
+				
+				if(foetel!=null && foetel.length>0) {
+					nm.setFoetel(foetel[0]);
+				}
+				
+				if(koret!=null && koret.length>0) {
+					nm.setKoret(koret[0]);
+				}
+				tobj.setNapimenu(nm);
+				tobj.setDate(hobj.getDate());
+				tobj.setDayName(hobj.getDayName());
+			}else {
+				SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+				SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
+				Napimenu nm = new Napimenu();
+				String date;
+				String dayName;
+				
+				try {
+					date = format.format(format2.parse(hobj.getDate()));
+					dayName = DateUtility.convertHungariDayToEnglish(hobj.getDayName());
+				} catch (ParseException e) {
+					date = hobj.getDate();
+					dayName = hobj.getDayName();
+					e.printStackTrace();
+				}
+				if(leves!=null && leves.length>1) {
+					nm.setLeves(leves[1]);
+				}else {
+					if(leves!=null && leves.length>0) {
+						nm.setLeves(leves[0]);
+					}
+				}
+				
+				if(foetel!=null && foetel.length>1) {
+					nm.setLeves(foetel[1]);
+				}else {
+					if(foetel!=null && foetel.length>0) {
+						nm.setLeves(foetel[0]);
+					}
+				}
+				
+				if(koret!=null && koret.length>1) {
+					nm.setLeves(koret[1]);
+				}else {
+					if(koret!=null && koret.length>0) {
+						nm.setLeves(koret[0]);
+					}
+				}
+				
+				tobj.setNapimenu(nm);
+				tobj.setDate(date);
+				tobj.setDayName(dayName);
+			}
+		}else {
+			tobj = null;
+		}
+		
 		
 		model.addAttribute("MainPageObject", bo.foldalGetAllActive(Nyelv.getNyelv(request)));
-		model.addAttribute("hetimenu", HetimenuObject.getCurrentDayMenu());
+		model.addAttribute("hetimenu", tobj);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 
 	@RequestMapping(value = "/foldal", method = RequestMethod.GET)
-	public String guestMainPage2(Model model, HttpServletRequest request){
+	public String guestMainPage2(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, MAIN_PAGE_NAME);
 		
 		FoldalBo bo = new FoldalBo();
+		HetimenuObject hobj = HetimenuObject.getCurrentDayMenu();
+		HetimenuObject tobj = new HetimenuObject();
+		
+		if(hobj != null) {
+			String[] leves = hobj.getNapimenu().getLeves().split("/");
+			String[] foetel = hobj.getNapimenu().getFoetel().split("/");
+			String[] koret = hobj.getNapimenu().getKoret().split("/");
+			
+			if(Nyelv.getNyelv(request) == NyelvEnum.HUN) {
+				Napimenu nm = new Napimenu();
+				if(leves!=null && leves.length>0) {
+					nm.setLeves(leves[0]);
+				}
+				
+				if(foetel!=null && foetel.length>0) {
+					nm.setFoetel(foetel[0]);
+				}
+				
+				if(koret!=null && koret.length>0) {
+					nm.setKoret(koret[0]);
+				}
+				tobj.setNapimenu(nm);
+				tobj.setDate(hobj.getDate());
+				tobj.setDayName(hobj.getDayName());
+			}else {
+				SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+				SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
+				Napimenu nm = new Napimenu();
+				String date;
+				String dayName;
+				
+				try {
+					date = format.format(format2.parse(hobj.getDate()));
+					dayName = DateUtility.convertHungariDayToEnglish(hobj.getDayName());
+				} catch (ParseException e) {
+					date = hobj.getDate();
+					dayName = hobj.getDayName();
+					e.printStackTrace();
+				}
+				if(leves!=null && leves.length>1) {
+					nm.setLeves(leves[1]);
+				}else {
+					if(leves!=null && leves.length>0) {
+						nm.setLeves(leves[0]);
+					}
+				}
+				
+				if(foetel!=null && foetel.length>1) {
+					nm.setLeves(foetel[1]);
+				}else {
+					if(foetel!=null && foetel.length>0) {
+						nm.setLeves(foetel[0]);
+					}
+				}
+				
+				if(koret!=null && koret.length>1) {
+					nm.setLeves(koret[1]);
+				}else {
+					if(koret!=null && koret.length>0) {
+						nm.setLeves(koret[0]);
+					}
+				}
+				
+				tobj.setNapimenu(nm);
+				tobj.setDate(date);
+				tobj.setDayName(dayName);
+			}
+		}else {
+			tobj = null;
+		}
+		
 		
 		model.addAttribute("MainPageObject", bo.foldalGetAllActive(Nyelv.getNyelv(request)));
-		model.addAttribute("hetimenu", HetimenuObject.getCurrentDayMenu());
+		model.addAttribute("hetimenu", tobj);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	//---------------szolgáltatás--------------------//
 	@RequestMapping(value = "/szolgaltatas", method = RequestMethod.GET)
-	public String szolgaltatas(Model model, HttpServletRequest request){
+	public String szolgaltatas(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, SZOLGALTATAS_PAGE_NAME);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	//---------------árak--------------------//
 	@RequestMapping(value = "/arak", method = RequestMethod.GET)
-	public String arak(Model model, HttpServletRequest request){
+	public String arak(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, ARAK_PAGE_NAME);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	//---------------várósinfó--------------------//
 	@RequestMapping(value = "/varosinfo", method = RequestMethod.GET)
-	public String varosinfo(Model model, HttpServletRequest request){
+	public String varosinfo(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, VAROSINFO_PAGE_NAME);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	//---------------gyik--------------------//
 	@RequestMapping(value = "/gyik", method = RequestMethod.GET)
-	public String gyik(Model model, HttpServletRequest request){
+	public String gyik(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, GYIK_PAGE_NAME);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	//---------------kapcsolatok--------------------//
 	@RequestMapping(value = "/kapcsolatok", method = RequestMethod.GET)
-	public String kapcsolatok(Model model, HttpServletRequest request){
+	public String kapcsolatok(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, KAPCSOLATOK_PAGE_NAME);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	//---------------ajánlatok--------------------//
 	@RequestMapping(value = "/ajanlat", method = RequestMethod.GET)
-	public String ajanlat(Model model, HttpServletRequest request){
+	public String ajanlat(Model model, HttpServletRequest request, HttpServletResponse response){
 		PageName.save(request, AJANLAT_PAGE_NAME);
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 	@RequestMapping(value = "/ajanlat", method = RequestMethod.POST)
@@ -129,7 +271,7 @@ public class GuestControllers {
 			@RequestParam(value = "szoba") String szoba,
 			@RequestParam(value = "reggeli", defaultValue = "false") boolean reggeli,
 			@RequestParam(value = "megjegyzes") String megjegyzes,
-			Model model, HttpServletRequest request){
+			Model model, HttpServletRequest request, HttpServletResponse response){
 		
 		PageName.save(request, AJANLAT_PAGE_NAME);
 		
@@ -177,12 +319,12 @@ public class GuestControllers {
 			Message.error(request, "Ismeretlen Hiba történt küldés közben, kérjük vegye fel a kapcsolatot velünk telefonon vagy e-mail-ben. Megértését köszönjük.");
 		}
 		
-		return Nyelv.getRedirectURL(request);
+		return Nyelv.getRedirectURL(request, response);
 	}
 	
 		//---------------galéria--------------------//
 		@RequestMapping(value = "/gallery", method = RequestMethod.GET)
-		public String gallery(Model model, HttpServletRequest request){
+		public String gallery(Model model, HttpServletRequest request, HttpServletResponse response){
 			PageName.save(request, GALLERY_PAGE_NAME);
 			GalleryBo bo = new GalleryBo();
 			List<Galeria> galeria = bo.getAll();
@@ -191,12 +333,12 @@ public class GuestControllers {
 				model.addAttribute("gallery", galeria);
 			}
 			
-			return Nyelv.getRedirectURL(request);
+			return Nyelv.getRedirectURL(request, response);
 		}
 		
 		//---------------étlap--------------------//
 		@RequestMapping(value = "/etlap", method = RequestMethod.GET)
-		public String etlap(Model model, HttpServletRequest request){
+		public String etlap(Model model, HttpServletRequest request, HttpServletResponse response){
 			PageName.save(request, ETLAP_PAGE_NAME);
 			
 			List<EtlapObject> etlapObject = new ArrayList<EtlapObject>();
@@ -258,12 +400,12 @@ public class GuestControllers {
 			
 			model.addAttribute("etlapObject", etlapObject);
 			
-			return Nyelv.getRedirectURL(request);
+			return Nyelv.getRedirectURL(request, response);
 		}
 		
 		//---------------heti menü--------------------//
 		@RequestMapping(value = "/hetimenu", method = RequestMethod.GET)
-		public String hetiMenu(Model model, HttpServletRequest request){
+		public String hetiMenu(Model model, HttpServletRequest request, HttpServletResponse response){
 			PageName.save(request, HETI_MENU_PAGE_NAME);
 			List<HetimenuObject> heti = new ArrayList<HetimenuObject>();
 			for( HetimenuObject o:HetimenuObject.get()) {
@@ -284,6 +426,8 @@ public class GuestControllers {
 					
 					heti.add(ho);
 				}else {
+					SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+					SimpleDateFormat format2 = new SimpleDateFormat("yyyy-MM-dd");
 					HetimenuObject ho = new HetimenuObject();
 					Napimenu nm = new Napimenu();
 					
@@ -295,7 +439,12 @@ public class GuestControllers {
 					nm.setFoetel(fo!=null&&fo.length>1?fo[1]:(fo!=null&&fo.length>0?fo[0]:null));
 					nm.setKoret(koret!=null&&koret.length>1?koret[1]:(koret!=null&&koret.length>0?koret[0]:null));
 					ho.setNapimenu(nm);
-					ho.setDate(o.getDate());
+					try {
+						ho.setDate(format.format(format2.parse(o.getDate())));
+					} catch (ParseException e) {
+						ho.setDate(o.getDate());
+						e.printStackTrace();
+					}
 					ho.setDayName(DateUtility.convertHungariDayToEnglish(o.getDayName()));
 					
 					heti.add(ho);
@@ -304,7 +453,7 @@ public class GuestControllers {
 			
 			model.addAttribute("hetiMenuObj", heti);
 			
-			return Nyelv.getRedirectURL(request);
+			return Nyelv.getRedirectURL(request, response);
 		}
 		
 		//---------------kép lekérése--------------------//

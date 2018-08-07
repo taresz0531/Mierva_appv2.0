@@ -15,19 +15,19 @@
 			<div class="foldal-leiras col-sm-12" id="foldal-leiras-id-hetimenu">
 				<table class="col-sm-12">
 					<tr class="row-div etel-header-row">
-						<th class="col-sm-4"><p>Leves</p></th>
-						<th class="col-sm-4"><p>Főétel</p></th>
-						<th class="col-sm-4"><p>Köret</p></th>
+						<th class="col-sm-4"><p>${Session.foldal_leves}</p></th>
+						<th class="col-sm-4"><p>${Session.foldal_fetel}</p></th>
+						<th class="col-sm-4"><p>${Session.foldal_koret}</p></th>
 					</tr>
 					<tr style="height: 100px;">
-						<td class="col-sm-4"><p><#if hetimenu.napimenu.leves??>${hetimenu.napimenu.leves?keep_before("/")}</#if></p></td>
-						<td class="col-sm-4"><p><#if hetimenu.napimenu.foetel??>${hetimenu.napimenu.foetel?keep_before("/")}</#if></p></td>
-						<td class="col-sm-4"><p><#if hetimenu.napimenu.koret??>${hetimenu.napimenu.koret?keep_before("/")}</#if></p></td>
+						<td class="col-sm-4"><p><#if hetimenu.napimenu.leves??>${hetimenu.napimenu.leves}</#if></p></td>
+						<td class="col-sm-4"><p><#if hetimenu.napimenu.foetel??>${hetimenu.napimenu.foetel}</#if></p></td>
+						<td class="col-sm-4"><p><#if hetimenu.napimenu.koret??>${hetimenu.napimenu.koret}</#if></p></td>
 					</tr>
 				</table>
 			</div>
 			<div class="foldal-date" id="foldal-date-id-hetimenu">
-				<p>${hetimenu.date}. ${hetimenu.dayName}</p>
+				<p>${hetimenu.date} ${hetimenu.dayName}</p>
 			</div>
 		</div>
 	<#else>
