@@ -10,26 +10,26 @@
 			<div> 
 				<h1>${etObj.nev?keep_before("/")}</h1>
 			</div>
-			<table>
+			<table style="width: 100%;">
 				<tr class="row-div etel-header-row">
-					<th class="col-sm-5"><p>${Session.etlap_etel}</p></th>
-					<th class="col-sm-3"><p>${Session.etlap_alergen}</p></th>
-					<th class="col-sm-1"><p>${Session.etlap_ar}</p></th>
-					<th class="col-sm-3"><p>${Session.etlap_kep}</p></th>
+					<th class="menu-v-align"><p>${Session.etlap_etel}</p></th>
+					<th class="menu-v-align"><p>${Session.etlap_alergen}</p></th>
+					<th class="menu-v-align"><p>${Session.etlap_ar}</p></th>
+					<th class="menu-v-align"><p>${Session.etlap_kep}</p></th>
 				</tr>
 				<#list etObj.etelek as e>
 					<#if !e?is_last>
 						<tr class="etel-row">
 					<#else>
-						<tr style="height: 150px;">
+						<tr style="height: 70px;">
 					</#if>
-						<td class="col-sm-5"><p><#if e.nev??>${e.nev}</#if></p></td>
-						<td class="col-sm-3"><p><#if e.leiras??>${e.leiras}</#if></p></td>
-						<td class="col-sm-1"><p><#if e.ar??>${e.ar}.-</#if></p></td>
+						<td class="menu-v-align"><p><#if e.nev??>${e.nev}</#if></p></td>
+						<td class="menu-v-align"><p><#if e.leiras??>${e.leiras}</#if></p></td>
+						<td class="menu-v-align"><p><#if e.ar??>${e.ar}.-</#if></p></td>
 						<#if e.is_kep == 0>
-							<td class="col-sm-3"><p>${Session.etlap_nincs_kep}</p></td>
+							<td class="menu-v-align"><p>${Session.etlap_nincs_kep}</p></td>
 						<#else>
-							<td class="col-sm-3"><img src="getImage?fileId=${e.id}&who=e" id="${e.id}" class="etlap-img" onclick="openImage(${e.id})"/></td>
+							<td class="menu-v-align"><img src="getImage?fileId=${e.id}&who=e" id="${e.id}" class="etlap-img" onclick="openImage(${e.id})"/></td>
 						</#if>
 					</tr>
 				</#list>

@@ -92,6 +92,7 @@ public class GuestControllers {
 					dayName = hobj.getDayName();
 					e.printStackTrace();
 				}
+				
 				if(leves!=null && leves.length>1) {
 					nm.setLeves(leves[1]);
 				}else {
@@ -101,18 +102,18 @@ public class GuestControllers {
 				}
 				
 				if(foetel!=null && foetel.length>1) {
-					nm.setLeves(foetel[1]);
+					nm.setFoetel(foetel[1]);
 				}else {
 					if(foetel!=null && foetel.length>0) {
-						nm.setLeves(foetel[0]);
+						nm.setFoetel(foetel[0]);
 					}
 				}
 				
 				if(koret!=null && koret.length>1) {
-					nm.setLeves(koret[1]);
+					nm.setKoret(koret[1]);
 				}else {
 					if(koret!=null && koret.length>0) {
-						nm.setLeves(koret[0]);
+						nm.setKoret(koret[0]);
 					}
 				}
 				
@@ -175,6 +176,7 @@ public class GuestControllers {
 					dayName = hobj.getDayName();
 					e.printStackTrace();
 				}
+				
 				if(leves!=null && leves.length>1) {
 					nm.setLeves(leves[1]);
 				}else {
@@ -184,18 +186,18 @@ public class GuestControllers {
 				}
 				
 				if(foetel!=null && foetel.length>1) {
-					nm.setLeves(foetel[1]);
+					nm.setFoetel(foetel[1]);
 				}else {
 					if(foetel!=null && foetel.length>0) {
-						nm.setLeves(foetel[0]);
+						nm.setFoetel(foetel[0]);
 					}
 				}
 				
 				if(koret!=null && koret.length>1) {
-					nm.setLeves(koret[1]);
+					nm.setKoret(koret[1]);
 				}else {
 					if(koret!=null && koret.length>0) {
-						nm.setLeves(koret[0]);
+						nm.setKoret(koret[0]);
 					}
 				}
 				

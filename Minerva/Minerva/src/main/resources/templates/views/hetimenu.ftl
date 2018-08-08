@@ -19,23 +19,23 @@
 	</div>
 	
 	<div class="guest-div">
-		<table>
+		<table style="width: 100%;">
 			<tr class="row-div etel-header-row">
-				<th class="col-sm-4"><p>${Session.heti_nap}</p></th>
-				<th class="col-sm-3"><p>${Session.heti_leves}</p></th>
-				<th class="col-sm-3"><p>${Session.heti_foetel}</p></th>
-				<th class="col-sm-2"><p>${Session.heti_koret}</p></th>
+				<th class="menu-v-align"><p>${Session.heti_nap}</p></th>
+				<th class="menu-v-align"><p>${Session.heti_leves}</p></th>
+				<th class="menu-v-align"><p>${Session.heti_foetel}</p></th>
+				<th class="menu-v-align"><p>${Session.heti_koret}</p></th>
 			</tr>
 			<#list hetiMenuObj as h>
 				<#if !h?is_last>
-					<tr class="etel-row" style="height: 100px;">
+					<tr class="etel-row" style="height: 70px;">
 				<#else>
-					<tr style="height: 100px;">
+					<tr style="height: 70px;">
 				</#if>
-						<td class="col-sm-4"><h3>${h.date} ${h.dayName}</h3></td>
-						<td class="col-sm-3"><p><#if h.napimenu.leves??>${h.napimenu.leves}</#if></p></td>
-						<td class="col-sm-3"><p><#if h.napimenu.foetel??>${h.napimenu.foetel}</#if></p></td>
-						<td class="col-sm-2"><p><#if h.napimenu.koret??>${h.napimenu.koret}</#if></p></td>
+						<td class="menu-v-align"><h4>${h.date} ${h.dayName}</h4></td>
+						<td class="menu-v-align"><p><#if h.napimenu.leves??>${h.napimenu.leves}</#if></p></td>
+						<td class="menu-v-align"><p><#if h.napimenu.foetel??>${h.napimenu.foetel}</#if></p></td>
+						<td class="menu-v-align"><p><#if h.napimenu.koret??>${h.napimenu.koret}</#if></p></td>
 					</tr>
 			</#list>
 		</table>

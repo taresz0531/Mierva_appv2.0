@@ -5,8 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import hu.tarnai.minerva.enums.NyelvEnum;
-import hu.tarnai.minerva.languages.EngLang;
-import hu.tarnai.minerva.languages.HunLang;
+import hu.tarnai.minerva.languages.LangSetter;
 
 public class Nyelv {
 	
@@ -24,11 +23,8 @@ public class Nyelv {
 		Cookie c = new Cookie("nyelv", nyelv == NyelvEnum.HUN?"hun":"eng");
 		response.addCookie(c);
 
-		if(nyelv == NyelvEnum.HUN) {
-			HunLang.set(request.getSession());
-		}else if(nyelv == NyelvEnum.ENG) {
-			EngLang.set(request.getSession());
-		}
+		LangSetter.set(request.getSession(),nyelv);
+		
 	}
 	
 	public static NyelvEnum getNyelv(HttpServletRequest request){

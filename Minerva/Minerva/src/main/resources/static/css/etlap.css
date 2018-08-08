@@ -3,10 +3,15 @@
 }
 .etel-row{
 	border-bottom: 1px solid white;
-	height: 150px;
+	height: 90px;
 	margin-top: 10px;	
 }
 .etlap-img{
-	max-height: 140px;
-	border-radius: 8px;
+	max-height: 80px;
+	border-radius: 5px;
+}
+
+.menu-v-align{
+	vertical-align: top;
+	padding: 8px;
 }
