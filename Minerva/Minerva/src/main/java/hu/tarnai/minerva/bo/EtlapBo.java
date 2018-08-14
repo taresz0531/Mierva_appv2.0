@@ -4,16 +4,20 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import hu.tarnai.minerva.entity.Etlap;
 import hu.tarnai.minerva.entity.Etlapkategoria;
 import hu.tarnai.minerva.entity.Foldal;
 import hu.tarnai.minerva.enums.ErrorCodeConverter;
 import hu.tarnai.minerva.enums.ErrorCodeEnum;
+import hu.tarnai.minerva.enums.EventLogEnum;
+import hu.tarnai.minerva.utility.EventLogger;
 import hu.tarnai.minerva.utility.SqlConnector;
 
 public class EtlapBo extends SqlConnector{
 	
-	public ErrorCodeEnum add(Etlap etlap){
+	public ErrorCodeEnum add(Etlap etlap, HttpServletRequest request){
 		if(connectDB() == ErrorCodeEnum.ERROR){
 			return ErrorCodeEnum.DBERROR;
 		}
@@ -30,10 +34,12 @@ public class EtlapBo extends SqlConnector{
 			
 			cstm.executeUpdate();
 			
+			EventLogger.add("Étlap mentés: " + etlap.getNev(), request, EventLogEnum.SUCCESS);
+			
 			return ErrorCodeConverter.getErrorCode(cstm.getInt(7));
 		}catch (Exception e){
 			e.printStackTrace();
-			System.out.println("Error: " + e.getMessage());
+			EventLogger.add("Étlap mentés: " + etlap.getNev(), request, EventLogEnum.ERROR);
 			return ErrorCodeEnum.ERROR;
 		} finally {
 			try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }
@@ -42,7 +48,7 @@ public class EtlapBo extends SqlConnector{
 		}
 	}
 	
-	public ErrorCodeEnum delet(int id){
+	public ErrorCodeEnum delet(int id, HttpServletRequest request){
 		if(connectDB() == ErrorCodeEnum.ERROR){
 			return ErrorCodeEnum.DBERROR;
 		}
@@ -52,10 +58,12 @@ public class EtlapBo extends SqlConnector{
 			
 			cstm.executeUpdate();
 			
+			EventLogger.add("Étlap törlés: " + id, request, EventLogEnum.SUCCESS);
+			
 			return ErrorCodeEnum.SUCCESS;
 		}catch (Exception e){
 			e.printStackTrace();
-			System.out.println("Error: " + e.getMessage());
+			EventLogger.add("Étlap törlés: " + id, request, EventLogEnum.ERROR);
 			return ErrorCodeEnum.ERROR;
 		} finally {
 			try { if (rs != null) rs.close(); } catch (SQLException e) { e.printStackTrace(); }

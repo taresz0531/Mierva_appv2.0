@@ -6,7 +6,7 @@ function searchEvent(){
 	var dateFrom = document.getElementById('dateFrom');
 	var dateTo = document.getElementById('dateTo');
 	
-	var u = "/searchEvent?dateFrom=" + dateFrom.value.replace("T", " ") + "&dateTo=" + dateTo.value.replace("T", " ") + "&id=" + id.value;
+	var u = "searchEvent?dateFrom=" + dateFrom.value.replace("T", " ") + "&dateTo=" + dateTo.value.replace("T", " ") + "&id=" + id.value;
 	console.log("url: " + u);
 	$.ajax({
 		type: "POST",

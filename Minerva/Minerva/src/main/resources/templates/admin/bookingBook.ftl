@@ -86,7 +86,7 @@
 			</form>
 		</div>
 		<div class="row" style="margin-top: 10px;">
-		<form action="/bookingBookSaveAll" method="post" id="saveAllForm">
+		<form action="bookingBookSaveAll" method="post" id="saveAllForm">
 			<center><button class="btn btn-default" type="button" onclick="submitAllBookingRooms('saveAllForm')">Mindet ment</button></center>
 		</form>
 		</div>

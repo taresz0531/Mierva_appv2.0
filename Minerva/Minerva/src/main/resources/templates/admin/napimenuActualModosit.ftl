@@ -20,7 +20,7 @@
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="leves_en_${m.nap}"><p>Leves angol:</p></label>
-				<input type="text" class="form-control" id="leves_en_${m.nap}" name="leves_en" value="<#if m.leves??>${m.leves?keep_before("/")}</#if>">
+				<input type="text" class="form-control" id="leves_en_${m.nap}" name="leves_en" value="<#if m.leves??>${m.leves?keep_after("/")}</#if>">
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="etlaprol_leves_${m.nap}"><p>Etlapról:</p></label>
@@ -47,7 +47,7 @@
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="foetel_en_${m.nap}"><p>Főétel angol:</p></label>
-				<input type="text" class="form-control" id="foetel_en_${m.nap}" name="foetel_en" value="<#if m.foetel??>${m.foetel?keep_before("/")}</#if>">
+				<input type="text" class="form-control" id="foetel_en_${m.nap}" name="foetel_en" value="<#if m.foetel??>${m.foetel?keep_after("/")}</#if>">
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="etlaprol_foetel_${m.nap}"><p>Etlapról:</p></label>
@@ -74,7 +74,7 @@
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="koret_en_${m.nap}"><p>Köret angol:</p></label>
-				<input type="text" class="form-control" id="koret_en_${m.nap}" name="koret_en" value="<#if m.koret??>${m.koret?keep_before("/")}</#if>">
+				<input type="text" class="form-control" id="koret_en_${m.nap}" name="koret_en" value="<#if m.koret??>${m.koret?keep_after("/")}</#if>">
 			</div>
 			<div class="form-group col-xs-4">
 				<label for="etlaprol_koret_${m.nap}"><p>Etlapról:</p></label>

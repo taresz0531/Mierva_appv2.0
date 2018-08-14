@@ -117,7 +117,7 @@
 			<staticText>
 				<reportElement x="0" y="1" width="756" height="20" uuid="76a33c03-20e1-4f4d-bfcc-204c5f4c0f08"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="14" isBold="true" isItalic="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="14" isBold="true" isItalic="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[MINERVA PANZIÓ, ÉTTEREM-KÁVÉZÓ FOGLALÁSI NYILVÁNTARTÓ]]></text>
 			</staticText>
@@ -131,7 +131,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -146,7 +146,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingVa}.split( "#" )[0]]]></textFieldExpression>
@@ -161,7 +161,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingVa}.split( "#" )[1]]]></textFieldExpression>
@@ -176,7 +176,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingVa}.split( "#" )[2]]]></textFieldExpression>
@@ -191,7 +191,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingVa}.split( "#" )[3]]]></textFieldExpression>
@@ -206,7 +206,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingVa}.split( "#" )[4]]]></textFieldExpression>
@@ -221,7 +221,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[2]]]></textFieldExpression>
@@ -236,7 +236,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[3]]]></textFieldExpression>
@@ -251,7 +251,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingSzo}.split( "#" )[4]]]></textFieldExpression>
@@ -266,7 +266,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[1]]]></textFieldExpression>
@@ -281,7 +281,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -296,7 +296,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingSzo}.split( "#" )[0]]]></textFieldExpression>
@@ -311,7 +311,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingPe}.split( "#" )[3]]]></textFieldExpression>
@@ -326,7 +326,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingPe}.split( "#" )[4]]]></textFieldExpression>
@@ -341,7 +341,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingPe}.split( "#" )[2]]]></textFieldExpression>
@@ -356,7 +356,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -371,7 +371,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingPe}.split( "#" )[0]]]></textFieldExpression>
@@ -386,7 +386,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingPe}.split( "#" )[1]]]></textFieldExpression>
@@ -401,7 +401,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingCso}.split( "#" )[2]]]></textFieldExpression>
@@ -416,7 +416,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingCso}.split( "#" )[1]]]></textFieldExpression>
@@ -431,7 +431,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingCso}.split( "#" )[0]]]></textFieldExpression>
@@ -446,7 +446,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingCso}.split( "#" )[4]]]></textFieldExpression>
@@ -461,7 +461,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingCso}.split( "#" )[3]]]></textFieldExpression>
@@ -476,7 +476,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -491,7 +491,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingSze}.split( "#" )[2]]]></textFieldExpression>
@@ -506,7 +506,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingSze}.split( "#" )[1]]]></textFieldExpression>
@@ -521,7 +521,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingSze}.split( "#" )[0]]]></textFieldExpression>
@@ -536,7 +536,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingSze}.split( "#" )[4]]]></textFieldExpression>
@@ -551,7 +551,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingSze}.split( "#" )[3]]]></textFieldExpression>
@@ -566,7 +566,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -581,7 +581,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingKe}.split( "#" )[4]]]></textFieldExpression>
@@ -596,7 +596,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingKe}.split( "#" )[3]]]></textFieldExpression>
@@ -611,7 +611,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingKe}.split( "#" )[2]]]></textFieldExpression>
@@ -626,7 +626,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -641,7 +641,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingKe}.split( "#" )[1]]]></textFieldExpression>
@@ -656,7 +656,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingKe}.split( "#" )[0]]]></textFieldExpression>
@@ -671,7 +671,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["tetőtéri 2 ágyas:" + $P{bookingHe}.split( "#" )[4]]]></textFieldExpression>
@@ -686,7 +686,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["4 ágyas szoba:   " + $P{bookingHe}.split( "#" )[3]]]></textFieldExpression>
@@ -701,7 +701,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["3 ágyas szoba:   " + $P{bookingHe}.split( "#" )[2]]]></textFieldExpression>
@@ -716,7 +716,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top" markup="none">
-					<font fontName="Calibri" size="9" isBold="true" isUnderline="false" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" isBold="true" isUnderline="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single" leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[Booking.com:]]></text>
@@ -731,7 +731,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["2 ágyas szoba:   " + $P{bookingHe}.split( "#" )[1]]]></textFieldExpression>
@@ -746,7 +746,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Top">
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA["1 ágyas szoba:   " + $P{bookingHe}.split( "#" )[0]]]></textFieldExpression>
@@ -760,7 +760,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dateVa}]]></textFieldExpression>
 			</textField>
@@ -773,7 +773,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dateSzo}]]></textFieldExpression>
 			</textField>
@@ -786,7 +786,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{datePe}]]></textFieldExpression>
 			</textField>
@@ -799,7 +799,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dateCsu}]]></textFieldExpression>
 			</textField>
@@ -812,7 +812,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dateSze}]]></textFieldExpression>
 			</textField>
@@ -825,7 +825,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dateKe}]]></textFieldExpression>
 			</textField>
@@ -838,7 +838,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{dateHe}]]></textFieldExpression>
 			</textField>
@@ -851,7 +851,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[VASÁRNAP]]></text>
 			</staticText>
@@ -864,7 +864,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[SZOMBAT]]></text>
 			</staticText>
@@ -877,7 +877,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[PÉNTEK]]></text>
 			</staticText>
@@ -890,7 +890,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[CSÜTÖRTÖK]]></text>
 			</staticText>
@@ -903,7 +903,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[SZERDA]]></text>
 			</staticText>
@@ -916,7 +916,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[KEDD]]></text>
 			</staticText>
@@ -929,7 +929,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[HÉTFŐ]]></text>
 			</staticText>
@@ -941,7 +941,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="14" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="14" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[]]></text>
@@ -954,7 +954,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="none">
-					<font fontName="Calibri" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1250" isPdfEmbedded="false"/>
+					<font fontName="Times New Roman" size="13" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph lineSpacing="Single"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" MEGNEVEZÉS"]]></textFieldExpression>
@@ -967,7 +967,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[1-ES SZOBA (2+2)]]></text>
@@ -980,7 +980,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[2-AS SZOBA (1)]]></text>
@@ -993,7 +993,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[3-AS SZOBA (2+2)]]></text>
@@ -1006,7 +1006,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[4-AS SZOBA (2)]]></text>
@@ -1019,7 +1019,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[5-ÖS SZOBA (2)]]></text>
@@ -1032,7 +1032,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[6-OS SZOBA (2)]]></text>
@@ -1045,7 +1045,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[7-AS SZOBA (T2)]]></text>
@@ -1058,7 +1058,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[8-AS SZOBA (T3)]]></text>
@@ -1071,7 +1071,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[9-AS SZOBA (T3)]]></text>
@@ -1084,7 +1084,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[10-ES SZOBA (T4)]]></text>
@@ -1097,7 +1097,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[11-ES SZOBA (T1)]]></text>
@@ -1110,7 +1110,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[ÚJ 1 (2)]]></text>
@@ -1124,7 +1124,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement verticalAlignment="Middle">
-					<font fontName="Calibri" size="13" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="13" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<text><![CDATA[ÚJ 2 (2)]]></text>
@@ -1132,7 +1132,7 @@
 			<staticText>
 				<reportElement x="0" y="530" width="756" height="16" uuid="ced86971-b1cc-4e0d-bb0f-f23877be78a1"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Calibri" size="10" isBold="true" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="10" isBold="true" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 				</textElement>
 				<text><![CDATA[FOGLALÁS ESETÉN A NÉV ÉS MOBILTELEFON SZÁM KITÖLTÉSE KÖTELEZŐ! AZ IDEGEN "BEESŐ" VENDÉGEKNEK ÉRKEZÉSKÓR A SZOBÁT KÖTELEZŐ KIFIZETNI!!]]></text>
 			</staticText>
@@ -1144,7 +1144,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela00}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
@@ -1157,7 +1157,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela10}.split( "#" )[0] + "\n" + $P{cela10}.split( "#" )[1]]]></textFieldExpression>
@@ -1170,7 +1170,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela20}.split( "#" )[0] + "\n" + $P{cela20}.split( "#" )[1]]]></textFieldExpression>
@@ -1183,7 +1183,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela30}.split( "#" )[0] + "\n" + $P{cela30}.split( "#" )[1]]]></textFieldExpression>
@@ -1196,7 +1196,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela40}.split( "#" )[0] + "\n" + $P{cela40}.split( "#" )[1]]]></textFieldExpression>
@@ -1209,7 +1209,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela70}.split( "#" )[0] + "\n" + $P{cela70}.split( "#" )[1]]]></textFieldExpression>
@@ -1222,7 +1222,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela60}.split( "#" )[0] + "\n" + $P{cela60}.split( "#" )[1]]]></textFieldExpression>
@@ -1235,7 +1235,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela80}.split( "#" )[0] + "\n" + $P{cela80}.split( "#" )[1]]]></textFieldExpression>
@@ -1248,7 +1248,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela50}.split( "#" )[0] + "\n" + $P{cela50}.split( "#" )[1]]]></textFieldExpression>
@@ -1261,7 +1261,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela90}.split( "#" )[0] + "\n" + $P{cela90}.split( "#" )[1]]]></textFieldExpression>
@@ -1274,7 +1274,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela100}.split( "#" )[0] + "\n" + $P{cela100}.split( "#" )[1]]]></textFieldExpression>
@@ -1287,7 +1287,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela110}.split( "#" )[0] + "\n" + $P{cela110}.split( "#" )[1]]]></textFieldExpression>
@@ -1301,7 +1301,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela120}.split( "#" )[0] + "\n" + $P{cela120}.split( "#" )[1]]]></textFieldExpression>
@@ -1314,7 +1314,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela61}.split( "#" )[0] + "\n" + $P{cela61}.split( "#" )[1]]]></textFieldExpression>
@@ -1327,7 +1327,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela21}.split( "#" )[0] + "\n" + $P{cela21}.split( "#" )[1]]]></textFieldExpression>
@@ -1340,7 +1340,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela11}.split( "#" )[0] + "\n" + $P{cela11}.split( "#" )[1]]]></textFieldExpression>
@@ -1354,7 +1354,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela121}.split( "#" )[0] + "\n" + $P{cela121}.split( "#" )[1]]]></textFieldExpression>
@@ -1367,7 +1367,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela51}.split( "#" )[0] + "\n" + $P{cela51}.split( "#" )[1]]]></textFieldExpression>
@@ -1380,7 +1380,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela31}.split( "#" )[0] + "\n" + $P{cela31}.split( "#" )[1]]]></textFieldExpression>
@@ -1393,7 +1393,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela01}.split( "#" )[0] + "\n" + $P{cela01}.split( "#" )[1]]]></textFieldExpression>
@@ -1406,7 +1406,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela111}.split( "#" )[0] + "\n" + $P{cela111}.split( "#" )[1]]]></textFieldExpression>
@@ -1419,7 +1419,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela71}.split( "#" )[0] + "\n" + $P{cela71}.split( "#" )[1]]]></textFieldExpression>
@@ -1432,7 +1432,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela101}.split( "#" )[0] + "\n" + $P{cela101}.split( "#" )[1]]]></textFieldExpression>
@@ -1445,7 +1445,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela81}.split( "#" )[0] + "\n" + $P{cela81}.split( "#" )[1]]]></textFieldExpression>
@@ -1458,7 +1458,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela41}.split( "#" )[0] + "\n" + $P{cela41}.split( "#" )[1]]]></textFieldExpression>
@@ -1471,7 +1471,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela91}.split( "#" )[0] + "\n" + $P{cela91}.split( "#" )[1]]]></textFieldExpression>
@@ -1484,7 +1484,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela62}.split( "#" )[0] + "\n" + $P{cela62}.split( "#" )[1]]]></textFieldExpression>
@@ -1497,7 +1497,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela22}.split( "#" )[0] + "\n" + $P{cela22}.split( "#" )[1]]]></textFieldExpression>
@@ -1510,7 +1510,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela12}.split( "#" )[0] + "\n" + $P{cela12}.split( "#" )[1]]]></textFieldExpression>
@@ -1524,7 +1524,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela122}.split( "#" )[0] + "\n" + $P{cela122}.split( "#" )[1]]]></textFieldExpression>
@@ -1537,7 +1537,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela52}.split( "#" )[0] + "\n" + $P{cela52}.split( "#" )[1]]]></textFieldExpression>
@@ -1550,7 +1550,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela32}.split( "#" )[0] + "\n" + $P{cela32}.split( "#" )[1]]]></textFieldExpression>
@@ -1563,7 +1563,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela02}.split( "#" )[0] + "\n" + $P{cela02}.split( "#" )[1]]]></textFieldExpression>
@@ -1576,7 +1576,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela112}.split( "#" )[0] + "\n" + $P{cela112}.split( "#" )[1]]]></textFieldExpression>
@@ -1589,7 +1589,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela72}.split( "#" )[0] + "\n" + $P{cela72}.split( "#" )[1]]]></textFieldExpression>
@@ -1602,7 +1602,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela102}.split( "#" )[0] + "\n" + $P{cela102}.split( "#" )[1]]]></textFieldExpression>
@@ -1615,7 +1615,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela82}.split( "#" )[0] + "\n" + $P{cela82}.split( "#" )[1]]]></textFieldExpression>
@@ -1628,7 +1628,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela42}.split( "#" )[0] + "\n" + $P{cela42}.split( "#" )[1]]]></textFieldExpression>
@@ -1641,7 +1641,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela92}.split( "#" )[0] + "\n" + $P{cela92}.split( "#" )[1]]]></textFieldExpression>
@@ -1654,7 +1654,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela63}.split( "#" )[0] + "\n" + $P{cela63}.split( "#" )[1]]]></textFieldExpression>
@@ -1667,7 +1667,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela23}.split( "#" )[0] + "\n" + $P{cela23}.split( "#" )[1]]]></textFieldExpression>
@@ -1680,7 +1680,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela13}.split( "#" )[0] + "\n" + $P{cela13}.split( "#" )[1]]]></textFieldExpression>
@@ -1694,7 +1694,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela123}.split( "#" )[0] + "\n" + $P{cela123}.split( "#" )[1]]]></textFieldExpression>
@@ -1707,7 +1707,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela53}.split( "#" )[0] + "\n" + $P{cela53}.split( "#" )[1]]]></textFieldExpression>
@@ -1720,7 +1720,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela33}.split( "#" )[0] + "\n" + $P{cela33}.split( "#" )[1]]]></textFieldExpression>
@@ -1733,7 +1733,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela03}.split( "#" )[0] + "\n" + $P{cela00}.split( "#" )[1]]]></textFieldExpression>
@@ -1746,7 +1746,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela113}.split( "#" )[0] + "\n" + $P{cela113}.split( "#" )[1]]]></textFieldExpression>
@@ -1759,7 +1759,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela73}.split( "#" )[0] + "\n" + $P{cela73}.split( "#" )[1]]]></textFieldExpression>
@@ -1772,7 +1772,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela103}.split( "#" )[0] + "\n" + $P{cela103}.split( "#" )[1]]]></textFieldExpression>
@@ -1785,7 +1785,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela83}.split( "#" )[0] + "\n" + $P{cela83}.split( "#" )[1]]]></textFieldExpression>
@@ -1798,7 +1798,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela43}.split( "#" )[0] + "\n" + $P{cela43}.split( "#" )[1]]]></textFieldExpression>
@@ -1811,7 +1811,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela93}.split( "#" )[0] + "\n" + $P{cela93}.split( "#" )[1]]]></textFieldExpression>
@@ -1824,7 +1824,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela94}.split( "#" )[0] + "\n" + $P{cela94}.split( "#" )[1]]]></textFieldExpression>
@@ -1837,7 +1837,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela14}.split( "#" )[0] + "\n" + $P{cela14}.split( "#" )[1]]]></textFieldExpression>
@@ -1850,7 +1850,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela104}.split( "#" )[0] + "\n" + $P{cela104}.split( "#" )[1]]]></textFieldExpression>
@@ -1863,7 +1863,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela74}.split( "#" )[0] + "\n" + $P{cela74}.split( "#" )[1]]]></textFieldExpression>
@@ -1876,7 +1876,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela44}.split( "#" )[0] + "\n" + $P{cela44}.split( "#" )[1]]]></textFieldExpression>
@@ -1889,7 +1889,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela54}.split( "#" )[0] + "\n" + $P{cela54}.split( "#" )[1]]]></textFieldExpression>
@@ -1902,7 +1902,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela84}.split( "#" )[0] + "\n" + $P{cela84}.split( "#" )[1]]]></textFieldExpression>
@@ -1915,7 +1915,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela114}.split( "#" )[0] + "\n" + $P{cela114}.split( "#" )[1]]]></textFieldExpression>
@@ -1928,7 +1928,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela64}.split( "#" )[0] + "\n" + $P{cela64}.split( "#" )[1]]]></textFieldExpression>
@@ -1941,7 +1941,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela04}.split( "#" )[0] + "\n" + $P{cela04}.split( "#" )[1]]]></textFieldExpression>
@@ -1954,7 +1954,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela34}.split( "#" )[0] + "\n" + $P{cela34}.split( "#" )[1]]]></textFieldExpression>
@@ -1968,7 +1968,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela124}.split( "#" )[0] + "\n" + $P{cela124}.split( "#" )[1]]]></textFieldExpression>
@@ -1981,7 +1981,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela24}.split( "#" )[0] + "\n" + $P{cela24}.split( "#" )[1]]]></textFieldExpression>
@@ -1994,7 +1994,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela95}.split( "#" )[0] + "\n" + $P{cela95}.split( "#" )[1]]]></textFieldExpression>
@@ -2007,7 +2007,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela15}.split( "#" )[0] + "\n" + $P{cela15}.split( "#" )[1]]]></textFieldExpression>
@@ -2020,7 +2020,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela105}.split( "#" )[0] + "\n" + $P{cela105}.split( "#" )[1]]]></textFieldExpression>
@@ -2033,7 +2033,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela75}.split( "#" )[0] + "\n" + $P{cela75}.split( "#" )[1]]]></textFieldExpression>
@@ -2046,7 +2046,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela45}.split( "#" )[0] + "\n" + $P{cela45}.split( "#" )[1]]]></textFieldExpression>
@@ -2059,7 +2059,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela55}.split( "#" )[0] + "\n" + $P{cela55}.split( "#" )[1]]]></textFieldExpression>
@@ -2072,7 +2072,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela75}.split( "#" )[0] + "\n" + $P{cela75}.split( "#" )[1]]]></textFieldExpression>
@@ -2085,7 +2085,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela115}.split( "#" )[0] + "\n" + $P{cela115}.split( "#" )[1]]]></textFieldExpression>
@@ -2098,7 +2098,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela65}.split( "#" )[0] + "\n" + $P{cela65}.split( "#" )[1]]]></textFieldExpression>
@@ -2111,7 +2111,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela05}.split( "#" )[0] + "\n" + $P{cela05}.split( "#" )[1]]]></textFieldExpression>
@@ -2124,7 +2124,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela35}.split( "#" )[0] + "\n" + $P{cela35}.split( "#" )[1]]]></textFieldExpression>
@@ -2138,7 +2138,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela125}.split( "#" )[0] + "\n" + $P{cela125}.split( "#" )[1]]]></textFieldExpression>
@@ -2151,7 +2151,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela25}.split( "#" )[0] + "\n" + $P{cela25}.split( "#" )[1]]]></textFieldExpression>
@@ -2164,7 +2164,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela66}.split( "#" )[0] + "\n" + $P{cela66}.split( "#" )[1]]]></textFieldExpression>
@@ -2177,7 +2177,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela96}.split( "#" )[0] + "\n" + $P{cela96}.split( "#" )[1]]]></textFieldExpression>
@@ -2190,7 +2190,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela26}.split( "#" )[0] + "\n" + $P{cela26}.split( "#" )[1]]]></textFieldExpression>
@@ -2204,7 +2204,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela126}.split( "#" )[0] + "\n" + $P{cela126}.split( "#" )[1]]]></textFieldExpression>
@@ -2217,7 +2217,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela76}.split( "#" )[0] + "\n" + $P{cela76}.split( "#" )[1]]]></textFieldExpression>
@@ -2230,7 +2230,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela36}.split( "#" )[0] + "\n" + $P{cela36}.split( "#" )[1]]]></textFieldExpression>
@@ -2243,7 +2243,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela06}.split( "#" )[0] + "\n" + $P{cela06}.split( "#" )[1]]]></textFieldExpression>
@@ -2256,7 +2256,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela106}.split( "#" )[0] + "\n" + $P{cela106}.split( "#" )[1]]]></textFieldExpression>
@@ -2269,7 +2269,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela56}.split( "#" )[0] + "\n" + $P{cela56}.split( "#" )[1]]]></textFieldExpression>
@@ -2282,7 +2282,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela116}.split( "#" )[0] + "\n" + $P{cela116}.split( "#" )[1]]]></textFieldExpression>
@@ -2295,7 +2295,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela16}.split( "#" )[0] + "\n" + $P{cela16}.split( "#" )[1]]]></textFieldExpression>
@@ -2308,7 +2308,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela76}.split( "#" )[0] + "\n" + $P{cela76}.split( "#" )[1]]]></textFieldExpression>
@@ -2321,7 +2321,7 @@
 					<rightPen lineWidth="1.1"/>
 				</box>
 				<textElement>
-					<font fontName="Calibri" size="9" pdfEncoding="Cp1250"/>
+					<font fontName="Times New Roman" size="9" pdfFontName="Times-Roman" pdfEncoding="Cp1250" isPdfEmbedded="true"/>
 					<paragraph leftIndent="2"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$P{cela46}.split( "#" )[0] + "\n" + $P{cela46}.split( "#" )[1]]]></textFieldExpression>

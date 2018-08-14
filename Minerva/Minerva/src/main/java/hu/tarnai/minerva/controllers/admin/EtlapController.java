@@ -87,7 +87,7 @@ public class EtlapController {
 			e.setIs_kep(1);
 		}
 		
-		ErrorCodeEnum error = bo.add(e);
+		ErrorCodeEnum error = bo.add(e, request);
 		if(error == ErrorCodeEnum.SUCCESS){
 			Message.success(request);
 		}else if(error == ErrorCodeEnum.NAME_NOT_VALID_ERROR){
@@ -214,7 +214,7 @@ public class EtlapController {
 		EtlapBo bo = new EtlapBo();
 		EtlapKategoriaBo kBo = new EtlapKategoriaBo();
 		
-		ErrorCodeEnum error = bo.delet(id);
+		ErrorCodeEnum error = bo.delet(id,request);
 		
 		if(error == ErrorCodeEnum.SUCCESS){
 			Message.success(request);

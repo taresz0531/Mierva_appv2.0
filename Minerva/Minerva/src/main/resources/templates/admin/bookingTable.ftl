@@ -200,7 +200,7 @@
 	<div id="popup" class="popupWindows"></div>
 	
 	<div id="popupAdd" class="popupWindows">
-		<form role="form" action="/bookingSave" method="post" name="popup-form-add">
+		<form role="form" action="bookingSave" method="post" name="popup-form-add">
 			<input type="hidden" id="dateFrom" name="dateFrom" value=""/>
 			<input type="hidden" id="roomType" name="roomType" value=""/>
 			<div class="form-group col-xs-12">
@@ -246,7 +246,7 @@
 	</div>
 	
 	<div id="popupModif" class="popupWindows">
-		<form role="form" action="/bookingModif" method="post" name="popup-form-modif">
+		<form role="form" action="bookingModif" method="post" name="popup-form-modif">
 			<input type="hidden" id="id_modif" name="id_modif" value=""/>
 			<div class="form-group col-xs-12">
 		      	<label for="dateTo"><p style="color: black;">Távozás dátuma:</p></label>
@@ -281,13 +281,14 @@
 		    </div>
 		    <center>
 		    	<input type="submit" value="Mentés" class="btn btn-default"/>
+		    	<input type="submit" value="Törlés" class="btn btn-default" onclick="javascript: form.action='bookingDelet'; form.target=''"/>
 		    	<input onclick="closepopupadd('popupModif')" type="button" class="btn btn-default" value="Mégsem"/>
 		    </center>
 		</form>
 	</div>
 	
 	<div id="popupAddComment" class="popupWindows">
-		<form role="form" action="/bookingAddComment" method="post" name="popup-form-add-comment">
+		<form role="form" action="bookingAddComment" method="post" name="popup-form-add-comment">
 			<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
 			<input type="hidden" id="addCommentId" name="addCommentId" value=""/>
 			<input type="hidden" id="addComment" name="addComment" value=""/>
@@ -303,7 +304,7 @@
 	</div>
 	
 	<div class="changeForm" style="display: none;">
-		<form role="form" action="/bookingChange" method="post" name="form-change" id="form-change">
+		<form role="form" action="bookingChange" method="post" name="form-change" id="form-change">
 			<input type="hidden" id="change_id" name="change_id" value=""/>
 			<input type="hidden" id="date" name="date" value="${monday?string('yyyy-MM-dd')}" />
 			<input type="hidden" id="change_roomType" name="change_roomType" value=""/>

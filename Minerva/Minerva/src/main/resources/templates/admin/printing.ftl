@@ -10,7 +10,7 @@
 <!-- ez a kód -->
 <div class="admin-div">
 	<div class="row" style="margin: 10px;">
-		<form action="/printNapimenuActual" method="post" target="_blank">
+		<form action="printNapimenuActual" method="post" target="_blank">
 			<div class="col-xs-8">
 				<label for="actualprint">Aktuális heti menü nyomtatása</label>
 			</div>
@@ -20,7 +20,7 @@
 		</form>
 	</div>
 	<div class="row" style="margin: 10px;">
-		<form action="/printNapimenuNext" method="post" target="_blank">
+		<form action="printNapimenuNext" method="post" target="_blank">
 			<div class="col-xs-8">
 				<label for="actualprint">Jövő heti menü nyomtatása</label>
 			</div>
@@ -30,7 +30,7 @@
 		</form>
 	</div>
 	<div class="row" style="margin: 10px;">
-		<form action="/printBookingTable" method="post" target="_blank">
+		<form action="printBookingTable" method="post" target="_blank">
 			<label style="margin-left: 12px;" for="actualprint">Foglalási nyilvántartó nyomtatása</label>
 			<div class="col-xs-12 btn-group" role="group" aria-label="...">
 				<input type="week" id="date" name="date" class="btn btn-default"/>

@@ -1,6 +1,7 @@
-/*
- * színek az azonos foglaláshoz
- */
+//context name
+var context = ""
+
+//színek az azonos foglaláshoz
 var colorArray = ['#ff8080','#ff1a1a','#b30000','#4d0000',
 				  '#80ff80','#1aff1a','#00b300','#004d00',
 				  '#8080ff','#1a1aff','#0000b3','#00004d',
@@ -344,7 +345,7 @@ function moveCalendar() {
 		var name = "moveCalendar";
 		var value = 1;
 		
-		var u = "/ajaxSessionSet?name=" + name + "&param=" + value;
+		var u = context + "ajaxSessionSet?name=" + name + "&param=" + value;
 		$.ajax({
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
@@ -363,7 +364,7 @@ function moveCalendar() {
 		
 		name = "saveCalId";
 		value = moveCalendarId;
-		u = "/ajaxSessionSet?name=" + name + "&param=" + value;
+		u = context + "ajaxSessionSet?name=" + name + "&param=" + value;
 		$.ajax({
 			type: "POST",
 			contentType: "application/json; charset=utf-8",
@@ -397,7 +398,7 @@ function saveMoveCalendar(){
 			var name = "moveCalendar";
 			var value = 0;
 			
-			var u = "/ajaxSessionSet?name=" + name + "&param=" + value;
+			var u = context + "ajaxSessionSet?name=" + name + "&param=" + value;
 			$.ajax({
 				type: "POST",
 				contentType: "application/json; charset=utf-8",
@@ -429,7 +430,7 @@ function moveCalendarCancel(){
 	data["name"] = "moveCalendar";
 	data["param"] = 0;
 	
-	var u = "/ajaxSessionSet?name=" + data["name"] + "&param=" + data["param"];
+	var u = context + "ajaxSessionSet?name=" + data["name"] + "&param=" + data["param"];
 	$.ajax({
 		type: "POST",
 		contentType: "application/json; charset=utf-8",
@@ -596,6 +597,6 @@ function submitAllBookingRooms(formId){
 	form.appendChild(bedAttic2);
 	form.appendChild(date);
 	
-	form.setAttribute("action", "/bookingBookSaveAll");
+	form.setAttribute("action", "bookingBookSaveAll");
 	form.submit();
 }

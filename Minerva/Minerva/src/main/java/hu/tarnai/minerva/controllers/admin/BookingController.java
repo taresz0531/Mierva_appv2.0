@@ -211,6 +211,47 @@ public class BookingController {
 		return  UserSession.checkUser(request, BOOKING_TABLE, model);
 	}
 	
+	@RequestMapping(value = "/bookingDelet", method = RequestMethod.POST)
+	public String bookingDeletPost(@RequestParam(name = "id_modif") int id_modif, @RequestParam(name = "dateTo") String dateTo, Model model, HttpServletRequest request, RedirectAttributes redirect){
+		
+		PageName.saveAdmin(request, BOOKING_TABLE);
+		PermissionCodeEnum permError = UserSession.userHasPermission(request, 10, BOOKING_TABLE, model);
+		SzobaBo bo = new SzobaBo();
+		
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		Date saveDate = new Date();
+		
+		try {
+			saveDate = format.parse(dateTo);
+		} catch (ParseException e1) {
+			e1.printStackTrace();
+		}
+		
+		if(permError == PermissionCodeEnum.LOGOUT) {
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}else if(permError == PermissionCodeEnum.DISABLE) {
+			bookingErrorSet(saveDate,model, request, "Nincs jogosultsága ehez a művelethez!");
+			return  UserSession.checkUser(request, BOOKING_TABLE, model);
+		}
+
+		ErrorCodeEnum error = bo.bookingDelet(id_modif);
+		
+		if(error == ErrorCodeEnum.SUCCESS) {
+			Message.success(request);
+		}else {
+			Message.error(request);
+		}
+		
+		BookingWeek week = new BookingWeek(saveDate);
+		model.addAttribute("weekDays", week.getWeekDays());
+		model.addAttribute("bookingRooms", week.getBooks());
+		model.addAttribute("roomTypes", week.getRooms());
+		model.addAttribute("monday", week.getWeekDays().get(0).date);
+		model.addAttribute("cells", week.getCells());
+		
+		return  UserSession.checkUser(request, BOOKING_TABLE, model);
+	}
+	
 	@RequestMapping(value = "/bookingPrev", method = RequestMethod.POST)
 	public String bookingPrevPost(@RequestParam(name = "date") String date, Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, BOOKING_TABLE);

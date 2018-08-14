@@ -48,7 +48,7 @@
 			var image = document.getElementById(id);
 			
 			div.style.display = "block";
-			img.src = "/getImage?fileId=" + id + "&who=e";
+			img.src = "getImage?fileId=" + id + "&who=e";
 		}
 	
 		function closeFullscreen(){
