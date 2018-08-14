@@ -6,7 +6,7 @@
 	</div>
 	<div class="row">
 		
-	<#include "adminMenu.ftl">
+	<#include "adminMenu.ftl"> 
 <!-- ez a kód -->
 <form method="post" action="napimenuNextModosit">
 <#list hetiMenu as m>

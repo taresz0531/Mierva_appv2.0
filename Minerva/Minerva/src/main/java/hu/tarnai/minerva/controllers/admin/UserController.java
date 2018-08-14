@@ -45,7 +45,7 @@ public class UserController {
 	public String userUjPost(@RequestParam(name = "nev") String nev,
 							 @RequestParam(name = "email") String email,
 							 @RequestParam(name = "menus") List<String> menus,
-							 @RequestParam(name = "perms") List<String> perms,
+							 @RequestParam(name = "perms", required = false) List<String> perms,
 							 Model model, HttpServletRequest request, RedirectAttributes redirect){
 		PageName.saveAdmin(request, FELHASZNALO_UJ_URL);
 		
@@ -57,8 +57,12 @@ public class UserController {
 			menusConCat = menusConCat + menus.get(i).toString() + (((menus.size()-1)>i)?",":"");
 		}
 		
-		for(int i=0;i<perms.size();i++){
-			permsConCat = permsConCat + perms.get(i).toString() + (((perms.size()-1)>i)?",":"");
+		if(perms == null) {
+			permsConCat = "0";
+		}else {
+			for(int i=0;i<perms.size();i++){
+				permsConCat = permsConCat + perms.get(i).toString() + (((perms.size()-1)>i)?",":"");
+			}
 		}
 		
 		int res= bo.add(nev, menusConCat, permsConCat, email);
