@@ -37,7 +37,6 @@
 			<li>${Session.szolg_zart}</li>
 			<li>${Session.szolg_recept}</li>
 			<li>${Session.szolg_hitel}</li>
-			<li>${Session.szolg_udules}</li>
 		</ul>
 	</div>
 </div>

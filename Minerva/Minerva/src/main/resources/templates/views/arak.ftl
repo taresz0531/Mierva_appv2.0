@@ -8,7 +8,6 @@
 	<div class="guest-div">
 		<ul>
 			<li>${Session.ar_11}</li>
-			<li>${Session.ar_12}</li>
 			<li>${Session.ar_21}</li>
 			<li>${Session.ar_22}</li>
 			<li>${Session.ar_23}</li>

@@ -44,16 +44,11 @@
 				<p>${Session.gyik_09l}</p>
 			</li>
 			<li>
-				<h3>${Session.gyik_10}</h3>
-				<p>${Session.gyik_10l}</p>
-			</li>
-			<li>
 				<h3>${Session.gyik_11}</h3>
 				<p>${Session.gyik_11l}</p>
 				<ul>
 					<li>${Session.gyik_kp}</li>
 					<li>${Session.gyik_bank}</li>
-					<li>${Session.gyik_utal}</li>
 					<li>${Session.gyik_meleg}</li>
 				</ul>
 			</li>
