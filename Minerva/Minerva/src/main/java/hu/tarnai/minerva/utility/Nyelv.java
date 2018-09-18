@@ -43,4 +43,8 @@ public class Nyelv {
 		}
 		return request.getSession().getAttribute("nyelv").toString().equals("hun")?NyelvEnum.HUN:NyelvEnum.ENG;
 	}
+	
+	public static String getKey(HttpServletRequest request, String key) {
+		return (String) request.getSession().getAttribute(key);
+	}
 }

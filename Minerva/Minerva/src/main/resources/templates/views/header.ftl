@@ -64,6 +64,7 @@
 <!-- 	include js files -->
 		<script type="text/javascript" src="javascript/foldal.js"></script>
 		<script type="text/javascript" src="javascript/gallery.js"></script>
+		<script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=${Session.js_notrobot}"></script>
 
 	</head>
 	<body>
@@ -97,6 +98,7 @@
 			          <li><a href="szolgaltatas">${Session.menu_szolgaltat}</a></li>
 			          <li><a href="arak">${Session.menu_arak}</a></li>
 			          <li><a href="varosinfo">${Session.menu_varos}</a></li>
+			          <li><a href="hazirend">${Session.menu_hazi}</a></li>
 			          <li><a href="gyik">${Session.menu_gyik}</a></li>
 			        </ul>
 			    </li>
